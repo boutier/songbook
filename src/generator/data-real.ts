@@ -1,29 +1,3193 @@
 export const RAW_DATA = `
+1 - LUMIÈRE DES HOMMES 
+# type : célébration
+R. Lumière des hommes !
+Nous marchons vers toi.
+Fils de Dieu !
+Tu nous sauveras.
+
+1.
+Ceux qui te cherchent, Seigneur,
+Tu les conduis vers la lumière,
+Toi, la route des égarés.
+
+2.
+Ceux qui te trouvent, Seigneur,
+Tu leur promets vie éternelle,
+Toi, la Pâque des baptisés.
+
+3.
+Ceux qui te suivent, Seigneur,
+Tu les nourris de ta parole,
+Toi, le pain de tes invités.
+
+
+1 - Louez-le
+# type : louange
+1. D'ici aux confins de la terre
+Va résonner notre prière
+Nous chanterons
+Car tout est accompli
+Et nous vivons de l'Esprit !
+Qu'éclate en toutes les nations
+Le réveil d'une génération
+Nous danserons
+Car tout est accompli
+Et nous crions Jésus Christ !
+ 
+R. Louez-le, louez-le
+Qui que vous soyez
+Louez-le, louez-le
+Où que vous soyez
+Louez-le, louez-le
+En toutes circonstances
+Louez-le, louez-le
+Voici que Dieu avance !
+
+2. Et de l'Europe et de l'Afrique
+De l'Asie jusqu'en Amérique
+N'ayons plus peur
+Car...
+Jeunes et vieux dans la louange
+Que chantent l'Église et les anges
+À Lui l'honneur
+Car...
+
+3. Du nord au sud, de l'est à l'ouest
+Au chant de notre Père céleste
+Dansons ensemble
+Car...
+Qu'elles s'appellent, qu'elles jubilent
+Au cœur des mers toutes les îles
+Courons ensemble
+Car...
+
+4. Chrétiens d'orient et d'occident
+Unis autour du Dieu vivant
+En Jésus Christ
+Car...
+Et qu'aux quatre coins de la France
+S'élève un chant, naisse une danse
+Pour le Messie
+Car...
+
+R. Louez-le, louez-le
+Pour l'Éternité
+Louez-le, louez-le
+Le Dieu à jamais
+Louez-le, louez-le
+Par vos pas de danse
+Louez-le, louez-le
+Voici que Dieu avance !
+
+
+
+1 - LOUANGE ET GLOIRE À TON NOM 
+# type : louange
+1. Louange et gloire à ton Nom, 
+Alléluia, alléluia ! 
+Seigneur, Dieu de l’univers, 
+Alléluia, alléluia ! 
+
+R. Gloire à Dieu, gloire à Dieu, 
+Au plus haut des cieux ! BIS
+
+2. Venez, chantons notre Dieu, alléluia...
+C’est lui notre Créateur, alléluia...
+
+3. Pour nous, il fit des merveilles, alléluia...
+Éternel est son amour, alléluia...
+
+4. Je veux chanter pour mon Dieu, alléluia...
+Tous les jours de ma vie, alléluia… 
+
+
+1 - LOUANGE À TOI, Ô CHRIST 
+# type : intercession+
+R. 
+Louange à toi, ô Christ
+Berger de ton Église,
+Joyeuse et vraie lumière,
+Tu nous donnes la vie !
+
+1.
+Toi l’étoile dans la nuit,
+Tu rayonnes avec le Père.
+Par toi nous avons la vie,
+Nous voyons la vraie lumière !
+
+2.
+Que nos chants te glorifient, qu’ils embrasent notre terre !
+Fils de Dieu, tu t’es fait chair pour nous mener vers le Père !
+
+3.
+Envoie sur nous ton Esprit, fais briller sur nous ta Face !
+Ô Jésus ressuscité, que nos chants te rendent grâce !
+
+4.
+Ta splendeur nous as sauvés des ténèbres éternelles.
+Donne-nous de proclamer tes prodiges, tes merveilles !
+
+5.
+Sois la source de la vie, sois la rosée de nos âmes !
+Que se lève pour chanter ton Église bienheureuse !
+
+
+
+1 - LEVONS LES YEUX 
+# type : intercession+
+R. Levons les yeux, voici la vraie lumière,
+Voici le Christ qui nous donne la paix !
+Ouvrons nos cœurs à sa miséricorde,
+Notre Sauveur est au milieu de nous !
+
+1. Jésus Christ, le Fils de Dieu fait homme,
+Vient demeurer au milieu de son peuple ! 
+Regardez ! Voici l’Emmanuel ! 
+Dieu avec nous, venu dans notre chair ! 
+
+2. Il est Dieu, il est notre lumière,
+Rayon jailli du cœur très saint du Père.
+Sa clarté embrase l’univers,
+Il est la vie illuminant la nuit !
+
+3. C’est par lui que fut créé le monde
+Pour l’habiter, l’habiller de sa gloire.
+Par son nom Dieu se révèle à nous.
+Accueillons-le, Il vient parmi les siens !
+
+4. Viens, Jésus ! Entre dans ton saint temple !
+Nourris nos cœurs, donne-nous ta parole !
+Nous voici, tes enfants rassemblés :
+Parle, Seigneur, et nous écouterons !
+
+5. Entendons l’appel de la sagesse,
+L’Époux très saint nous invite à ses noces.
+"Venez tous au banquet de l’Agneau,
+Mangez ce pain et buvez de ce vin !"
+
+
+1 - LEVEZ LES MAINS VERS DIEU 
+# type : louange
+R. Levez les mains vers Dieu,
+Chantez et louez-le, 
+Invoquez le Seigneur,
+Notre Sauveur ! 
+Levez les mains vers Dieu, 
+Chantez et louez-le, 
+Serviteurs du Seigneur, 
+Bénissez-le !
+
+1. Le Seigneur est grand, saint est son nom,
+Devant lui s’inclinent les nations.
+Louez-le, car il est bon !
+Lui seul est Seigneur, lui seul est Dieu !
+Notre Créateur, le Roi des cieux, 
+Tous les peuples, adorez-le !
+
+2. Approchez, venez tout près de lui,
+Sa miséricorde est infinie, 
+Son pardon nous rend la vie !
+Dans l’épreuve, il est notre rocher,
+Dans la nuit, il vient nous éclairer, 
+Par amour, il nous recrée.
+
+3. Bienheureux qui écoute sa voix, 
+Qui le suit jamais ne se perdra,
+Il nous guide dans la foi. 
+Aujourd’hui, écoutez son appel,
+Il nous ouvre le chemin du ciel,
+Son amour est éternel.
+
+
+1 - LES SOLDATS ONT ENCHAÎNÉ TES MAINS 
+# type : célébration
+1.
+Les soldats ont enchaîné tes mains
+Qui de nous ne s'est enfui ?
+Vers tes juges, seul, tu as marché,
+Qui de nous ne s'est enfui ?
+
+R.
+Ô Seigneur, pardonne à ton peuple (bis),
+Ô Seigneur, pardonne-nous !
+
+2.
+Tu comptais sur un soutien d'ami,
+Qui de nous t'a défendu ?
+Ton regard cherchait un peu d'appui,
+Qui de nous t'a défendu ?
+
+3.
+Ton visage était couvert de sang,
+Qui de nous t'a consolé ?
+Et les larmes remplissaient tes yeux,
+Qui de nous t'a consolé ?
+
+4.
+Quand le fouet a déchiré ta peau,
+Qui de nous a protesté ?
+Quand les clous ont transpercé tes mains,
+Qui de nous a protesté ?
+
+5.
+Tes épaules se courbaient si bas,
+Qui de nous t'a secouru ?
+Jusqu'au bout, tu as porté la croix,
+Qui de nous t'a secouru ?
+
+6.
+Aujourd'hui le pauvre crie et meurt,
+Qui de nous te reconnaît ?
+Sur la terre coule encore ton sang,
+Qui de nous te reconnaît ?
+
+7.
+Le soldat a reconnu ta voix,
+Oui, c'est toi le Fils de Dieu,
+Le voleur t'a demandé pardon,
+Oui, c'est toi le Fils de Dieu.
+
+8.
+Par ta mort, tu as vaincu la mort,
+Par tes plaies tu nous guéris.
+Et ton sang nous a rendu la vie,
+Par tes plaies tu nous guéris.
+
+
+1 - LES SAINTS ET LES SAINTES DE DIEU 
+# type : célébration
+R.
+Les saints et les saintes de Dieu
+s'avancent vers le Roi des cieux.
+Par leurs hymnes de joie,
+ils célèbrent sans fin celui qui donne vie !
+
+1.
+Je vis la gloire de Dieu revêtu de sa puissance.
+Devant lui se tient une louange éternelle :
+Saint, Saint, Saint le Seigneur !
+
+2.
+Je vis paraître son Fils resplendissant de lumière.
+Il est le Seigneur, le Sauveur de tous les hommes :
+Saint, Saint, Saint le Seigneur !
+
+3.
+Je vis descendre des Cieux l'Esprit qui rend témoignage.
+Par ce don gratuit, nous devenons fils du Père :
+Saint, Saint, Saint le Seigneur !
+
+
+1 - LES MOTS QUE TU NOUS DIS 
+# type : célébration
+
+1.
+Les mots que tu nous dis surprennent nos attentes.
+Mais qui es-tu, Jésus, pour nous parler ainsi ?
+Viens-tu aux nuits pesantes donner le jour promis ?
+Es-tu celui qui vient pour libérer nos vies ?
+
+2.
+Les mots que tu nous dis sans cesse nous appellent.
+Mais qui es-tu, Jésus, pour nous parler ainsi ?
+Sont-ils Bonne Nouvelle qui changera nos vies ?
+Es-tu celui qui vient pour libérer nos vies ?
+
+3.
+Les mots que tu nous dis troublèrent Jean-Baptiste.
+Mais qui es-tu, Jésus, pour nous parler ainsi ?
+Faut-il être prophète pour croire comme lui ?
+Es-tu celui qui vient pour libérer nos vies ?
+
+4.
+Les mots que tu nous dis formèrent les apôtres.
+Mais qui es-tu, Jésus, pour nous parler ainsi ?
+Mais tu n'en dis pas d'autres aux hommes d'aujourd'hui.
+Es-tu celui qui vient pour libérer nos vies ?
+
+5.
+Les mots que tu nous dis ont fait naître l’Église.
+Mais qui es-tu, Jésus, pour nous parler ainsi ?
+Comment peut être acquise la foi qui la construit ?
+Es-tu celui qui vient pour libérer nos vies ?
+
+6.
+Les mots que tu nous dis engagent au partage.
+Mais qui es-tu, Jésus, pour nous parler ainsi ?
+Vivrons-nous le message que tu nous as transmis ?
+Es-tu celui qui vient pour libérer nos vies ?
+
+7.
+Les mots que tu nous dis nous mènent jusqu'au Père.
+Mais qui es-tu, Jésus, pour nous parler ainsi ?
+Saurons-nous vivre en frères que son amour unit ?
+Es-tu celui qui vient pour libérer nos vies ?
+
+8.
+Les mots que tu nous dis demandent qu'on te suive.
+Mais qui es-tu, Jésus, pour nous parler ainsi ?
+Et l'impossible arrive aux coeurs que tu saisis !
+Tu es celui qui vient pour libérer nos vies.
+
+9.
+Les mots que tu nous dis révèlent notre rôle.
+Mais qui es-tu, Jésus, pour nous parler ainsi ?
+La vie se fait Parole quand c'est toi qui agis !
+Tu es celui qui vient pour libérer nos vies.
+
+10.
+Les mots que tu nous dis annoncent notre gloire.
+Mais qui es-tu, Jésus pour nous parler ainsi ?
+Viens accomplir l'histoire où l'homme resplendit !
+Tu es celui qui vient pour libérer nos vies.
+
+11.
+Les mots que tu nous dis dépassent nos frontières.
+Mais qui es-tu, Jésus, pour nous parler ainsi ?
+Alors, dans la lumière, ils disent : "Me voici !".
+Tu es celui qui vient pour libérer nos vies.
+
+
+1 - LA NAISSANCE DE JÉSUS-CHRIST 
+# type : célébration
+1.
+Les Anges dans nos campagnes
+Ont entonné l'hymne des cieux.
+Et l'écho de nos montagnes
+Redit ce chant mélodieux.
+
+R.
+Gloria in excelsis Deo ! BIS
+
+2.
+Bergers, pour qui cette fête,
+Quel est l'objet de vos doux chants ?
+Quel héros, quelle conquête mérite
+Ces cris triomphants ?
+
+3.
+Ils annoncent la naissance
+Du libérateur d'Israël.
+Ah ! Plein de reconnaissance
+Saluons ce jour solennel.
+
+4.
+Adorons dans cette étable
+Le Souverain maître des cieux.
+Qu'il est doux, qu'il est aimable
+Offrons-lui nos accents pieux.
+
+
+1 - Le Seigneur nous a aimés
+# type : célébration
+1.
+Le Seigneur nous a aimés comme on n´a jamais aimé.
+Il nous guide chaque jour comme une étoile dans la nuit.
+Quand nous partageons le pain, il nous donne son amour :
+C´est le pain de l´amitié, le pain de Dieu.
+
+R.
+C´est mon corps : prenez et mangez.
+C´est mon sang : prenez et buvez.
+Car je suis la vie et je suis l´amour.
+Ô Seigneur, emporte-nous dans ton amour !
+
+2.
+Le Seigneur nous a aimés comme on n´a jamais aimé.
+Un enfant nous est donné dans cette nuit de Bethléem.
+Les bergers l´ont reconnu et les Mages sont venus :
+Ils ont vu le Fils de Dieu petit enfant.
+
+3.
+Le Seigneur nous a aimés comme on n´a jamais aimé.
+Pour les gens de son village, c´est le fils du charpentier.
+Il travaille de ses mains comme font tous ses amis :
+Il connaît le dur labeur de chaque jour.
+
+4.
+Le Seigneur nous a aimés comme on n´a jamais aimé.
+Au hasard de ses rencontres par les villes et les cités
+Il révèle son amour et nous parle de son Père
+Et chacun retrouve espoir en l´écoutant.
+
+5.
+Le Seigneur nous a aimés comme on n´a jamais aimé.
+Son Amour était si grand qu´il en mourut sur une croix.
+Son Amour était si fort qu´il triompha de la mort.
+Il sortit de son tombeau libre et vainqueur.
+
+6.
+Le Seigneur nous a aimés comme on n´a jamais aimé.
+Il rassemble tous les hommes et les fait vivre de sa vie
+Et tous les chrétiens du monde sont les membres de son Corps.
+Rien ne peut les séparer de son Amour.
+
+ 1 - LE SEIGNEUR EST MA LUMIÈRE 
+# type : intercession+
+Le Seigneur est ma lumière et mon salut de qui aurais-je crainte? 
+Le Seigneur est le rempart de ma vie devant qui tremblerais-je? 
+
+
+1 - LE FILS DE DIEU S'EST FAIT HOMME 
+# type : célébration
+R. 
+Le Fils de Dieu
+Pour nous s’est fait homme
+Emmanuel est son nom BIS !
+Alléluia !
+
+1.
+Jésus-Christ, Sauveur du monde,
+Fils unique aimé du Père,
+Tu as pris chair d’une vierge, ô Emmanuel !
+
+2.
+Engendré avant les siècles,
+Dieu vrai Dieu, Verbe du Père,
+Tu es né de la lumière, ô Emmanuel !
+
+3.
+De la peur, tu nous libères,
+Toi Jésus, la vraie lumière,
+Tu éclaires les ténèbres, ô Emmanuel !
+
+4.
+Seigneur, pour nous tu t’abaisses
+Tu revêts notre faiblesse
+Toi Jésus vrai Dieu fait homme, ô Emmanuel !
+
+
+1 -  Le Christ va se manifester
+# type : intercession+
+R.
+Le Christ va se manifester parmi nous.
+Celui qui est, qui était et qui vient,
+Dieu parmi nous, va dresser sa tente.
+1.
+La parole qui donne la paix à déjà retenti.
+Le salut annoncé est au milieu de nous.
+Que la discorde et la haine s'éloignent de nos cœurs,
+Que l'amour du Christ notre Seigneur les habite?!
+2.
+Vous tous, ministres du Seigneur, célébrez le Seigneur !
+Avec les créatures des cieux, chantez sa gloire et sa sainteté.
+Vous tous, fidèles rassemblés autour de cet autel royal et saint,
+Venez adorer le Christ qui habite au milieu de nous avec tous les saints du ciel.
+
+1 - LE CHRIST EST VIVANT 
+# type : célébration
+1.
+Le Christ est vivant ! Alléluia !
+Il est parmi nous ! Alléluia !
+Béni soit son nom dans tout l'univers !
+Alléluia ! Alléluia !
+
+2.
+C'est lui notre joie ! Alléluia !
+C'est lui notre espoir ! Alléluia !
+C'est lui notre pain, c'est lui notre vie,
+Alléluia ! Alléluia !
+
+3.
+Soyons dans la joie ! Alléluia !
+Louons le Seigneur ! Alléluia !
+Il nous a aimés, il nous a sauvés,
+Alléluia ! Alléluia !
+
+4.
+Le Christ est vivant ! Alléluia !
+Allons proclamer, Alléluia !
+La Bonne Nouvelle à toute nation,
+Alléluia ! Alléluia !
+
+5.
+Le Christ était mort ! Alléluia !
+Le Christ est vivant ! Alléluia !
+Le Christ est présent, le Christ reviendra,
+Alléluia ! Alléluia !
+
+6.
+Louange au Seigneur ! Alléluia !
+Au Père très bon, Alléluia !
+Au Christ, à l'Esprit, aux siècles sans fin !
+Alléluia ! Alléluia !
+
+
+1 - LAUDATE DOMINUM 
+# type : louange
+Laudate Dominum, laudate Dominum,
+omnes gentes, alleluia ! BIS
+
+
+
+1 - Laissons la présence
+# type : intercession+
+Laissons la présence du Dieu amour
+Devenir le soleil irradiant notre vie.
+
+1 - LAISSEZ-VOUS CONSUMER 
+# type : célébration
+R. Laissez-vous consumer 
+Par le feu de l’amour de mon cœur. 
+Depuis l’aube des temps, 
+Je veux habiter au creux de vos vies. 
+
+
+
+1. Je suis venu allumer un feu sur terre, 
+Comme je voudrais qu’il soit déjà allumé ! 
+Laissez-vous brûler par ma charité ! 
+
+
+
+2. Voyez mon cœur qui a tant aimé les hommes,
+Et qui, en retour, n’a reçu que du mépris.
+Laissez-vous aimer par mon cœur brûlant !
+
+
+
+3. Prenez mon corps et buvez à ce calice.
+Depuis si longtemps, j’ai désiré ce moment…
+Laissez-moi venir demeurer en vous !
+
+
+
+4. N’écoutez pas votre cœur qui vous condamne,
+Mon amour pour vous est plus grand que vos péchés.
+Laissez mon Esprit purifier vos vies !
+
+
+
+5. Ma croix dressée est un signe pour le monde.
+Voici l’étendard, il conduit vers le salut.
+Laissez-vous guider vers la sainteté !
+
+
+
+6. Je suis venu pour vous donner la victoire,
+J’ai vaincu la mort. Ayez foi, ne craignez pas,
+Exultez de joie pour l’éternité !
+
+
+1 - LAISSERONS-NOUS À NOTRE TABLE 
+# type : célébration
+
+1.
+Laisserons-nous à notre table
+Un peu de place à l'étranger,
+Trouvera-t-il quand il viendra
+Un peu de pain et d'amitié ? 
+R.
+Ne laissons pas mourir la terre,
+Ne laissons pas mourir le feu.
+Tendons nos mains vers la lumière,
+Pour accueillir le don de Dieu (bis).
+
+2.
+Laisserons-nous à nos paroles
+Un peu de temps à l'étranger,
+Trouvera-t-il quand il viendra
+Un cœur ouvert pour l'écouter ?
+
+3.
+Laisserons-nous à notre fête
+Un pas de danse à l'étranger,
+Trouvera-t-il quand il viendra
+Des mains tendues pour l'inviter ?
+
+4.
+Laisserons-nous à nos fontaines
+Un peu d'eau vive à l'étranger,
+Trouvera-t-il quand il viendra
+Des hommes libres et assoiffés
+
+5.
+Laisserons-nous à nos églises
+Un peu d'espace à l'étranger ?
+Trouvera-t-il quand il viendra
+Des cœurs de pauvres et d'affamés ?
+
+
+
+1 - LA TÉNÈBRE N'EST POINT TÉNÈBRE 
+# type : intercession+
+La ténèbre n’est point ténèbre devant toi : 
+la nuit comme le jour est lumière.
+
+
+
+1 - LA SAGESSE A DRESSÉ UNE TABLE 
+# type : célébration
+R.
+La sagesse a dressé une table,
+Elle invite les hommes au festin.
+Venez au banquet du fils de l'homme,
+Mangez et buvez la Pâque de Dieu.
+
+1.
+Je bénirai le Seigneur en tout temps,
+Sa louange est sans cesse à mes lèvres.
+En Dieu mon âme trouve sa gloire,
+Que les pauvres m'entendent et soient en fête !
+
+2.
+Proclamez avec moi que le Seigneur est grand,
+Exaltons tous ensemble son nom !
+J'ai cherché le Seigneur et il m'a répondu
+De toutes mes terreurs il m'a délivré.
+
+3.
+Tournez vous vers le Seigneur et vous serez illuminés
+Votre visage ne sera pas couvert de honte ;
+Un pauvre a crié, et Dieu a entendu,
+Le Seigneur l'a sauvé de toutes ses angoisses.
+
+4.
+L'ange du Seigneur a établi son camp,
+Il entoure et délivre ceux qui le craignent.
+Goûtez et voyez que le Seigneur est doux,
+Bienheureux l'homme qui trouve en lui son abri !
+
+5.
+Saints du Seigneur, adorez le Seigneur,
+Ceux qui le craignent ne manquent de rien.
+Les riches s'appauvrissent et ils ont faim,
+Mais ceux qui cherchent le Seigneur sont comblés de tout bien.
+
+6.
+Venez, mes fils, écoutez moi
+Je vous enseignerai la crainte du Seigneur ;
+Quel est l'homme qui désire la vie
+Qui aime les jours où il voit le bonheur ?
+
+7.
+Que ta langue se garde du mal
+Et tes lèvres du mensonge.
+Écarte-toi du mal et fais le bien,
+Recherche la paix et poursuis-la toujours.
+
+8.
+Le Seigneur tourne sa face contre ceux qui font le mal
+Pour effacer de la terre leur souvenir
+Mais ses yeux regardent ceux qui l'aiment
+Il tend l'oreille, vers ceux qui l'appellent.
+
+9.
+Ils ont crié, et le Seigneur a entendu,
+De la détresse, il les a délivrés.
+Il est proche de ceux qui ont le cœur brisé
+Il vient sauver ceux dont la vie est déchirée.
+
+10.
+Tant de fois, le malheur a éprouvé le juste
+Mais toujours, le Seigneur l'a délivré,
+Il veille sur lui, il garde tous ses os,
+Pas un seul ne sera brisé.
+
+11. 
+Le mal fera mourir le méchant,
+Lui qui avait pris en haine le juste, il sera condamné.
+Le Seigneur rachète la vie de ses serviteurs,
+En lui, ils ont cherché refuge, ils ne seront pas condamnés.
+
+
+1 - LA PREMIÈRE EN CHEMIN, MARIE 
+# type : marie
+1.
+La première en chemin, Marie tu nous entraînes
+A risquer notre "oui" aux imprévus de Dieu.
+Et voici qu'est semé en argile incertaine
+De notre humanité Jésus-Christ, Fils de Dieu.
+MARCHE AVEC NOUS, MARIE,
+SUR NOS CHEMINS DE FOI,
+ILS SONT CHEMINS VERS DIEU (bis).
+
+2.
+La première en chemin, en hâte tu t'élances,
+Prophète de Celui qui a pris corps en toi.
+La parole a surgi, tu es sa résonance
+Et tu franchis des monts pour en porter la voix.
+MARCHE AVEC NOUS, MARIE,
+AUX CHEMINS DE L'ANNONCE,
+ILS SONT CHEMINS VERS DIEU (bis).
+
+3.
+La première en chemin pour suivre au Golgotha
+Le Fils de ton amour que tous ont condamné,
+Tu te tiens là, debout, au plus près de la croix
+Pour recueillir la vie de son cœur transpercé.
+MARCHE AVEC NOUS, MARIE,
+SUR NOS CHEMINS DE CROIX
+ILS SONT CHEMINS VERS DIEU (bis).
+
+4.
+La première en chemin avec l’Église en marche
+Dès les commencements, tu appelles l'Esprit !
+En ce monde aujourd'hui, assure notre marche ;
+Que grandisse le corps de ton Fils Jésus-Christ !
+MARCHE AVEC NOUS, MARIE,
+AUX CHEMINS DE CE MONDE
+ILS SONT CHEMINS VERS DIEU (bis).
+
+
+1 - LA NUIT QU'IL FUT LIVRÉ 
+# type : célébration
+
+1.
+La nuit qu'il fut livré, le Seigneur prit du pain,
+En signe de sa mort, le rompit de sa main :
+"Ma vie, nul ne la prend, mais c'est moi qui la donne
+Afin de racheter tous mes frères humains."
+
+2.
+Après qu'il eût soupé pour la dernière fois,
+S'offrit comme victime au pressoir de la croix :
+"Mon sang, versé pour vous, est le sang de l'Alliance ;
+Amis, faites ceci en mémoire de moi."
+
+3.
+Et nous, peuple de Dieu, nous en sommes témoins :
+Ta mort, nous l'annonçons par ce pain et ce vin.
+Jésus ressuscité, ton Eglise t'acclame,
+Vainqueur, passé du monde à la gloire sans fin !
+
+4.
+Tu viens revivre en nous ton mystère pascal :
+Éteins en notre chair le foyer de tout mal.
+Nous sommes tes sarments, sainte vigne du Père :
+Fais-nous porter du fruit pour le jour triomphal.
+
+5.
+Seigneur, nous attendons ton retour glorieux :
+Un jour tu nous prendras avec toi dans les cieux.
+Ton corps est la semence de vie éternelle :
+Un jour tu nous prendras à la table de Dieu.
+
+
+1 - L'ESPRIT SAINT QUI NOUS EST DONNÉ 
+# type : esprit-saint
+R.
+L'ESPRIT SAINT QUI NOUS EST DONNÉ
+FAIT DE NOUS TOUS DES FILS DE DIEU
+APPELÉS À LA LIBERTÉ
+GLORIFIONS DIEU PAR NOTRE VIE !
+
+1.
+Nés de l'amour de notre Dieu,
+Fils de lumière, sel de la terre,
+Ferments d'amour au cœur du monde
+Par la puissance de l'Esprit.
+
+2.
+À son image Il nous a faits
+Pour nous aimer comme Il nous aime.
+Sa ressemblance reste gravée
+Au fond des cœurs de ceux qui l'aiment.
+
+3.
+Tous ceux qu'anime l'Esprit Saint
+Sont délivrés de toute peur
+Et désormais fils adoptifs
+Ils sont devenus fils du Père.
+
+4.
+N'ayons pas peur d'être des saints
+Puisque le Christ nous a aimés,
+Ouvrons les portes à l'espérance,
+Soyons des témoins de sa paix !
+
+
+1 -  L’ESPRIT DE FÊTE
+# type : célébration
+R.
+L’ESPRIT DE FÊTE ÉCLATERA
+DANS NOS MAINS, DANS NOS YEUX,
+DANS NOS CŒURS.
+ET NOUS VERRONS NOTRE TERRE
+FLEURIR D’AMOUR SOUS LE SOLEIL.
+
+1.
+Il suffirait d’un arc-en-ciel
+Pour faire chanter l’enfant.
+Il ne faudrait qu’un brin d’amour
+Pour se donner la paix.
+2.
+Il suffirait d’un peu de cœur
+Pour faire germer le grain.
+Il ne faudrait que le printemps,
+Peut-être aussi le vent.
+3.
+Il suffirait d’un peu d’espoir
+Pour faire grandir l’amour.
+Il ne faudrait que nos deux mains
+Pour partager le pain.
+4.
+Il suffirait de quelques mots
+Pour faire danser la joie.
+Il ne faudrait que des chansons
+Pour fredonner ton nom.
+
+1 - L'EAU VIVE DU BAPTÊME 
+# type : célébration
+R.
+L'EAU VIVE DU BAPTÊME
+SUR NOS LÈVRES ET SUR NOS FRONTS,
+L'EAU VIVE DU BAPTÊME
+A GRAVÉ EN NOUS TON NOM.
+NOUS SOMMES UN PEUPLE NÉ DE TOI,
+MARQUÉ DU SIGNE DE TA CROIX,
+TA CROIX, SIGNE D'AMOUR. (bis)
+
+1.
+Pour aller de l'ombre à la lumière
+Et passer de la mort à la vie,
+Pour aller de l'ombre à la lumière
+Nous avons fait confiance à l'Esprit.
+
+2.
+Pour aller profond dans ta parole
+Et passer de la peur à l'amour,
+Pour aller profond dans ta parole,
+Nous avons pris ta route au grand jour !
+
+3.
+Pour aller plus près du cœur des hommes
+Et passer du désert au Jourdain
+Pour aller plus près du cœur des hommes,
+Nous avons mis nos pas dans les tiens !
+
+
+
+1 - L'AMOUR JAMAIS NE PASSERA 
+# type : intercession+
+R.
+L'amour jamais ne passera, l'amour demeurera.
+L'amour, l'amour seul, la charité jamais ne passera,
+Car Dieu est Amour.
+
+1.
+Quand j'aurais le don de la science,
+Et connaîtrais tous les mystères,
+Parlerais-je les langues des anges,
+Sans amour, je ne suis rien.
+
+2.
+Si je donnais mes biens en aumône,
+Si je livrais mon corps aux flammes,
+Si ma foi déplaçait les montagnes,
+Sans amour, je ne suis rien.
+
+3.
+La charité est toujours longanime,
+Ne tient pas compte du mal,
+La charité se donne sans cesse,
+Ne cherche pas son avantage.
+
+4.
+La charité ne jalouse personne,
+La charité jamais ne s'irrite.
+En tout temps, elle excuse et espère.
+La charité supporte tout.
+
+5.
+Un jour les langues vont se taire,
+Les prophéties disparaîtront.
+Devant Dieu le Seigneur notre maître,
+Seul l'Amour restera.
+
+
+1 - JÉSUS LE CHRIST 
+# type : intercession+
+Jésus le Christ, lumière intérieure,
+ne laisse pas mes ténèbres me parler.
+Jésus le Christ, lumière intérieure,
+donne-moi d’accueillir ton amour.
+
+
+1 - J'AI VU L'EAU VIVE 
+# type : célébration
+1.
+J'ai vu l'eau vive jaillissant du cœur du Christ,
+Alléluia ! Alléluia !
+Tous ceux que lave cette eau
+Seront sauvés, et chanteront :
+Alléluia ! Alléluia ! Alléluia !
+
+2.
+J'ai vu la source devenir un fleuve immense,
+Alléluia ! Alléluia !
+Les fils de Dieu rassemblés
+Chantaient leur joie d'être sauvés,
+Alléluia ! Alléluia ! Alléluia !
+
+3.
+J'ai vu le temple désormais s'ouvrir à tous,
+Alléluia ! Alléluia !
+Le Christ revient victorieux
+Montrant la plaie de son côté,
+Alléluia ! Alléluia ! Alléluia !
+
+4.
+J'ai vu le Verbe nous donner la paix de Dieu,
+Alléluia ! Alléluia !
+Tous ceux qui croient en son nom
+Seront sauvés et chanteront :
+Alléluia ! Alléluia ! Alléluia !
+
+
+1 - J'AI VU L'EAU VIVE
+# type : célébration
+1. J'ai vu l'eau vive jaillissant
+Du cœur du Christ, Alléluia !
+Alléluia !
+Tous ceux que lave cette eau
+Seront sauvés et chanteront :
+
+R. Alléluia, alléluia, 
+Alléluia !
+Alléluia, alléluia, 
+Alléluia !
+
+2. J'ai vu la source
+Devenir un fleuve immense, Alléluia !
+Alléluia !
+Les fils de Dieu rassemblés
+Chantaient leur joie d'être sauvés !
+
+3. J'ai vu le Temple
+Désormais s'ouvrir à tous, Alléluia !
+Alléluia !
+Le Christ revient victorieux,
+Montrant la plaie de son côté !
+
+4. J'ai vu le Verbe
+Nous donner la paix de Dieu, Alléluia !
+Alléluia !
+Tous ceux qui croient en son nom
+Seront sauvés et chanteront : 
+
+
+1 - J'AI VU DES FLEUVES D'EAU VIVE 
+# type : célébration
+1.
+J’ai vu des fleuves d’eau vive, Alléluia (bis) !
+Jaillir du côté du Temple, Alléluia (bis) !
+
+2.
+J’ai vu la source du Temple, Alléluia (bis) !
+Grandir en un fleuve immense, Alléluia (bis) !
+
+3.
+Tous ceux que lave l’eau vive, Alléluia (bis) !
+Acclament et chantent ta gloire, Alléluia (bis) !
+
+4.
+Ton cœur, Jésus est la source, Alléluia (bis) !
+D’où coule l’eau de la grâce, Alléluia (bis) !
+
+
+1 - IN MANUS TUAS, PATER 
+# type : intercession+
+In manus tuas, Pater, commendo spiritum meum. BIS
+
+
+1 - AU GRAND LARGE TU M’ENTRAÎNES 
+# type : célébration
+R. Au grand large tu m’entraînes, 
+Ta présence a dissipé ma nuit. 
+Je te loue mon roc et ma force, 
+Ô mon Dieu, le rempart de ma vie !
+Au grand large tu m’entraînes, 
+Devant toi la ténèbre n’est plus ! 
+Je te loue mon roc et ma force, 
+Ô mon Dieu, mon chemin, mon Salut !
+
+1. Toi mon rocher, ma forteresse, 
+Tu es celui en qui je m’appuie. 
+Tu m’as sauvé des filets des ténèbres, 
+Et de la mort, tu m’as délivré ! 
+
+2. Quand j’ai crié, dans la détresse, 
+Du fond des mers je t’ai appelé, 
+Tu m’as tiré des tréfonds de l’abîme, 
+Tu m’as saisi par ton bras puissant !
+
+3. Tu me revêts de ta lumière, 
+Par ton amour tu me fortifies. 
+Seigneur je chante et je te loue sans cesse,
+Et en tout lieu, je publie ton nom !
+
+4. Pour toi mon Dieu, rien d’impossible,
+Car tes chemins dépassent nos voies.
+Avec toi seul je franchis les murailles,
+Toi mon espoir, j’ai confiance en toi !
+
+
+1 - Il faut marcher de très longues routes
+# type : célébration
+1.
+Il faut marcher de très longues routes
+Pour rencontrer les fleurs du printemps
+Il faut marcher, traverser le doute
+Pour retrouver son cœur d’enfant
+Il faut marcher et franchir la peine
+Pour découvrir que Tu es la Joie
+Il faut mourir dépasser la haine
+Pour Te connaître, et vivre avec Toi.
+
+R. Tu as voulu sur une croix
+Nous apprendre les chemins de la joie.
+Tu as voulu sur une croix
+Nous apprendre les chemins de la joie.
+
+2. Il faut aller au bout de sa peine
+Pour allumer l’espoir comme un feu
+Il faut aller au bout de soi-même
+Pour découvrir le cœur de Dieu
+Il faut aller au bout de sa vie
+Pour retrouver son premier amour
+Et pour chanter d’une âme éblouie
+La symphonie de l’éternel retour.
+
+
+1 - Heureux les invités dans ta maison
+# type : célébration
+1.
+Heureux les invités dans ta maison,
+Seigneur, nous venons chez toi !
+Conduits par notre frère Jésus Christ ;
+Seigneur, nous venons chez toi !
+Marchons vers la fontaine de ta Vie,
+Seigneur, nous venons chez toi !
+Chantons « louange à toi le Dieu très bon ! »
+Seigneur, nous venons chez toi !
+
+R. SEIGNEUR, NOUS VENONS CHEZ TOI,
+TU NOUS ACCUEILLES POUR LA FÊTE,
+SEIGNEUR, NOUS VENONS CHEZ TOI,
+DIEU VIVANT, DIEU D’AMOUR !
+
+2.
+Heureux de te chanter notre merci,
+Seigneur, nous venons chez toi !
+À toi le Créateur qui nous a faits ;
+Seigneur, nous venons chez toi !
+Merci pour le trésor de tes bienfaits,
+Seigneur, nous venons chez toi !
+Pour toi, que nous soyons eucharistie !
+Seigneur, nous venons chez toi !
+
+3.
+Heureux d’ouvrir nos cœurs à ton Esprit,
+Seigneur, nous venons chez toi !
+Nourris de ta Parole et de ton pain,
+Seigneur, nous venons chez toi !
+Allons semer ta joie sur nos chemins,
+Seigneur, nous venons chez toi !
+Porter ton Évangile à toute vie,
+Seigneur, nous venons chez toi !
+
+4.
+Heureux d’être une Église au feu ardent,
+Seigneur, nous venons chez toi !
+Un peuple où l’espérance peut briller ;
+Seigneur, nous venons chez toi !
+Soyons de tes fidèles messagers,
+Seigneur, nous venons chez toi !
+Témoins d’un Dieu présent à notre temps,
+Seigneur, nous venons chez toi !
+
+5. 
+Voici qu’il vient chez nous, Jésus Messie,
+Seigneur, nous venons chez toi !
+L’avent d’un Dieu qui veut nous libérer ;
+Seigneur, nous venons chez toi !
+Restons à chaque instant des éveillés,
+Seigneur, nous venons chez toi !
+Tournés vers le Noël qu’il a promis,
+Seigneur, nous venons chez toi !
+
+6.
+Voici que tu nous mènes à ton désert,
+Seigneur, nous venons chez toi !
+La terre où la tendresse fleurira ;
+Seigneur, nous venons chez toi !
+Partons à la recherche de tes pas,
+Seigneur, nous venons chez toi !
+La Pâque enchantera notre univers,
+Seigneur, nous venons chez toi !
+
+7.
+Voici Jésus vainqueur de son tombeau,
+Seigneur, nous venons chez toi !
+Heureux ceux qui l’ont vu ressuscité !
+Seigneur, nous venons chez toi !
+Heureux bien plus encor les baptisés
+Seigneur, nous venons chez toi !
+Qui croient au grand réveil des temps nouveaux,
+Seigneur, nous venons chez toi !
+
+
+1 - ENTREZ, VENEZ VOIR
+# type : célébration
+
+R.
+ENTREZ, VENEZ VOIR,
+ENTREZ, VENEZ DONC,
+JÉSUS NOUS APPELLE,
+JÉSUS NOUS RASSEMBLE,
+POUR FAIRE SON ÉGLISE,
+SON ÉGLISE.
+
+1.
+Assis à la margelle d'un puits,
+Tu viens, Seigneur, à ma rencontre.
+Eau vive dans ma nuit,
+Tu sais tout de ma vie,
+Eau vive dans ma nuit,
+Tu ouvres le chemin.
+
+2.
+Debout aux carrefours de ma vie,
+Tu viens, Seigneur, à ma rencontre.
+Lumière dans ma nuit,
+Tu marches à mes côtés,
+Lumière dans ma nuit,
+Tu montres le chemin.
+
+3.
+Passant sur mon chemin d'Emmaüs,
+Tu viens, Seigneur, à ma rencontre.
+Parole dans ma nuit,
+Tu es le pain de vie,
+Parole dans ma nuit,
+Tu traces le chemin.
+
+
+1 - EN FAMILLE, EN PEUPLE, EN ÉGLISE... 
+# type : célébration
+R. EN FAMILLE, EN PEUPLE, EN ÉGLISE,
+SEIGNEUR, NOUS ARRIVONS
+DE TOUS LES HORIZONS.
+EN FAMILLE, EN PEUPLE, EN ÉGLISE,
+SEIGNEUR, NOUS ARRIVONS
+POUR CÉLÉBRER TON NOM.
+
+1.
+Tu nous accueilles différents…
+C'est toi qui nous rassembles.
+Chacun de nous est ton enfant…
+Car tu es l'amour !
+
+2.
+Nous avons quitté nos maisons…
+C'est toi qui nous rassembles.
+C'est notre vie que nous t'offrons…
+Car tu es l'amour !
+
+3.
+Nous avons froid, nous avons faim…
+C'est toi qui nous rassembles.
+Tu viens nous partager ton pain…
+Car tu es l'amour !
+
+
+1 -  Dieu nous invite à son festin
+# type : célébration
+R. Dieu nous invite à son festin, 
+Table où lui-même se donne,
+Voici le pain pour notre faim,
+Source de vie éternelle.
+
+1. Approchez-vous pleins d’allégresse, 
+Ouvrez vos cœurs au Dieu vivant ;
+En son amour, en sa tendresse,
+Il vous appelle ses enfants.
+
+2. Venez à lui dans la confiance, 
+Abandonnez tous vos soucis ;
+Et livrez-vous pleins d’espérance,
+Car c’est lui qui vous a choisis.
+
+3. Jésus a rendu témoignage 
+Par son offrande sur la croix ;
+Il donne sa vie en partage
+À qui l’accueille dans la foi.
+
+4. Verbe de Dieu, splendeur du Père, 
+Il est le pain qui vient du ciel ;
+Recevez-le en ce mystère
+Brûlez en l’amour éternel.
+
+5. Il fait triompher sa puissance 
+En la faiblesse des petits ;
+Il met en eux sa ressemblance,
+Les attirant vers l’infini.
+
+6. Du cœur du Christ jaillit l’eau vive 
+Qui désaltère toute soif ;
+L’Esprit de Dieu qui nous anime
+Et qui nous comble de sa joie.
+
+1-  Debout chante
+# type : louange
+
+R. Debout chante et danse pour ton Roi
+Il est là, il est là en toi
+Debout chante et pousse des cris de joie
+Car ton Dieu est au milieu de toi
+
+         
+1. Ainsi parle le Seigneur, celui qui t’a créé              
+qui t’a modelé, Israël :
+Ne crains pas, car je t’ai racheté
+appelé par ton nom, tu es à moi.
+
+Criez de joie, vous les cieux, le Seigneur a agi                   
+Il a délivré Israël.
+Montagnes et profondeurs de la terre
+tressaillent d’allégresse devant sa puissance.
+
+Ainsi parle le Seigneur, lui qui t’a libéré
+pousse des cris de joie, Israël :
+Reviens à moi, je t’ai racheté
+dissipé tes péchés, comme une nuée.
+
+Ainsi parle le Seigneur, celui qui t’a sauvé
+lui ton rédempteur, Israël.
+Il est un héros qui s’avance 
+pour te ramener, ô fille bien aimée !
+
+
+
+1 - DANS NOS OBSCURITÉS 
+# type : intercession+
+Dans nos obscurités, allume le feu qui ne s’éteint jamais,
+qui ne s’éteint jamais. BIS
+
+
+1 - CHRIST EST VRAIMENT RESSUSCITÉ 
+# type : célébration
+1. Le Christ est vivant et partage la route
+De ceux qui partagent leur pain ;
+Le Christ est vivant, que s'écroulent nos doutes,
+Il nous attend sur le chemin.
+
+R. ALLÉLUIA, ALLONS DIRE AU MONDE ENTIER :
+CHRIST EST VRAIMENT RESSUSCITÉ.
+
+2.
+Le Christ est vivant Il partage la peine
+De ceux que la vie a brisés ;
+Le Christ est vivant, c'est un Dieu qui nous aime,
+Qu'avons-nous donc à redouter ?
+
+3.
+Le Christ est vivant dans le cœur de l’Église,
+C'est lui qui en est l'unité.
+Le Christ est vivant son Amour nous délivre
+Et son Esprit nous fait chanter.
+
+
+1 - BONUM EST 
+# type : intercession+
+Bonum est confidere in Domino, 
+bonum sperare in Domino.
+
+
+1 - ALEGRIA, MON ÂME EXALTE LE SEIGNEUR
+# type : louange, Marie
+1. Rassemblés dans une seule foi, un seul cœur pour te louer.
+Chantons nos hymnes de joie, ô Seigneur ressuscité !
+Déposons tout, devant toi, en ton cœur si assoiffé.
+Unissons toutes nos voix, pour acclamer ta bonté !
+Nous venons à toi !
+
+R. Alegria, Alegria,
+Mon âme exalte le Seigneur,
+Alegria, Alegria,
+Jésus, vient habiter nos cœurs ! BIS
+
+2. Ô Marie, Vierge Bénie, tu nous accueilles aujourd’hui.
+Oui, l’enfant qui en toi, est mon Dieu, il est mon Roi !
+La parole est accomplie qui prend chair en toi Marie.
+Avec toi, je crie de joie, en Jésus, Dieu vient à moi !
+Nous venons à toi !
+
+3. Notre Dame et Notre Mère, debout au creux du rocher,
+Te voici devant mes yeux, donne-moi d’aller à Dieu.
+Avec toi je veux prier, implorer, intercéder :
+Jésus Fils de Dieu Sauveur, prends pitié de nous pécheurs !
+Nous venons à toi !
+
+4. Toi la Mère du Seigneur, près de lui jusqu’à la Croix,
+Femme au courage infini, toi qui as porté la Vie,
+Donne-moi de t’écouter, d’être là à tes côtés,
+Les yeux fixés sur Jésus, lui ma force et mon Salut.
+Nous venons à toi !
+
+5. Tu es venue jusqu’à moi, tu me visites, ô Marie,
+Moi si pauvre et si petit, solitaire au cœur fermé !
+Tu cours pour me rencontrer : j’ai donc du prix à tes yeux !
+Par toi Dieu vient me chercher et m’ouvrir à l’amitié !
+Nous venons à toi !
+
+6. Comment garder pour moi seul un tel bonheur, un tel feu ?
+À mon tour je veux sortir : j’ai des frères à rencontrer !
+Regardons le monde entier avec les yeux du Seigneur.
+Que Dieu nous fasse témoins, dans l’Église avec les saints !
+Nous venons à toi !
+
+
+
+1 - JUBILEZ, TOUS LES PEUPLES 
+# type : célébration
+JUBILEZ, TOUS LES PEUPLES,
+JUBILEZ POUR LE SEIGNEUR !
+JÉSUS CHRIST NOUS LIBÈRE,
+JUBILEZ POUR LE SAUVEUR ! (bis)
+
+1.Venez à lui,
+La Lumière des nations !
+Quittez la nuit
+Pour le jour dans sa maison !
+Formez le peuple du partage,
+L’Église aux mille visages !
+
+2. Levez les yeux,
+L'univers est plein de lui !
+Le Créateur
+Sème encore à l'infini.
+Vibrez des hymnes de ce monde,
+Clamez vos mille réponses !
+
+3. Il est venu,
+Le Seigneur Emmanuel.
+Qui donc l'a vu
+Sous l'étoile de Noël ?
+Sa gloire habite notre terre,
+Lumière au cœur des ténèbres.
+
+4. Cherchez la joie
+Près du Maître qui vous dit :
+" Heureux qui croit
+Aux paroles de la vie ! ".
+A son Royaume il vous appelle;
+Croyez la bonne Nouvelle !
+
+5. Marchez sans peur,
+Avec Dieu redressez-vous !
+Jésus Sauveur
+Est venu briser les jougs.
+L'humanité retrouve une âme,
+Vrai temple d'hommes et de femmes.
+
+6. Suivez les pas
+De Jésus le Crucifié,
+Il conduira
+Vers la Terre ensoleillée.
+Soyez témoins de ses passages,
+Portez le feu de la Pâque !
+
+7. Puisez l'Esprit
+A la source du Très-Haut !
+Portez du fruit
+Dans la Vigne au sang nouveau.
+Pour les vendanges de justice
+Le Dieu très saint vous baptise.
+
+8. Voici le temps
+Du retour et du pardon.
+Le Dieu vivant
+Nous apprend la communion.
+Il se révèle notre Père,
+Pour lui nous sommes des frères.
+
+9. Vivons d'amour
+Et croyons en l'avenir,
+Dieu met en nous
+Son audace pour bâtir.
+Il nous confirme dans sa force,
+Et vers le large il nous porte.
+
+10. Avec Marie
+Nous marchons en pèlerins.
+Sa foi nous dit
+Où nous mène son Chemin.
+Louange à Dieu pour l'espérance
+Que toi, Marie, tu nous chantes !
+
+11. De quel amour
+Le Seigneur nous a aimés !
+Soyons debout,
+Peuple immense de sauvés !
+A pleine voix rendons-lui grâce,
+Nous sommes tous de sa race !
+
+ 
+1 - JÉSUS, MON ROI 
+# type : intercession+
+R. Jésus, mon Roi ! Jésus, ma joie ! 
+Jésus, tu es là, viens à moi !
+
+1. Cœur plein d’amour et plein de douceur,
+Cœur plein de paix et plein de tendresse,
+Cœur se penchant sur notre misère,
+Pour nous offrir sur la croix à notre Père.
+
+2. Cœur bienveillant et plein de bonté,
+Cœur pur et fort, plein de charité,
+Cœur embrassant toutes nos douleurs,
+Pour les offrir sur la croix à notre Père.
+
+3. Cœur glorieux et cœur plein de feu,
+Cœur d’où jaillit la source de vie,
+Cœur amoureux nous ouvrant le ciel,
+Pour nous offrir dans la gloire à notre Père.
+
+
+
+1 - JÉSUS, MON DIEU, JE T'ADORE 
+# type : intercession+
+Jésus, Jésus,
+Mon Dieu je t’adore.
+Jésus, Jésus,
+Reçois ma prière.
+Jésus, je te loue, en présence des anges.
+Jésus, Jésus, mon Dieu, mon Seigneur.
+
+
+1 - JÉSUS ME VOICI DEVANT TOI 
+# type : intercession+
+R. Jésus, me voici devant toi,
+Tout simplement dans le silence ;
+Rien n'est plus important pour moi
+Que d'habiter en ta présence.
+
+1. Avec des larmes dans les yeux
+Ou plein de joie sur le visage,
+Des rêves fous ou dangereux,
+Un cœur qui recherche un rivage.
+
+2. Avec l'orage ou le ciel bleu,
+Avec ce monde et ses naufrages,
+Ceux qui te prient ou bien tous ceux
+Qui restent sourds à ton message.
+
+3. Quand viendra-t-il ton jour, mon Dieu
+Où j'apercevrai ton visage ;
+Tu seras là, c'est merveilleux,
+Les bras ouverts sur mon passage.
+
+
+1 - JÉSUS, BERGER DE TOUTE HUMANITÉ 
+# type : célébration
+1. Jésus, Berger de toute humanité,
+Tu es venu chercher ceux qui étaient perdus.
+
+R. Prends pitié de nous, fais-nous revenir,
+Fais-nous revenir à toi ! Prends pitié de nous !
+
+2. Jésus, Berger de toute humanité,
+Tu es venu guérir ceux qui étaient malades.
+
+3.  Jésus, Berger de toute humanité,
+Tu es venu sauver ceux qui étaient pécheurs.
+
+
+1 - JÉSUS, AGNEAU DE DIEU 
+# type : intercession+
+Jésus, Agneau de Dieu
+Digne es-tu de recevoir
+Honneur, puissance et gloire,
+La majesté, la victoire !
+Digne es-tu de recevoir
+Notre amour, notre adoration. (bis)
+
+Amen, amen
+Honneur, puissance et gloire ! (bis)
+
+
+
+1 – J’attendrai
+# type : louange
+Envoie ton Esprit Saint envoie ton feu divin
+J'attendrai les mains levées vers Celui qui peut tout
+Fais pleuvoir ton Esprit sur ton fils repenti
+J'attendrai les mains levées vers Celui qui peut tout
+
+Ouvre les écluses des Cieux Tu règnes
+Fais pleuvoir l'eau de ton Saint lieu du Ciel
+Que Ton Esprit Saint souffle en ce lieu qu'il vienne
+
+
+1 - IL EST VRAIMENT RESSUSCITÉ
+# type : célébration
+R. Il est vraiment ressuscité !
+Pourquoi chercher parmi les morts ?
+Il est vivant comme Il l’a promis ! Alléluia !
+
+1. C’est la Pâque du Seigneur clame l’Esprit,
+C’est la Pâque du Seigneur en vérité !
+Le Seigneur a versé son sang
+en signe de l’Esprit qui devait venir,
+Il nous a signés de son sang
+Et nous avons été protégés. Alléluia !
+
+2. Seigneur Tu as étendu les mains sur la croix,
+Tu nous as abrités sous ses ailes,
+Tu as versé le Sang d’un Dieu
+pour sceller l’Alliance Nouvelle.
+Tu as éloigné de nous la colère,
+Tu nous réconcilies avec Dieu. Alléluia !
+
+3. Tu ouvres la fête de l’Esprit,
+Tu nous entraînes dans la danse mystique,
+O pâque de Dieu qui descend du ciel sur la terre,
+et qui de la terre remonte au ciel,
+En Toi la création tout entière
+s’assemble et se réjouit. Alléluia !
+
+4. Ô Joie de l’Univers,
+Festin de grâce !
+Tu dissipes les ténèbres de la mort,
+Tu ouvres les portes de la vie,
+En Toi les promesses sont accomplies,
+les chants sont rendus à la terre. Alléluia !
+
+5. Ô Pâque Noces de l’Agneau,
+Le Dieu du ciel vient s’unir à nous dans l’Esprit,
+L’immense salle des Noces
+est remplie de convives.
+Tous portent la robe nuptiale,
+Et nul n’est rejeté. Alléluia !
+
+6. Ô Pâque Nouvelle Clarté,
+Splendeur du cortège virginal,
+Chez tous le feu de la Grâce
+brûle dans le corps et dans l’Esprit,
+Les lampes ne s’éteindront plus,
+Car c’est l’huile du Christ qui brûle en elles. Alléluia !
+
+7. Ô Christ, Dieu Souverain, Roi dans l’Esprit,
+Étends les mains sur ton Église protège la du mal !
+Et donne-lui de pouvoir chanter avec Moïse
+Le chant triomphal,
+Car à Toi est la victoire,
+dans les siècles des siècles. Alléluia !
+
+
+1 - IL EST TEMPS DE QUITTER VOS TOMBEAUX 
+# type : louange
+R. Il est temps de quitter vos tombeaux  
+De sortir du sommeil de la nuit,
+D’aller vers la lumière acclamer
+Le Dieu trois fois Saint ! (bis)
+
+1. Vainqueur de la nuit, Christ ressuscité,
+Tu dévoiles la face du Père.
+Tu es la lumière, tu es notre joie.
+Sois béni, ô Dieu qui nous libères !
+
+2. Unis à ton corps, Christ ressuscité,
+Tu nous mènes à la gloire éternelle.
+Tu présentes au Père ceux qu’il t’as confiés.
+Sois loué, reçois notre prière !
+
+3. Tu donnes l’Esprit, Christ ressuscité,
+Tu déverses les fleuves d’eau vive.
+Fils aimé du Père tu nous as sauvés.
+Gloire à toi, pour ta miséricorde !
+
+4. Roi de l’univers, Christ ressuscité,
+Toi qui trônes à la droite du Père.
+Tu viens dans la Gloire pour nous relever.
+Ô Seigneur que s’ouvre ton Royaume !
+
+
+1 - IL EST NÉ LE DIVIN ENFANT 
+# type : célébration
+R. Il est né le divin Enfant,
+Jour de fête aujourd’hui sur terre,
+Il est né le divin Enfant,
+Chantons tous son avènement !
+
+1. Depuis plus de quatre mille ans, 
+Nous le promettaient les prophètes,
+Depuis plus de quatre mille ans,
+Nous attendions cet heureux temps.
+
+2. Une étable est son logement,
+Un peu de paille est sa couchette, 
+Une étable est son logement,
+Pour un Dieu quel abaissement !
+
+3. Le Sauveur que le monde attend,
+Pour tout homme est la vraie lumière
+Le Sauveur que le monde attend,
+Est clarté pour tous les vivants.
+
+4. De la crèche au crucifiement,
+Dieu nous livre un profond Mystère,
+De la crèche au crucifiement,
+Il nous aime inlassablement.
+
+5. Qu’Il revienne à la fin des temps
+Nous conduire à la joie du Maître,
+Qu’Il revienne à la fin des temps
+Et qu’Il règne éternellement !
+
+
+1 - HUMBLEMENT DANS LE SILENCE 
+# type : intercession+
+R. Humblement dans le silence de mon cœur, 
+je me donne à Toi, mon Seigneur. 
+
+1. Par ton amour, fais-moi demeurer 
+humble et petit devant Toi. 
+
+2. Enseigne-moi ta Sagesse, ô Dieu, 
+viens habiter mon silence. 
+
+3. Entre tes mains, je remets ma vie, 
+ma volonté, tout mon être.
+
+4. Je porte en moi ce besoin d'amour, 
+de me donner de me livrer sans retour. 
+
+5. Vierge Marie, garde mon chemin 
+dans l'abandon, la confiance de l'amour.
+
+
+1 – Hosanna
+# type : louange
+1. Hosanna, hosanna, hosanna au plus haut des cieux. (bis)
+Nous célébrons ton nom d’un cœur reconnaissant,
+Tu es le Seigneur glorieux. Hosanna au plus haut des cieux.
+2.  Ô gloire, ô gloire, ô gloire à Jésus notre Roi. (bis)
+Nous célébrons ton nom d’un cœur reconnaissant,
+Tu es le Seigneur glorieux. Ô gloire à Jésus notre Roi.
+
+
+1 - HOSANNA, BÉNI SOIT CELUI QUI VIENT ! 
+# type : louange
+R. Hosanna, hosanna,
+Béni soit celui qui vient nous sauver.
+Hosanna, hosanna,
+Béni soit ton nom,
+Ô Roi des nations.
+
+1. Maître de tout, à toi la richesse,
+À toi, ô Seigneur, les peuples et la terre.
+Tu l’as fondée sur les océans,
+Inébranlable, ô Dieu, tu la gardes.
+
+2. Qui gravira ta sainte montagne ?
+Qui pourra tenir, Seigneur, devant toi ?
+Devant ta face, il jubilera
+L’homme au cœur pur, aux mains innocentes.
+
+3. Vois tes enfants, regarde ton peuple,
+Tous ceux qui te cherchent, sont devant toi.
+Ils obtiendront la bénédiction
+Et la justice en ton nom, Dieu sauveur.
+
+4. Élevez-vous, portes éternelles,
+Levez vos frontons, portes du ciel !
+C’est le Seigneur, le Fort, le Vaillant,
+Qu’il entre aujourd’hui le Roi de Gloire !
+
+5. C’est le Seigneur, Dieu de l’univers !
+Voici le Seigneur, Maître de tout.
+Élevez-vous, portes éternelles,
+Qu’il entre aujourd’hui le Roi de Gloire !
+
+
+1 - HEUREUX, BIENHEUREUX 
+# type : célébration
+R. Heureux, bienheureux,
+Qui écoute la parole de Dieu.
+Heureux, bienheureux,
+Qui la garde dans son cœur. 
+
+1. Heureux ceux qui ont une âme de pauvre
+Car le royaume des cieux est à eux.
+Heureux les doux
+Car ils posséderont la terre. 
+
+2. Heureux les affligés
+Car ils seront consolés
+Heureux les affamés et assoiffés de justice
+Car ils seront rassasiés. 
+
+3. Heureux les miséricordieux
+Car ils obtiendront miséricorde.
+Heureux les cœurs purs
+Car ils verront Dieu. 
+
+4. Heureux les artisans de paix
+Car ils seront appelés fils de Dieu.
+Heureux les persécutés pour la justice
+Car le royaume des cieux est à eux.
+
+5. Heureux serez-vous quand on vous insultera
+Et qu'on vous persécutera,
+Et que l'on dira faussement contre vous
+Toute sorte de mal à cause de moi.
+Soyez dans la joie, soyez dans l'allégresse,
+Dans les cieux vous serez comblés ! (bis)
+
+
+1 - GOÛTEZ ET VOYEZ 
+# type : célébration
+R. Goûtez et voyez comme est bon notre Seigneur, 
+Recevez Jésus, livré pour le Salut. 
+Devenez le temple saint du Christ Ressuscité, 
+Devenez le temple saint, 
+Demeure du Sauveur. 
+
+1. Par ton corps livré, tu prends sur toi la faute, 
+Par ton sang versé, tu laves nos péchés, 
+Par ton cœur blessé, d’où jaillit le Salut, 
+Tu nous as rachetés. 
+
+2. Jésus, pain du ciel, tu descends dans le monde,
+Dieu parmi les siens, mystère de l’amour,
+Tu te rends présent, livré entre nos mains,
+Près de nous pour toujours.
+
+3. Seigneur tu nous offres, en ce banquet de Noces,
+Le vin de l’alliance et le pain de la Vie,
+Nous vivons en toi, comme tu vis en nous,
+Un seul corps dans l’Esprit.
+
+4. En te recevant, nous devenons l’Église,
+Peuple racheté, prémices du Salut.
+Par ta charité tu rassembles en un corps
+Les enfants dispersés.
+
+
+
+5. Qu’il est grand, Seigneur,
+L’amour dont tu nous aimes,
+Tu te livres à nous en cette Eucharistie,
+Sommet de l’amour, don de la Trinité,
+Tu te fais pain de Vie.
+
+
+1 - GLOIRE À TOI, SOURCE DE TOUTE JOIE 
+# type : louange
+R.
+Gloire à toi, Seigneur, source de toute joie
+Gloire à ton nom, ô Dieu très saint.
+Gloire à toi, Seigneur ô toi le Roi des rois,
+Amen, Alléluia !
+
+1. Le Seigneur est ma lumière et mon salut,
+Le Seigneur est le rempart de ma vie.
+Je vivrai dans la maison du Seigneur,
+Maintenant et à jamais.
+
+2. Que mon cœur exulte, mon âme te loue,
+Tu ne peux m’abandonner à la mort.
+Tu m’apprendras le chemin de la vie,
+Plénitude de la joie.
+
+3. Tous les peuples de la terre louez Dieu
+Annoncez la Vérité aux nations.
+Bienheureux qui met sa foi dans le Seigneur,
+Éternel est son amour !
+
+
+1 - GLOIRE À TOI, SEIGNEUR RESSUSCITÉ
+# type : célébration
+R. Gloire à Toi,
+Seigneur ressuscité,
+Par ta lumière tu donnes la vie,
+Alléluia, Alléluia.
+
+1. Quand se lève sur nous la douceur de ta Pâque,
+Nous marchons le cœur lourd et nos yeux ne voient pas,
+Tu viens sur le chemin et nos cœurs sont brûlants
+Quand l'écriture s'accomplit en ta chair ressuscitée.
+
+2. Quand se lève sur nous la lumière de ta Pâque,
+Et que tombe le soir au fond de notre cœur,
+Tu restes près de nous, et partages le pain
+Pour que, ressuscités, nous devenions ton corps.
+
+3. Quand se lève sur nous la splendeur de ta Pâque,
+Tu fais voir en ta chair le prix de ton amour,
+Il fallait que tu souffris pour entrer dans la gloire,
+Toi l'Agneau immolé, pour le salut du monde.
+
+4. Quand se lève sur Pierre et Jean l'aurore de ta Pâque,
+Tu leur dis de jeter les filets dans la mer,
+Les filets se remplissent et Jean te reconnaît,
+Tu prépares pour eux le festin du royaume.
+
+5. Quand se lève sur Pierre le pardon de ta Pâque,
+Lui qui t'avait renié quand tu marchais vers la mort,
+Tu ressuscites en lui ton amour et sa foi,
+Et lui confies le soin de paître le troupeau.
+
+6. Quand se lève sur nous la clarté de ta Pâque,
+Tu viens dans le cénacle au milieu des disciples,
+Et tu donnes la paix que toi seul peut donner
+Toute la peur disparaît : « Tu es vraiment ressuscité ! »
+
+7. Quand se lève sur nous la gloire de ta Pâque,
+Tu nous donnes en partage la terre des vivants,
+Tu conduis tes disciples, au chemin de la vie
+Qui mène auprès de toi, dans la joie pour toujours.
+
+8. Quand se lève sur nous le bonheur de ta Pâque,
+Seigneur toi notre coupe et notre part d'héritage,
+Ne nous abandonne pas au pouvoir de la mort,
+Comble-nous de la joie de ta résurrection !
+
+9. Quand se lève sur nous l'amour du Dieu vivant,
+Nous célébrons le Père qui a livré son Fils,
+Et nous chantons le Christ, ressuscité des morts,
+Dans la joie de l'Esprit, la source de la vie.
+
+
+1 - GLOIRE À TOI, Ô DIEU 
+# type : louange
+R. Gloire à toi, ô Dieu notre Père,
+Gloire à toi, Jésus-Christ venu nous sauver.
+Gloire à toi, Esprit de lumière,
+Trinité bienheureuse, honneur et gloire à toi !
+
+1. Père des cieux, Père infiniment bon,
+Tu combles tes enfants de tes dons.
+Tu nous as faits, et nous t’offrons nos cœurs,
+Nous te bénissons, nous croyons en toi, Seigneur !
+
+2. Jésus Sauveur, et Fils du Dieu vivant,
+Que s’élève vers toi notre chant.
+Ton cœur ouvert nous donne à contempler
+L’amour infini dont le Père nous a aimés.
+
+3. Esprit de Dieu, Esprit de sainteté,
+Tu nous conduis à la vérité.
+Descends sur nous éclairer nos chemins,
+Sois le maître en nous, et fais de nous des témoins.
+
+
+
+1 - GARDE-MOI MON SEIGNEUR 
+# type : intercession+
+R. Garde-moi mon Seigneur,
+J’ai fait de toi mon refuge.
+J’ai dit au Seigneur : “ Tu es mon Dieu,
+Je n’ai d’autre bonheur que toi !
+Seigneur tu es toute ma joie !”
+
+1. Je bénis le Seigneur qui s’est fait mon conseil,
+Et qui même la nuit instruit mon cœur.
+Je garde le Seigneur devant moi sans relâche,
+Près de lui, je ne peux chanceler.
+
+2. Aussi mon cœur exulte et mon âme est en fête,
+En confiance, je peux reposer.
+Tu m’ouvres le chemin de la vie éternelle,
+Avec toi, débordement de joie !
+
+3. Tu es le seul Seigneur, mon partage et ma vie.
+La part qui me revient fait mon bonheur.
+Je reçois de tes mains le plus bel héritage,
+Car de Toi, Seigneur dépend mon sort.
+
+
+1 - FAIS PARAÎTRE TON JOUR 
+# type : célébration
+R. 
+Fais paraître ton Jour, et le temps de ta grâce,
+Fais paraître ton Jour : que l'homme soit sauvé !
+
+1. Par la croix du Fils de Dieu,
+Signe levé qui rassemble les nations,
+Par le corps de Jésus Christ dans nos prisons,
+Innocent et torturé,
+Sur les terres désolées, terres d'exil,
+Sans printemps, sans amandier.
+
+2. Par la croix du Bien-Aimé,
+Fleuve de paix où s'abreuve toute vie,
+Par le corps de Jésus Christ, hurlant nos peurs
+Dans la nuit des hôpitaux,
+Sur le monde que tu fis, pour qu'il soit beau,
+Et nous parle de ton nom.
+
+3. Par la croix du Serviteur,
+Porche royal où s'avancent les pécheurs,
+Par le corps de Jésus Christ, nu, outragé,
+Sous le rire des bourreaux,
+Sur les foules sans berger et sans espoir
+Qui ne vont qu'à perdre cœur.
+
+4. Par la croix de l'Homme-Dieu, arbre béni
+Où s'abritent les oiseaux,
+Par le corps de Jésus Christ
+Recrucifié dans nos guerres sans pardon,
+Sur les peuples de la nuit et du brouillard
+Que la haine a décimés.
+
+5. Par la croix du vrai pasteur,
+Alléluia, où l'enfer est désarmé,
+Par le corps de Jésus Christ,
+Alléluia, qui appelle avec nos voix,
+Sur l’Église de ce temps,
+Alléluia, que l'Esprit vient purifier.
+
+6. Par la croix du Premier-Né,
+Alléluia, le gibet qui tue la mort,
+Par le corps de Jésus Christ,
+Alléluia, la vraie chair de notre chair,
+Sur la pierre des tombeaux,
+Alléluia, sur nos tombes à venir.
+
+
+1 - FAIS-NOUS MARCHER À TA LUMIÈRE 
+# type : célébration
+R. FAIS-NOUS MARCHER À TA LUMIÈRE
+SUR LES CHEMINS DE TON ESPRIT
+OUVRE LES YEUX DE NOTRE TERRE
+AU GRAND SOLEIL DU JOUR PROMIS.
+
+1. Si tu ne viens dans notre nuit,
+Comment Seigneur attendre l'aube ?
+Révèle-nous le Dieu de vie
+Sous l'humble feu de ton Royaume.
+Première Étoile de l'Avent,
+Quel est ton signe à notre temps ?
+
+2. Quel est le peuple ou la nation
+Qui partira vers ta montagne ?
+Celui qui cherche au mont Sion
+La loi d'amour et de partage :
+C'est lui l'étoile d'avenir
+Tant que sa foi pourra tenir.
+
+3. Le monde sait combien de murs
+Sont les témoins de notre haine.
+Que nos épées soient des charrues
+Pour le bonheur de tous nos frères !
+Joyeuse étoile de la paix,
+Heureux celui qui te connaît !
+
+4. Il vient le temps des grands réveils
+Et des porteurs de l'espérance.
+Nous sortirons de nos sommeils
+Si les prophètes font violence.
+Que chaque étoile de l'Avent
+Crie l'évangile à tout vivant !
+
+
+1 - EXULTEZ DE JOIE, PEUPLES DE L'UNIVERS 
+# type : louange
+R.
+Exultez de joie, peuples de l'univers 
+Jubilez, acclamez votre roi.
+Exultez de joie, Dieu a pris notre chair,
+Jubilez, chantez, alléluia.
+
+1. Car un enfant nous est né,
+Car un fils nous a été donné,
+Dieu éternel et prince de paix,
+Maintenant et à jamais.
+
+2. Dieu nul ne l'a jamais vu,
+En son fils il nous est apparu,
+Il nous a révélé sa bonté,
+Par Jésus le bien-aimé.
+
+3. Pour nous, pour notre salut,
+Pour sauver ce qui était perdu,
+Pour qu'enfin la paix règne sur terre,
+Le Fils de Dieu s'est fait chair.
+
+4. Quand les temps furent accomplis,
+Dieu posa son regard sur Marie.
+Sans cesser d'être le Tout-Puissant,
+Il se fit petit enfant.
+
+5. Le même hier et demain,
+Aujourd'hui il vit au cœur des siens.
+Annonçons l’œuvre de son amour :
+" Dieu avec nous pour toujours !"
+
+
+1 - Esprit Saint, source vive
+# type : esprit-saint
+R. Esprit Saint, source vive,
+viens régner dans nos cœurs,
+Embrase-nous, amour du Père,
+Fais-nous reconnaître le Sauveur !
+1. Jaillis de nos cœurs, comme une eau vive,
+Qui murmure au dedans de nous, viens vers le Père!
+2. Repose sur nous comme la colombe
+Qui descend sur Jésus à son baptême.
+3. Tu viens au secours de nos faiblesses.
+Intercède et crie en nous, c’est Toi mon Père!
+
+
+1- ESPRIT DE SAINTETÉ
+# type : esprit-saint
+Esprit de Sainteté, viens combler nos cœurs,
+Tout au fond de nos vies réveille ta puissance,
+Esprit de Sainteté, viens combler nos cœurs,
+Chaque jour, fais de nous des témoins du Seigneur.
+Tu es la lumière qui vient nous éclairer, 
+le libérateur qui vient nous délivrer,
+Le consolateur, Esprit de vérité, 
+en toi l’espérance et la fidélité.
+ 
+
+1 - ESPRIT DE LUMIÈRE 
+# type : esprit-saint
+1. Viens Esprit du Dieu vivant, 
+Renouvelle tes enfants, 
+Viens, Esprit Saint, nous brûler de ton feu ! 
+Dans nos cœurs, répands tes dons, 
+Sur nos lèvres inspire un chant, 
+Viens, Esprit Saint, viens transformer nos vies ! 
+
+R. Esprit de lumière, Esprit créateur, 
+Restaure en nous la joie, le feu, l’Espérance. 
+Affermis nos âmes, ranime nos cœurs, 
+Pour témoigner de ton amour immense. 
+
+2. Fortifie nos corps blessés,
+Lave-nous de tout péché,
+Viens, Esprit Saint, nous brûler de ton feu !
+Fais nous rechercher la paix,
+Désirer la sainteté,
+Viens, Esprit Saint, viens transformer nos vies !
+
+Pont :
+Veni Sancte Spiritus (x4)
+
+3. Donne-nous la charité
+Pour aimer en vérité,
+Viens, Esprit Saint, nous brûler de ton feu !
+Nous accueillons ta clarté
+Pour grandir en liberté,
+Viens, Esprit Saint, viens transformer nos vies !
+
+
+
+1 - EN TOI J'AI MIS MA CONFIANCE 
+# type : intercession+
+En toi j’ai mis ma confiance 
+Ô Dieu très Saint, 
+Toi seul es mon espérance 
+Et mon soutien ; 
+C’est pourquoi je ne crains rien, 
+J’ai foi en toi, ô Dieu très Saint. 
+C’est pourquoi je ne crains rien, 
+J’ai foi en toi, ô Dieu très Saint. 
+
+
+1 - En Esprit et en Vérité
+# type : intercession+
+1. Seigneur je m’offre tout à Toi, je m’offre pour devenir
+Ton enfant, afin que par moi, à jamais Tu puisses agir.
+Seigneur je m’offre tout à toi, afin que plus rien en moi,
+Ne sache plus résister, que Tu puisses me sanctifier.
+R. Je t’adore en esprit et en vérité,
+Ô mon Seigneur et mon Dieu je désire te rencontrer.
+Je t’adore en esprit et en vérité,
+Ô mon Seigneur et mon Dieu je désire toujours t’aimer.
+2. Seigneur je m’offre tout à Toi, je désire m’abandonner,
+À ta divine volonté, car Tu es le Dieu d’Amour.
+Père et Source de tout bien, Fils Agneau, doux Rédempteur,
+Esprit de vie d’Amour sans bornes, au cœur même de mon cœur.
+
+
+1 - ÉCOUTE, TON DIEU T'APPELLE 
+
+R. Écoute, ton Dieu t'appelle: "Viens, suis-moi"! 
+Lève-toi et ne crains pas de marcher avec Lui. 
+Il est ton chemin de Vie, la Route de ta Joie. 
+Il est ton chemin de Vie, la Route de ta Joie!
+
+
+
+1. Accueille le Christ, Il est ton Sauveur, 
+la Vie que le Père donne en abondance 
+Lui la vraie lumière, la vérité qui rend libre. 
+Sa Parole vient réveiller ton cœur.
+
+
+
+2. Quitte le cortège de l'indifférence, 
+laisse les sentiers de ton désespoir, 
+détourne les yeux des mirages qui séduisent; 
+tu as soif d'un amour vrai et pur... 
+
+
+
+
+
+3. Cherche son visage, écoute sa voix! 
+Dans l'humble prière, découvre sa joie, 
+cherche sa Présence au milieu de l’Église! 
+De Lui seul jaillit ta plénitude. 
+
+
+
+4. En toutes tes œuvres d'amour et de vie, 
+porte témoignage au feu de l'Esprit,
+proclame à tes frères l’Évangile de la Paix! 
+Ne crains pas, il fait route avec toi.
+
+
+1 - ÉCOUTE LA VOIX DU SEIGNEUR 
+# type : célébration
+
+1. Écoute la voix du Seigneur,
+Prête l'oreille de ton cœur.
+Qui que tu sois
+Ton Dieu t'appelle,
+qui que tu sois,
+Il est ton Père.
+R.
+TOI QUI AIMES LA VIE,
+Ô TOI QUI VEUX LE BONHEUR,
+RÉPONDS EN FIDÈLE OUVRIER
+DE SA TRÈS DOUCE VOLONTÉ.
+RÉPONDS EN FIDÈLE OUVRIER
+DE L’ÉVANGILE ET DE SA PAIX.
+
+2. Écoute la voix du Seigneur,
+Prête l'oreille de ton cœur.
+Tu entendras
+Que Dieu fait grâce,
+Tu entendras
+L'Esprit d'audace.
+
+3. Écoute la voix du Seigneur,
+Prête l'oreille de ton cœur.
+Tu entendras
+Crier les pauvres,
+Tu entendras
+Gémir ce monde.
+
+4. Écoute la voix du Seigneur,
+Prête l'oreille de ton cœur.
+Tu entendras
+Grandir l’Église,
+Tu entendras
+Sa paix promise.
+
+5. Écoute la voix du Seigneur,
+Prête l'oreille de ton cœur.
+Qui que tu sois,
+Fais-toi violence,
+Qui que tu sois,
+Rejoins ton frère.
+
+
+1 - Écoute en toi la source
+# type : intercession+
+R. ÉCOUTE EN TOI LA SOURCE
+QUI TE PARLE D'AIMER,
+ÉCOUTE EN TOI LA SOURCE
+DE L’ÉTERNITÉ,
+ÉCOUTE EN TOI LA SOURCE
+QUI TE FAIT PRIER.
+1. Ton cœur est comme une terre,
+Où le grain pourra lever,
+Si tu l'ouvres à la lumière,
+Si tu laisses l'eau couler.
+2. On n'arrête pas l'eau vive,
+N'essaie pas de la freiner,
+En ton cœur elle ravive,
+La tendresse et la beauté.
+3. La source devient rivière,
+Qui t'emmène à l'océan,
+Écoute bien les prières,
+Qu'elle murmure en cheminant.
+4. Avec Marie comme exemple,
+D'une terre qui attend,
+Devient toi aussi le temple,
+D'un Dieu qui se fait présent.
+
+
+1 - ÉCOUTE 
+# type : intercession+
+1. Écoute,
+Entends la voix de Dieu
+À celui qui a soif,
+Il vient se révéler
+Écoute,
+Que tout en toi se taise,
+Que tout en toi s'apaise
+Et que parle ton Dieu.
+
+2. Écoute,
+Laisse là ton souci
+Que se taisent les mots
+Que s'éloignent les cris
+Écoute
+Dieu sème sans compter
+Sa parole est le pain
+Qui vient nous rassasier
+
+3. Écoute
+Dieu t'invite au désert
+Au silence du cœur
+À la source sans fin
+Écoute
+Il se tient à la porte
+Il frappe et bienheureux
+Celui qui ouvrira
+
+4. Écoute
+Dieu passe près de toi
+Dans la brise légère
+Dans le vent de l'Esprit
+Écoute
+Tu es aimé de Dieu
+Tu es choisi de Dieu
+Il veut pour toi la Vie.
+
+
+1 – DOUCE NUIT
+# type : célébration
+Douce nuit, sainte nuit ! 
+Dans les cieux ! L'astre luit. 
+Le mystère annoncé s'accomplit 
+Cet enfant sur la paille endormi, 
+C'est l'amour infini ! (bis)
+
+Saint enfant, doux agneau ! 
+Qu'il est grand ! Qu'il est beau ! 
+Entendez résonner les pipeaux 
+Des bergers conduisant leurs troupeaux 
+Vers son humble berceau ! (bis)
+
+C'est vers nous qu'il accourt, 
+En un don sans retour ! 
+De ce monde ignorant de l'amour, 
+Où commence aujourd'hui son séjour, 
+Qu'il soit Roi pour toujours ! (bis)
+
+Quel accueil pour un Roi ! 
+Point d'abri, point de toit ! 
+Dans sa crèche il grelotte de froid 
+O pécheur, sans attendre la croix, 
+Jésus souffre pour toi ! (bis)
+
+Paix à tous ! Gloire au ciel ! 
+Gloire au sein maternel, 
+Qui pour nous, en ce jour de Noël, 
+Enfanta le Sauveur éternel, 
+Qu'attendait Israël ! (bis)
+
+
+1 - DONNE-NOUS TON FILS 
+# type : marie
+R. Vierge bénie entre toutes les femmes,
+Mère choisie entre toutes les mères,
+Mère du Christ et mère des hommes :
+Donne-nous ton Fils (bis).
+
+1. Entre toutes les femmes du monde
+Le Seigneur t'a choisie
+Pour que brille à jamais sur la terre
+La lumière de Dieu.
+
+2. Comme coule la source limpide
+La tendresse de Dieu
+Envahit chaque instant de ta vie
+Et nous donne un Sauveur
+
+3. En ton cœur, ô Marie, nul obstacle
+A l'amour infini.
+Le Seigneur fait en toi des merveilles
+Il nous donne son Fils
+
+4. L'univers tout entier te contemple
+Il acclame ton Fils.
+Grâce à toi, au milieu de son peuple
+Le Seigneur est présent.
+
+5. Tu chemines avec nous sur la route
+Tu connais notre espoir
+Au milieu de nos croix et nos larmes
+Tu nous montres ton Fils
+
+1 - DONNE-MOI SEULEMENT DE T'AIMER 
+# type : intercession+
+1. Prends, Seigneur et reçois
+Toute ma liberté,
+Ma mémoire, mon intelligence,
+Toute ma volonté.
+
+R. Et donne-moi, donne-moi,
+Donne-moi seulement de t'aimer BIS.
+
+2. Reçois tout ce que j'ai,
+Tout ce que je possède,
+C'est toi qui m'a tout donné,
+A toi, Seigneur, je le rends.
+
+3. Tout est à toi, disposes-en,
+Selon ton entière volonté,
+Et donne-moi ta grâce,
+Elle, seule, me suffit.
+
+
+1 - DIEU QUI NOUS APPELLES À VIVRE 
+# type : célébration
+1. Dieu, qui nous appelles à vivre
+Aux combats de la liberté. (bis)
+Pour briser nos chaînes
+Fais en nous ce que tu dis !
+Pour briser nos chaînes
+Fais jaillir en nous l'Esprit !
+
+2. Dieu, qui nous apprends à vivre
+Aux chemins de la vérité. (bis)
+Pour lever le jour
+Fais en nous ce que tu dis !
+Pour lever le jour
+Fais jaillir en nous l'Esprit !
+
+3. Dieu, qui nous invites à suivre
+Le soleil du Ressuscité. (bis)
+Pour passer la mort
+Fais en nous ce que tu dis !
+Pour passer la mort
+Fais jaillir en nous l'Esprit !
+
+4. Dieu, qui as ouvert le livre
+Où s'écrit notre dignité. (bis)
+Pour tenir debout
+Fais en nous ce que tu dis !
+Pour tenir debout
+Fais jaillir en nous l'Esprit !
+
+
+1 -  DIEU, NOUS TE LOUONS 
+# type : célébration
+R. DIEU, NOUS TE LOUONS, SEIGNEUR, NOUS T'ACCLAMONS,
+DANS L'IMMENSE CORTÈGE DE TOUS LES SAINTS !
+
+1. Par les Apôtres qui portèrent ta parole de vérité,
+Par les Martyrs emplis de force dont la foi n'a pas chancelé.
+
+2. Par les pontifes qui gardèrent ton Église dans l'unité,
+Et par la grâce de tes Vierges, qui révèle ta sainteté.
+
+3. Par les Docteurs en qui rayonne la lumière de ton Esprit,
+Par les Abbés aux ruches pleines célébrant ton nom jour et nuit.
+
+4. Avec les Saints de tous les âges, comme autant de frères aînés,
+En qui sans trêve se répandent tous les dons de ta charité.
+
+5. Pour tant de mains pansant les plaies en mémoire de tes douleurs,
+Pour l'amitié donnée aux pauvres, comme étant plus près de ton Cœur.
+
+6. Pour tant de pas aux plaines longues, à la quête des égarés,
+Pour tant de mains lavant les âmes aux fontaines du Sang versé.
+
+7. Pour tant d'espoir et tant de joie, plus tenaces que nos méfaits,
+Pour tant d'élans vers ta justice, tant d'efforts tendus vers ta paix.
+
+8. Pour la prière et pour l'offrande des fidèles unis en toi,
+Et pour l'amour de Notre-Dame, Notre Mère au pied de ta Croix.
+
+
+
+1 - DIEU NOUS ACCUEILLE 
+# type : célébration
+R. Dieu nous accueille en sa maison,
+Dieu nous invite à son festin :
+Jour d'allégresse et jour de joie !
+Alléluia !
+
+1. Oh, quelle joie quand on m'a dit : approchons-nous de sa maison
+Dans la cité du Dieu vivant !
+
+2 . Jérusalem, réjouis-toi, car le Seigneur est avec toi :
+Pour ton bonheur, il t'a choisie !
+
+3. Criez de joie pour notre Dieu, chantez pour lui, car il est bon,
+car éternel est son amour !
+
+4. Avec Jésus, nous étions morts ; avec Jésus, nous revivons,
+Nous avons part à sa clarté.
+
+5. Approchons-nous de ce repas où Dieu convie tous ses enfants,
+Mangeons le Pain qui donne vie.
+
+6. « Si tu savais le Don de Dieu », si tu croyais en son amour,
+Tu n'aurais plus de peur en toi.
+
+7. Que Jésus-Christ nous garde tous dans l'unité d'un même Corps,
+Nous qui mangeons le même Pain.
+
+8. Soyons témoins de son Esprit ! Que disparaisse toute peur !
+Montrons au monde notre foi !
+
+
+1 - DIEU NOUS A TOUS APPELÉS 
+# type : célébration
+R. NOUS SOMMES LE CORPS DU CHRIST,
+CHACUN DE NOUS EST UN MEMBRE DE CE CORPS.
+CHACUN REÇOIT LA GRACE DE L'ESPRIT POUR LE BIEN DU CORPS ENTIER. (bis)
+
+1. Dieu nous a tous appelés à tenir la même espérance,
+pour former un seul corps baptisé dans l'Esprit.
+Dieu nous a tous appelés à la même sainteté,
+pour former un seul corps baptisé dans l'Esprit.
+
+2. Dieu nous a tous appelés des ténèbres à sa lumière,
+pour former un seul corps baptisé dans l'Esprit.
+Dieu nous a tous appelés à l'amour et au pardon,
+pour former un seul corps baptisé dans l'Esprit.
+
+3. Dieu nous a tous appelés à chanter sa libre louange,
+pour former un seul corps baptisé dans l'Esprit.
+Dieu nous a tous appelés à l'union avec son Fils,
+pour former un seul corps baptisé dans l'Esprit.
+
+4. Dieu nous a tous appelés à la paix que donne sa grâce,
+pour former un seul corps baptisé dans l'Esprit.
+Dieu nous a tous appelés sous la croix de Jésus Christ,
+pour former un seul corps baptisé dans l'Esprit.
+
+5. Dieu nous a tous appelés au salut par la renaissance,
+pour former un seul corps baptisé dans l'Esprit.
+Dieu nous a tous appelés au salut par l'Esprit Saint,
+pour former un seul corps baptisé dans l'Esprit.
+
+6. Dieu nous a tous appelés à la gloire de son Royaume,
+pour former un seul corps baptisé dans l'Esprit.
+Dieu nous a tous appelés pour les noces de l'Agneau,
+pour former un seul corps baptisé dans l'Esprit.
+
+
+1 - DIEU NOTRE PÈRE, VOICI LE PAIN 
+# type : célébration
+Dieu notre Père, voici le pain.
+Dieu notre Père, voici le vin.
+Pour ces offrandes, fruits de la terre,
+béni sois-tu, Dieu créateur.
+Sur cet autel, voici nos vies,
+vin du Royaume, pain de la vie.
+Qu'ils soient pour nous eucharistie.
+
+
+1 - DEVENEZ CE QUE VOUS RECEVEZ 
+# type : célébration
+R. Devenez ce que vous recevez, 
+Devenez le corps du Christ, 
+Devenez ce que vous recevez, 
+Vous êtes le corps du Christ. 
+
+1. Rassasiés par le pain de Vie,
+Nous n’avons qu’un cœur et qu’une âme ;
+Fortifiés par l’amour du Christ,
+Nous pouvons aimer comme il aime.
+
+2. Purifiés par le sang du Christ,
+Et réconciliés avec Dieu,
+Sanctifiés par la vie du Christ,
+Nous goûtons la joie du Royaume.
+
+3. Rassemblés à la même table,
+Nous formons un peuple nouveau :
+Bienheureux sont les invités
+Au festin des Noces éternelles.
+
+4. Appelés par Dieu notre Père
+À devenir saints comme lui,
+Nous avons revêtu le Christ,
+Nous portons la robe nuptiale.
+
+5. Envoyés par l’Esprit de Dieu
+Et comblés de dons spirituels,
+Nous marchons dans l’amour du Christ,
+Annonçant la Bonne Nouvelle.
+
+6. Rendons gloire à Dieu notre Père,
+Par Jésus son Fils Bien-Aimé,
+Dans l’Esprit, notre communion
+Qui fait toutes choses nouvelles.
+
+
+1 -  DEMEUREZ EN MON AMOUR 
+# type : célébration
+R. Demeurez en mon amour comme je demeure en vous,
+Ainsi tous reconnaîtront que vous êtes mes amis.
+1. Prenez et mangez, c’est mon corps livré pour vous.
+Prenez et buvez, c’est mon sang versé pour vous.
+2. Si quelqu’un a soif, qu’il vienne à moi et qu’il boive.
+Qui croira en moi, de son sein l’eau jaillira.
+3. La gloire de mon Père, c’est que vous portiez du fruit.
+Ayez foi en moi, demandez, vous recevrez.
+4. Dieu m’a envoyé, moi aussi je vous envoie.
+Recevez l’Esprit et proclamez le Salut.
+5. Soyez mes témoins, je vous ferai pécheurs d’hommes.
+Je suis avec vous pour toujours, n’ayez pas peur.
+
+1 - DANS UNE ÉTABLE OBSCURE 
+# type : célébration
+R. Le Seigneur Jésus Christ,
+Est né dans une crèche
+Pour nous donner la vie !
+
+1. Dans une étable obscure,
+Sous le ciel étoilé,
+Et d'une vierge pure,
+Un Fils nous est donné.
+
+2. L'amour de Dieu le Père
+Rayonne sur son front.
+Il nous dit le mystère
+D'un immense pardon.
+
+3. Le Dieu de toute gloire
+Se donne en cet enfant.
+Il porte notre histoire
+A son achèvement.
+
+4. Dans le fracas du monde
+Il rejoint nos chemins.
+Pour que la paix abonde
+Il se livre en nos mains.
+
+5. Marie berce en silence
+Celui qui l'a créée.
+Elle est arche d'alliance
+Pour notre humanité.
+
+6. Cherchez sur le visage
+Des humbles et des petits
+La trace et le message
+D'un Dieu si démuni.
+
+
+1 - DANS LA JOIE  
+# type : louange
+1. Je chanterai de tout cœur 
+Les merveilles de Jésus, mon Seigneur. 
+Il m'a ôté des ténèbres, 
+Il m'a délivré de tout péché BIS !
+
+R. Je suis dans la joie, une joie immense ! 
+Je suis dans l'allégresse, 
+Car mon Dieu m'a libéré BIS.
+
+2. Car mon Dieu est fidèle, 
+Il ne m'abandonne jamais. 
+Je n'ai plus rien à craindre  
+Car mon Dieu m'a libéré BIS !
+
+1 – CRIEZ DE JOIE, PAUVRES DE CŒURS 
+# type : louange
+R.
+Criez de joie, vous les pauvres de cœur,
+Vous les enfants bien-aimés du Seigneur
+Ouvrez les yeux, car le Royaume est là,
+Voici pour vous le Sauveur.
+
+1. Je bénirai le Seigneur en tout temps,
+Mon âme exalte et jubile en mon Dieu.
+Que les petits écoutent et crient de joie,
+Heureux, car ils verront Dieu.
+
+2. Venez chanter, magnifier le Seigneur,
+Quand je l’appelle, toujours il répond.
+De mes frayeurs, il vient me délivrer.
+Son nom de gloire est puissant.
+
+3. Tournez les yeux, regardez notre Dieu.
+Qui le contemple, par lui resplendit.
+Un pauvre crie le Seigneur lui répond.
+Voyez, le Seigneur est bon.
+
+4. Heureux celui qui prend refuge en Dieu,
+Qui le choisit ne manquera de rien.
+Écoute-le, et recherche la paix,
+En lui, fais ce qui est bien.
+
+
+1 - CRIEZ DE JOIE, CHRIST EST RESSUSCITÉ ! 
+# type : louange
+R. Criez de joie, Christ est ressuscité !
+Il est vivant comme il l'avait promis.
+Alléluia, Christ est ressuscité !
+Il nous ouvre la vie !
+
+1. Au milieu de notre nuit,
+la lumière a resplendi.
+La vie a détruit la mort.
+Christ ressuscité !
+
+2. Vous les anges, louez-le
+exultez depuis les cieux !
+Tous les vivants louez Dieu !
+Christ ressuscité !
+
+3. Louez Dieu dans sa grandeur,
+louez Dieu notre Sauveur !
+Sans fin louez le Seigneur !
+Christ ressuscité !
+
+4. Accueillez en votre cœur
+Jésus-Christ l'Agneau Vainqueur !
+Il est le Chemin, la Vie,
+Christ ressuscité !
+
+
+1 - COMME UNE BICHE 
+# type : célébration
+1. Comme une biche qui désire l’eau vive, 
+Ainsi mon âme te cherche, ô mon Dieu. 
+Elle a soif de toi, Dieu de toute vie. 
+Quand viendrai-je et verrai-je la face de Dieu ? (bis) 
+
+2. Donne-moi ta lumière et ta vérité,
+Qu’elles me conduisent vers ta sainte montagne,
+Qu’elles guident mes pas pour marcher vers toi,
+Vers ta sainte montagne, lieu de ta demeure. (bis)
+
+3. Je m’avancerai vers l’autel du Seigneur,
+J’exulterai, le louerai, lui mon Dieu,
+Il est mon rocher, le Dieu de ma joie,
+Le salut de ma face, mon maître et Seigneur. (bis) 
+
+
+1 - COMME UN SOUFFLE FRAGILE 
+# type : célébration
+R. Comme un souffle fragile, ta parole se donne.
+Comme un vase d'argile, ton amour nous façonne.
+
+1. Ta parole est murmure, comme un secret d'amour
+Ta parole est blessure qui nous ouvre le jour.
+
+2. Ta parole est naissance, comme on sort de prison
+Ta parole est semence, qui promet la moisson.
+
+3. Ta parole est partage, comme on coupe du pain
+Ta parole est passage, qui nous dit un chemin.
+
+
+1 -  Comme lui
+# type : célébration
+R. Comme lui, savoir dresser la table
+Comme lui, nouer le tablier
+Se lever chaque jour
+Et servir par amour
+Comme lui.
+
+1.Offrir le pain de sa Parole
+Aux gens qui ont faim de bonheur
+Être pour eux des signes du Royaume
+Au milieu de notre monde.
+
+2. Offrir le pain de sa présence
+Aux gens qui ont faim d'être aimés
+Être pour eux des signes d'espérance
+Au milieu de notre monde.
+
+3. Offrir le pain de sa promesse
+Aux gens qui ont faim d'avenir
+Être pour eux des signes de tendresse
+Au milieu de notre monde.
+
+
+1 - CŒUR DE JÉSUS BRÛLANT D'AMOUR 
+# type : intercession+
+Cœur de Jésus brûlant d’amour, 
+Embrase-nous par ton Esprit. 
+Que nos cœurs soient semblables au tien, 
+Que nous brûlions de charité ! 
+
+
+1 - CHRIST AUJOURD'HUI NOUS APPELLE 
+# type : célébration
+R. CHRIST AUJOURD'HUI NOUS APPELLE,
+CHRIST AUJOURD'HUI NOUS ENVOIE !
+VIVE LE SEIGNEUR QUI NOUS AIME,
+DIEU NOUS DONNE SA JOIE, DIEU NOUS DONNE SA JOIE !
+
+1. Ses chemins vous conduisent vers la vie.
+Partez loin, l'aventure est infinie !
+Vous serez ses témoins,
+Vous qu'il nomme ses amis !
+
+2. Ses chemins sont amour et vérité.
+Le bon grain, Dieu lui-même l'a semé.
+Vous serez ses témoins,
+La parole va germer.
+
+3. Ses chemins déconcertent vos regards.
+Son matin réconforte vos espoirs.
+Vous serez ses témoins :
+Soyez sûrs de votre foi !
+
+4. Ses chemins vous libèrent de la peur ;
+Dieu soutient les disciples du Sauveur.
+Vous serez ses témoins
+sur les pas du Serviteur.
+
+5. Ses chemins vous entraînent vers la croix ;
+Le Dieu saint est présent au Golgotha.
+Vous serez ses témoins :
+Jour de Pâques brillera.
+
+6. Ses chemins vous appellent à tout quitter.
+Pèlerins, que l'Esprit soit votre paix !
+Vous serez ses témoins
+Dans son peuple à réveiller.
+
+7. Ses chemins vous apprennent à partager.
+Le vrai pain chaque jour vous est donné.
+Vous serez ses témoins :
+Dieu prépare son Banquet.
+
+8. Ses chemins sont ouverts sur l'avenir ;
+par vos mains le bonheur pourra fleurir.
+Vous serez ses témoins
+Dans un monde à rebâtir.
+
+9. Ses chemins sont jeunesse pour les cœurs.
+Christ a faim d'envoyer des rassembleurs.
+Serez-vous ses témoins,
+Les prophètes du Seigneur ?
+
+
+1 - CHRÉTIENS, CHANTONS LE DIEU VAINQUEUR 
+# type : célébration
+1. Chrétiens, chantons le Dieu vainqueur,
+Fêtons la Pâque du Seigneur,
+Acclamons le d’un même cœur : Alléluia !
+R. Alléluia, Alléluia, Alléluia !
+2. De son tombeau Jésus surgit.
+Il nous délivre de la nuit,
+Et dans nos cœurs le Jour a lui, Alléluia !
+
+3. Nouveau Moïse ouvrant les eaux,
+Il sort vainqueur de son tombeau ;
+Il est Seigneur des temps nouveaux, Alléluia !
+
+4. L'Agneau pascal est immolé :
+Il est vivant ressuscité,
+Splendeur du monde racheté, Alléluia !
+
+5. Le cœur de Dieu est révélé,
+Le cœur de l’homme est délivré,
+Ce jour, le monde est rénové, Alléluia !
+
+6. O Jour de joie, de vrai bonheur !
+O Pâque sainte du Seigneur,
+Par toi nous sommes tous vainqueurs, Alléluia !
+
+
+1 - CHERCHER AVEC TOI, MARIE
+# type : marie
+R. Chercher avec toi, dans nos vies
+Les pas de Dieu, Vierge Marie,
+Par toi, accueillir aujourd'hui
+Le don de Dieu, Vierge Marie.
+
+1. Puisque tu chantes avec nous,
+Magnificat, Vierge Marie,
+Permets la Pâque sur nos pas,
+Nous ferons tout ce qu'il dira.
+
+2. Puisque tu souffres avec nous,
+Gethsémani, Vierge Marie,
+Soutiens nos croix de l'"aujourd'hui",
+Entre tes mains, voici ma vie.
+
+3. Puisque tu demeures avec nous
+Pour l'angélus, Vierge Marie,
+Guide nos pas dans l'inconnu,
+Car tu es celle qui a cru.
+
+
+1 - CHANTONS SANS FIN LE NOM DU SEIGNEUR 
+# type : louange
+R. Chantons sans fin le nom du Seigneur
+Bénissons-le d'âge en âge !
+Par son amour il comble nos cœurs
+Et vient transformer nos vies.
+
+1. Goûtez, voyez comme est bon le Seigneur
+Lui qui pardonne à tout homme pécheur
+Quand il se tourne vers lui !
+
+2. Changeons nos cœurs et convertissons-nous,
+Tournons nos yeux vers Dieu plein d'amour,
+Son pardon redonne vie !
+
+3. Quand sur la croix Jésus dans sa passion,
+Offre sa vie pour notre rédemption
+Sa mort nous ouvre à la vie.
+
+4. Le corps de Dieu et le sang du salut
+Nous sont donnés pour vivre avec Jésus
+Dans la sainte eucharistie.
+
+5. Lavant les pieds, se faisant serviteur,
+Jésus nous ouvre à l'amour de son cœur
+Afin d'aimer comme lui.
+
+6. Suivons les pas des amis du Seigneur
+Qui ont laissé Dieu transformer leurs cœurs
+Par l'amour qui sanctifie.
+
+7. Soyons témoins de l'amour du Seigneur.
+Dieu allume une étincelle en nos cœurs
+Que brûle en nous son Esprit !
+
+
+1 - CHANTEZ, PRIEZ, CÉLÉBREZ LE SEIGNEUR 
+# type : célébration
+R. CHANTEZ, PRIEZ, CÉLÉBREZ LE SEIGNEUR,
+DIEU NOUS ACCUEILLE, PEUPLES DU MONDE.
+CHANTEZ, PRIEZ, CÉLÉBREZ SON NOM,
+DIEU NOUS ACCUEILLE DANS SA MAISON.
+
+1. Il a fait le ciel et la terre,
+ÉTERNEL EST SON AMOUR,
+Façonné l'homme à son image,
+ÉTERNEL EST SON AMOUR.
+
+2. Il sauva Noé du déluge,
+ÉTERNEL EST SON AMOUR,
+L'arc-en-ciel en signe d'alliance,
+ÉTERNEL EST SON AMOUR.
+
+3. D'Abraham, il fit un grand peuple,
+ÉTERNEL EST SON AMOUR,
+Par milliers fut sa descendance,
+ÉTERNEL EST SON AMOUR.
+
+4. Il perçut le cri de son peuple,
+ÉTERNEL EST SON AMOUR,
+Le guida en terre promise,
+ÉTERNEL EST SON AMOUR.
+
+5. Aux exilés de Babylone,
+ÉTERNEL EST SON AMOUR,
+Il donna la foi qui libère,
+ÉTERNEL EST SON AMOUR.
+
+6. Il a parlé par les prophètes,
+ÉTERNEL EST SON AMOUR,
+Sa parole est une promesse,
+ÉTERNEL EST SON AMOUR.
+
+7. Il combla Marie de sa grâce,
+ÉTERNEL EST SON AMOUR,
+Il se fit chair parmi les hommes,
+ÉTERNEL EST SON AMOUR.
+
+8. Crucifié, c'est sa vie qu'Il donne,
+ÉTERNEL EST SON AMOUR,
+Mais le Père le ressuscite,
+ÉTERNEL EST SON AMOUR.
+
+9. Dans l'Esprit-Saint, Il nous baptise,
+ÉTERNEL EST SON AMOUR,
+Son amour forge notre Église,
+ÉTERNEL EST SON AMOUR.
+
+10. Acclamez Dieu, ouvrez le Livre,
+ÉTERNEL EST SON AMOUR,
+Dieu nous crée et Dieu nous délivre,
+ÉTERNEL EST SON AMOUR.
+
+
+1 -  Chantez au Seigneur car il s’est couvert de gloire
+# type : louange
+R. Chantez au Seigneur car il s’est couvert de gloire,
+Cheval et cavalier la mer les a engloutis. 
+Chantez au Seigneur car il s’est couvert de Gloire,
+Le Seigneur est Roi, en lui je me glorifie.
+1. Le Seigneur est ma force et mon chant, de la mort c’est Lui qui m’a délivré 
+Sa main droite écrase l’ennemi, comme une pierre ils sont tombés. 
+
+2. Ton amour a racheté tes enfants et ta force a triomphé de la mort 
+qui au ciel est grand comme notre Dieu, Lui dont le nom est trois fois saint ! 
+
+3. Tu les guides et tu les amèneras au lieu saint que tes mains ont façonné, 
+Le Seigneur régnera parmi son peuple dès maintenant et à jamais
+
+
+1 - CHANGEZ VOS CŒURS 
+# type : célébration
+R. Changez vos cœurs, croyez à la Bonne Nouvelle !
+Changez de vie, croyez que Dieu vous aime !
+
+1. "Je ne viens pas pour condamner le monde :
+Je viens pour que le monde soit sauvé."
+
+2. "Je ne viens pas pour les bien-portants ni pour les justes :
+Je viens pour les malades, les pécheurs."
+
+3. "Je ne viens pas pour juger les personnes :
+Je viens pour leur donner la vie de Dieu."
+
+4. "Je suis le Bon Pasteur, dit Jésus :
+Je cherche la brebis égarée."
+
+5. "Je suis la porte, dit Jésus :
+Qui entrera par moi sera sauvé."
+
+6. "Qui croit en moi a la vie éternelle :
+Croyez en mes paroles et vous vivrez."
+
+
+1 - CELUI QUI AIME EST NÉ DE DIEU 
+# type : célébration
+R. Celui qui aime est né de Dieu.
+Celui qui aime connaît Dieu.
+Celui qui demeure dans l'amour
+Demeure en Dieu et Dieu en lui.
+
+1. Voyez comme il est grand, l'amour du Père :
+Nous sommes enfants de Dieu !
+Lorsqu'il paraîtra, nous lui serons semblables,
+Et nous le verrons tel qu'il est.
+
+2. Jésus a donné sa vie pour nous :
+Donnons notre vie pour nos frères !
+Celui qui se ferme à toute compassion,
+Comment l'amour de Dieu demeurait-il en lui ?
+
+3. Qui prétend aimer Dieu et n'aime pas son frère,
+Celui-là est un menteur !
+Qui n'aime pas son frère qu'il voit,
+Ne peut aimer Dieu qu'il ne voit pas.
+
+4. Bien-aimés, vous avez la vie éternelle :
+Qui est né de Dieu ne pèche plus ?
+Car Jésus, son Fils, nous garde,
+Et le Mauvais n'a pas de prise sur lui.
+
+
+1 - CÉLESTE JÉRUSALEM
+# type : célébration
+R. Notre cité se trouve dans les cieux, 
+Nous verrons l’épouse de l’Agneau, 
+Resplendissante de la gloire de Dieu, 
+Céleste Jérusalem. 
+
+1. L’Agneau deviendra notre flambeau, 
+Nous nous passerons du soleil,
+ll n’y aura plus jamais de nuit, 
+Dieu répandra sur nous sa lumière. 
+
+2. Dieu aura sa demeure avec nous,
+Il essuiera les larmes de nos yeux,
+Il n’y aura plus de pleurs ni de peines
+Car l’ancien monde s’en est allé.
+
+3. Et maintenant, voici le salut,
+Le règne et la puissance de Dieu,
+Soyez donc dans la joie, vous, les cieux,
+Il régnera sans fin dans les siècles.
+
+1 - CAR TU ES L'AMOUR
+# type : célébration
+R. Dieu notre Père, nous croyons en toi,
+Dieu notre Père, ton amour ne passe pas !
+Dieu notre Père, nous croyons en toi,
+Car tu es l’Amour, car tu es l’Amour !
+
+
+1. Par son Fils Bien-Aimé, venu pour nous sauver,
+Dieu nous montre son amour infini.
+Pas de plus grand amour que de donner sa vie.
+Il s’offre sans réserve, jusqu’à la Croix.
+
+2. Vois ce cœur transpercé, qui nous a tant aimé,
+Trop souvent méprisé et mal-aimé.
+Jésus est ton berger, l'amour que tu cherchais,
+Dieu t'aime et te désire, viens, n'aie pas peur.
+
+3. Mon Dieu tu es si grand, sans fin je te louerai,
+Ta miséricorde est toute ma joie.
+Aucun mot ne saisit la grandeur de ton Nom
+L'amour dont tu nous aimes. Tu es la Vie !
+
+4. Mon Dieu sois remercié, je m'abandonne à toi,
+Viens, prends mon cœur, rends-le semblable au tien.
+Je suis là devant toi, j'ai confiance en tes voies
+Je suis prêt à te suivre, j'ai foi en toi.
+
+5. Seigneur éclaire-moi, donne-moi de saisir
+La profondeur de ton amour pour moi.
+Seigneur, enflamme-moi, et donne-moi ta joie
+Pour annoncer au monde que tu nous aimes !
+
+6. De toute éternité, ton nom est dans mon cœur.
+Je t'ai aimé avant de te créer.
+Toute la création, je l'ai voulue pour toi,
+Que sa beauté soit ta joie et que tu m'aimes.
+
+7. Quand tu t'es détourné, je t'ai toujours aimé,
+Tu voulais vivre seul et loin de moi.
+J´ai accouru vers toi, je t'ai pris par la main
+Dans ma miséricorde, je te relève !
+
+
+1 - C'EST TOI, SEIGNEUR, LE PAIN ROMPU
+# type : célébration
+R. C'est toi Seigneur le Pain rompu,
+Livré pour notre vie.
+C'est toi, Seigneur, notre unité,
+Jésus ressuscité.
+
+1. Jésus, la nuit qu'il fut livré, rompit le pain et dit :
+Prenez, mangez : voici mon corps, livré pour l'univers.
+
+2. Jésus, la nuit qu'il fut livré, montra le vin et dit :
+Prenez, buvez : voici mon sang, versé pour l'univers.
+
+3. Je donnerai gratuitement à ceux qui m'ont cherché,
+Et tous les pauvres mangeront, parole du Seigneur.
+
+4. Je suis le pain qui donne vie : qui croit en moi, vivra ;
+Et je le ressusciterai, au jour de mon retour.
+
+5. Je suis venu pour vous sauver et non pour vous juger :
+C'est notre Père qui m'envoie pour vous donner la vie.
+
+6. Nous partageons un même pain, dans une même foi,
+Et nous formons un même corps : l’Église de Jésus.
+
+7. C'est maintenant le temps de Dieu : il faut nous préparer.
+C'est maintenant le temps de Dieu : il faut changer nos cœurs.
+
+8. Avant d'aller vers mon autel, regarde ton prochain :
+Pardonne et réconcilie-toi, puis viens dans ma maison.
+
+9. Si nous souffrons en Jésus Christ, en lui nous régnerons.
+Si nous mourons en Jésus Christ, en lui nous revivrons.
+
+10. L'esprit de Dieu m'a envoyé pour annoncer la joie,
+Pour libérer les prisonniers, pour apporter la paix.
+
+11. Voici venir les temps nouveaux, la terre des vivants :
+Vous deviendrez mes biens-aimés ; Je suis « Dieu-avec-vous »
+
+
+
+
+1 -  Bénis le Seigneur, ô mon âme
+# type : louange, intercession+
+R. Bénis le Seigneur, ô mon âme, 
+Du fond de mon être, son Saint Nom. 
+Bénis le Seigneur, ô mon âme, 
+Et n’oublie aucun de ses bienfaits. 
+
+1. Le Seigneur est tendresse et pitié, 
+Lent à la colère et plein d’amour, 
+Sa justice demeure à jamais. 
+Bénis le Seigneur, ô mon âme ! 
+
+2. Il pardonne toutes tes fautes,
+De tes maladies il te guérit,
+À la fosse il rachète ta vie.
+Bénis le Seigneur, ô mon âme !
+
+3. Comme un père pour ses enfants,
+Tendre est le Seigneur pour qui le craint,
+De son cœur jaillit l’amour.
+Bénis le Seigneur, ô mon âme !
+
+4. La bonté du Seigneur se répand
+Sur qui accomplit sa volonté,
+Attentif à sa Parole.
+Bénis le Seigneur, ô mon âme !
+
+5. Vous les anges, les saints du Seigneur,
+Tous ses serviteurs, toutes ses œuvres,
+Dans la joie bénissez-le.
+Bénis le Seigneur, ô mon âme !
+
+
+1 -  BAPTISÉS DANS L'EAU ET DANS L'ESPRIT
+# type : célébration
+R.
+BAPTISÉS DANS L'EAU ET DANS L'ESPRIT,
+NOUS RENAISSONS CRÉATURE NOUVELLE !
+PLONGÉS DANS LA MORT AVEC JÉSUS,
+NOUS SOMMES LES ENFANTS DU PÈRE.
+
+1. Aux premiers temps de la genèse
+L'Esprit de Dieu couvrait les eaux
+D'une promesse…
+Pour que la vie en vous se lève,
+Le même Esprit bénit cette eau.
+
+2. Rompus les liens, brisés les pièges,
+N'ayez plus peur du tentateur,
+Le Seigneur veille !
+Écoutez-le qui vous appelle,
+Criez son nom : "Jésus Sauveur".
+
+3. Rappelez-vous ce que vous êtes
+Et l'onction faite sur vos corps,
+Levez la tête !
+En Jésus, roi, prêtre et prophète,
+Vous êtes saints, vous êtes forts.
+
+4. Dieu vous remet par son Église
+Le vêtement immaculé
+Des néophytes.
+Que chaque jour en vous grandisse
+La joie de vivre en baptisés.
+
+5. Transmettez-vous les uns aux autres
+Le feu qui doit guider vos pas
+Jusqu'au Royaume.
+Gardez sa flamme vive et haute,
+Reflet du Christ en ceux qui croient.
+
+6. Depuis les jours de la genèse
+La vie se lève en Jésus Christ,
+L’œuvre s'achève.
+L'Amour tient toutes ses promesses
+Vos corps sont temples de l'Esprit.
+
 1 – AVEC TOI, NOUS IRONS AU DÉSERT
 # type : célébration
 1. Seigneur, avec toi nous irons au désert,
-Poussés comme toi par l'Esprit (bis).
+Poussés comme toi par l'Esprit. (bis)
 Et nous mangerons la parole de Dieu,
 et nous choisirons notre Dieu.
 Et nous fêterons notre Pâque au désert :
 Nous vivrons le désert avec toi !
 
 2. Seigneur, nous irons au désert pour guérir,
-poussés comme toi par l'Esprit (bis).
+poussés comme toi par l'Esprit. (bis)
 Et tu ôteras de nos cœurs le péché,
 et tu guériras notre mal.
 Et nous fêterons notre Pâque au désert :
 Ô Vivant qui engendre la vie !
 
 3. Seigneur, nous irons au désert pour prier,
-Poussés comme toi par l'Esprit (bis).
+Poussés comme toi par l'Esprit. (bis)
 Et nous goûterons le silence de Dieu,
 Et nous renaîtrons dans la joie.
 Et nous fêterons notre Pâque au désert :
 Nous irons dans la force de Dieu !
 
 4. Seigneur, nous irons au désert vers la croix,
-Poussés comme toi par l'Esprit (bis).
+Poussés comme toi par l'Esprit. (bis) 
 Et nous te suivrons au désert pas à pas,
 et nous porterons notre croix
 Et nous fêterons notre Pâque au désert :
@@ -155,7 +3319,7 @@ Car le Christ va nous transformer en lui
 Voici l'admirable échange
 Où le christ prend sur lui nos péchés.
 Mettons-nous en sa présence,
-Il nous revêt de sa divinité
+Il nous revêt de sa divinité.
 
 3.
 Père, nous te rendons grâce
@@ -206,14 +3370,20 @@ Soyons les témoins du règne qui vient !
 
 1 - Âme du Christ
 # type : célébration
-1. Âme du Christ, sanctifie-moi,
-Corps du Christ, sauve-moi,
-Sang du Christ enivre-moi,
+1. Âme du Christ, sanctifie-moi, 
+Corps du Christ, sauve-moi, 
+Sang du Christ enivre-moi, 
 Eau du côté du Christ, lave-moi.
 
-2. Passion du Christ, fortifie-moi, ô doux Jésus, exauce-moi, dans tes blessures, cache-moi, ne permets pas que je sois séparé de Toi.
+2. Passion du Christ, fortifie-moi, 
+ô doux Jésus, exauce-moi, 
+dans tes blessures, cache-moi, 
+ne permets pas que je sois séparé de Toi.
 
-3. De l'ennemi, défends-moi. À ma mort, appelle-moi et donne-moi de venir à Toi, pour qu'avec les saints, je te loue, dans les siècles des siècles. Amen.
+3. De l'ennemi, défends-moi. 
+À ma mort, appelle-moi et donne-moi de venir à Toi, 
+pour qu'avec les saints, je te loue, 
+dans les siècles des siècles. Amen.
 
 1 - ALLEZ PAR TOUTE LA TERRE
 # type : célébration
@@ -245,7 +3415,7 @@ Il gouverne les peuples avec droiture !
 
 1 – ALLÉLUIA (PSAUME 117)
 # type : louange
-R. Alléluia Alléluia Alléluia
+R. Alléluia, Alléluia, Alléluia ! (bis)
 
 1.
 Proclamez que le Seigneur est bon
@@ -287,11 +3457,11 @@ Que la louange de vos chants le glorifie !
 Adorez-le, bénissez-le !
 Que de vos cœurs jaillisse le feu de l'Esprit !
 
-1
+1.
 Aujourd'hui, approchez-vous de lui,
 présentez-lui l'offrande de vos vies !
 
-2
+2.
 D'un seul cœur, louez votre Seigneur,
 que son amour transforme votre vie.
 
@@ -415,7 +3585,7 @@ conduis nos pas dans la clarté de Dieu.
 7. Louange au Père qui nous aime, 
 louange au Fils qui nous appelle, 
 louange à l'Esprit de Lumière. 
-A notre Dieu la gloire pour les siècles. 
+À notre Dieu la gloire pour les siècles. 
 
 
 1 - OUI, LE SEIGNEUR EST NOTRE JOIE, ALLEGRIA !
@@ -441,8 +3611,8 @@ Il est notre Dieu, Allegria !
 2 - EXULTEZ DE JOIE, PEUPLES DE LA TERRE
 # type : louange
 R.
-EXULTEZ DE JOIE, PEUPLE DE LA TERRE  }
-LA MORT EST VAINCUE, LE CHRIST EST VIVANT } bis
+EXULTEZ DE JOIE, PEUPLE DE LA TERRE
+LA MORT EST VAINCUE, LE CHRIST EST VIVANT ! BIS
 1.
 Que soient remplis d’allégresse
 Les déserts et terres arides,
@@ -469,12 +3639,12 @@ Le muet criera de joie,
 Les oreilles des sourds s’ouvriront,
 Les aveugles verront.
 
-3 - MON BIEN-AIME
+3 - MON BIEN-AIMÉ
 # type : louange
-R.
-Mon bien-aimé, mon bien-aimé,  }
-Mon bien-aimé, le voici, il vient.  } bis
-Il saute sur les montagnes et bondit sur les collines (bis)
+
+Mon bien-aimé, mon bien-aimé,
+Mon bien-aimé, le voici, il vient (bis).
+Il saute sur les montagnes et bondit sur les collines (bis).
 
 5 - LOUEZ, EXALTEZ LE SEIGNEUR
 # type : louange
@@ -511,9 +3681,9 @@ Que ma bouche chante ta louange.
 Notre confiance est dans ton nom très saint !
 Que ma bouche chante ta louange.
 R.
-SOIS LOUE SEIGNEUR, POUR TA GRANDEUR,
-SOIS LOUE POUR TOUS TES BIENFAITS ;
-GLOIRE A TOI SEIGNEUR, TU ES VAINQUEUR,
+SOIS LOUÉ SEIGNEUR, POUR TA GRANDEUR,
+SOIS LOUÉ POUR TOUS TES BIENFAITS ;
+GLOIRE À TOI SEIGNEUR, TU ES VAINQUEUR,
 TON AMOUR INONDE NOS CŒURS.
 QUE MA BOUCHE CHANTE TA LOUANGE.
 2.
@@ -539,28 +3709,28 @@ Seigneur en tout temps je fête ton nom ! Que ma …
 1.
 Seigneur, tu es toute ma joie
 Je veux chanter pour Toi, proclamer que tu es mon roi,
-En toi Seigneur, j’ai mis ma foi,
-Car ton amour jamais ne s’éloignera de moi (bis)
+En toi Seigneur, j’ai mis ma foi.
+Car ton amour jamais ne s’éloignera de moi (bis).
 2.
 Dans ta bonté, Tu m’as comblé,
 Du mal et du péché Tu es venu me délivrer
-et par ta croix Tu m’as sauvé,
-Car ton amour jamais ne s’éloignera de moi (bis)
+et par ta croix Tu m’as sauvé.
+Car ton amour jamais ne s’éloignera de moi (bis).
 3.
 Seigneur, mon âme a soif de Toi,
 Mon cœur bondit de joie quand j’entends le son de Ta voix,
-De Ton eau vive abreuve-moi,
-Car ton amour jamais ne s’éloignera de moi (bis)
+De Ton eau vive abreuve-moi.
+Car ton amour jamais ne s’éloignera de moi (bis).
 4.
 C’est Toi que je veux adorer,
 Vers Ton cœur, ô Jésus, conduis mon âme dans la paix,
-Embrase-moi de charité,
-Car ton amour jamais ne s’éloignera de moi (bis)
+Embrase-moi de charité.
+Car ton amour jamais ne s’éloignera de moi (bis).
 5.
 Sans fin, ô Dieu, sois magnifié,
 Partout, j’annoncerai Ta lumière et Ta vérité,
-Reçois ma vie pour Te louer,
-Car ton amour jamais ne s’éloignera de moi (bis)
+Reçois ma vie pour Te louer.
+Car ton amour jamais ne s’éloignera de moi (bis).
 
 9 - JE VEUX CHANTER TON AMOUR
 # type : louange
@@ -572,19 +3742,19 @@ ET GLORIFIER TON NOM.
 1.
 Ton amour pour nous est plus fort que tout
 Et tu veux nous donner la vie,
-Nous embraser par ton Esprit.   Gloire à toi !
+Nous embraser par ton Esprit. Gloire à toi !
 2.
 Oui, tu es mon Dieu, tu es mon Seigneur.
 Toi seul est mon libérateur,
-Le rocher sur lequel je m’appuie.  Gloire à toi !
+Le rocher sur lequel je m’appuie. Gloire à toi !
 3.
 Car tu es fidèle, tu es toujours là ;
 Tout près de tous ceux qui te cherchent.
-Tu réponds à ceux qui t’appellent.    Gloire à toi !
+Tu réponds à ceux qui t’appellent. Gloire à toi !
 4.
 Voici que tu viens au milieu de nous,
 Demeurer au cœur de nos vies
-Pour nous mener droit vers le Père.   Gloire à toi !
+Pour nous mener droit vers le Père. Gloire à toi !
 
 
 
@@ -616,7 +3786,7 @@ L’ÉPOUX QUE RIEN NE RETIENT ;
 EN BONDISSANT, IL ACCOURT, 
 IL FAIT ENTENDRE SA VOIX :
 « SORS DE LA NUIT, VIENS A MOI,
-JE SUIS A TOI, POUR TOUJOURS ! »       
+JE SUIS À TOI, POUR TOUJOURS ! »       
 1.
 Lève-toi, pousse des cris de joie :
 Du malheur, il va te consoler.
@@ -684,76 +3854,30 @@ Et je leur dirai que tu les aimes
 Car ton amour nous donne la vie.
 
 
-166 - PRIÈRE A SAINT MATHURIN
-
-Saint Mathurin,
-Glorieux témoin de la Foi au milieu des païens ;
-Tu reçus l’Évangile dans ta jeunesse,
-tu sus le choisir et demander le Baptême ;
-aide-nous à choisir le Christ,
-et à accueillir sa grâce par les sacrements.
-Tes parents furent gagnés à la Foi par ta prière,
-par la sainteté de ta vie et la justesse de ta parole ;
-visite nos familles,
-pour qu’elles trouvent le chemin de l’unité et de la paix 
-sous le regard de Dieu.
-Devenu prêtre, tu annonçais le Christ avec assurance,
-et les cœurs étaient touchés ;
-fais se lever au milieu de nous des apôtres de feu,
-serviteurs des desseins de Dieu.
-Terreur des démons, tu fus appelé jusqu’à Rome
-pour délivrer la princesse Théodora,
-et, après ta mort, tu continuas à soulager
-d’innombrables détresses spirituelles.
-O Saint Mathurin, regarde ceux (celui, celle, N.)
-pour qui nous te prions instamment :
-Par l’Esprit de Jésus,
-qui t’a rendu puissant contre l’Adversaire,
-étends la main sur toutes blessures intérieures.
-S’il est nécessaire, 
-chasse toutes obsessions, toutes persécutions 
-ou toutes infestations des mauvais esprits,
-et romps tous liens qui aient pu être tissés avec eux.
-Viens surtout déposer la Paix de Dieu
-dans les cœurs troublés,
-viens redonner la force et le goût de la vie
-à ceux qui n’en peuvent plus,
-viens soulager les dépressifs
-et guérir de toutes difficultés psychiques.
-O Saint Mathurin, uni par la communion des saints
-à la Bienheureuse Vierge Marie, à Saint Michel Archange,
-à tous les saints du ciel et tous les anges,
-que ton action puissante dans nos vies,
-manifeste la victoire de Dieu,
-lui qui a envoyé son Fils
-pour que les hommes aient la vie,
-et qu’ils l’aient en abondance
-Amen
-
 163 - DEBOUT, RESPLENDIS
 # type : louange
 1.
-Debout, resplendis, car voici la lumière,  }
-Et sur toi la gloire du Seigneur.    } bis
+Debout, resplendis, car voici la lumière,
+Et sur toi la gloire du Seigneur (bis).
 Lève les yeux et regarde au loin,
 Que ton cœur tressaille d’allégresse.
 Voici tes fils qui reviennent vers Toi,
 Et tes filles portées sur la hanche.
 R.
 JÉRUSALEM, JÉRUSALEM,
-  QUITTE TA ROBE DE TRISTESSE !
+QUITTE TA ROBE DE TRISTESSE !
 JÉRUSALEM, JÉRUSALEM,
-  CHANTE ET DANSE POUR TON DIEU !
+CHANTE ET DANSE POUR TON DIEU !
 2.
-Toutes les nations marcherons vers ta lumière,}
-Et les rois à ta clarté naissante.    } bis
+Toutes les nations marcherons vers ta lumière,
+Et les rois à ta clarté naissante (bis).
 De nombreux troupeaux de chameaux te couvriront,
 Les trésors des mers afflueront vers toi.
 Ils viendront d’Epha, de Saba, de Qédar,
 Faisant monter vers Dieu la louange.
 3.
-Les fils d’étrangers rebâtiront tes remparts }
-Et leurs rois passeront par tes portes.   } bis
+Les fils d’étrangers rebâtiront tes remparts
+Et leurs rois passeront par tes portes (bis).
 Je ferai de toi un sujet de joie.
 On t’appellera « ville du Seigneur »,
 Les jours de ton deuil seront tous accomplis,
@@ -790,7 +3914,7 @@ Ils seront comblés de biens.
 # type : louange
 R.
 JE T’EXALTE, Ô ROI MON DIEU,
-JE BÉNIS TON NOM A JAMAIS,
+JE BÉNIS TON NOM À JAMAIS,
 JE VEUX TE BÉNIR CHAQUE JOUR,
 LOUER TON NOM TOUJOURS ET À JAMAIS
 1.
@@ -823,9 +3947,9 @@ Nous le fêtons, O Roi, car tu nous fais partager ta joie,
 Et nous offrons en ton honneur,
 Un chant d’Amour, Seigneur !
 R.
-VENEZ LE CÉLÉBRER, CÉLÉBRER,  }
-CÉLÉBRER, CHANTER     } bis
-CÉLÉBRER, CHANTER NOTRE ROI  }
+VENEZ LE CÉLÉBRER, CÉLÉBRER,
+CÉLÉBRER, CHANTER
+CÉLÉBRER, CHANTER NOTRE ROI ! BIS
 2.
 Venez le célébrer ; sa majesté, venez l’exalter
 Le Fils de Dieu sur la Croix livra l’esprit !
@@ -845,7 +3969,9 @@ R.
 QU’EXULTE TOUT L’UNIVERS,
 QUE SOIT CHANTÉE EN TOUS LIEUX
 LA PUISSANCE DE DIEU.
-DANS UNE MÊME ALLÉGRESSE TERRE ET CIEUX DANSENT DE JOIE, CHANTENT ALLÉLUIA.
+DANS UNE MÊME ALLÉGRESSE 
+TERRE ET CIEUX DANSENT DE JOIE,
+CHANTENT ALLÉLUIA.
 1.
 Par amour des pécheurs, la lumière est venue, 
 Elle a changé les cœurs, de tous ceux qui l’ont reconnue.
@@ -917,13 +4043,13 @@ Sur ton chemin d'éternité.
 
 158 - JE SUIS NÉ POUR TE LOUER
 # type : louange, intercession+
-R.
+
 Je suis né pour Te louer
 Je suis né pour glorifier Ton nom en toutes circonstances,
 Apprendre à Te dire merci.
- Je suis né pour T’aimer
- Je suis né pour T’adorer mon Dieu, obéir à Ta voix,
- Je suis fait pour Toi.
+Je suis né pour T’aimer
+Je suis né pour T’adorer mon Dieu, obéir à Ta voix,
+Je suis fait pour Toi.
 
 159 - JE LOUERAI L’ÉTERNEL
 # type : louange
@@ -999,7 +4125,7 @@ n’est que Don des cieux !
 
 152 - JE VOUS SALUE MARIE (Fr. J.-Baptiste de la Ste Famille)
 # type : marie
-R.
+
 Je vous salue Marie, comblée de grâce
 le Seigneur est avec vous.
 Vous êtes bénie entre toutes les femmes
@@ -1009,7 +4135,7 @@ pauvres pécheurs, maintenant et à l'heure de notre mort.
 Amen, Amen, Alléluia (bis)
 
 153 - AVE MARIA
-# type : marie 
+# type : marie	
 R.
 AVE MARIA GRATIA PLENA, 
 DOMINUS TECUM BENEDICTA TU.
@@ -1032,7 +4158,7 @@ R.
 CHANTEZ AVEC MOI LE SEIGNEUR,
 CÉLÉBREZ-LE SANS FIN.
 POUR MOI IL A FAIT DES MERVEILLES
-ET POUR VOUS IL FERA DE MÊME
+ET POUR VOUS IL FERA DE MÊME.
 1.
 Il a posé les yeux sur moi, malgré ma petitesse.
 Il m'a comblée de ses bienfaits, en lui mon cœur exulte.
@@ -1079,7 +4205,7 @@ Je veux voir Dieu.
 le passage des Saints,
 Là où les Saints passent,
 Dieu passe avec eux
-Soyons saints comme Dieu (bis)
+Soyons saints comme Dieu. (bis)
 2. Illuminé par l’Esprit,
 baptisé dans le feu
 Tu es devenu lumière de Dieu.
@@ -1131,9 +4257,9 @@ Il te recrée par son amour.
 # type : esprit-saint
 R.
 Ô SOUFFLE, SOUFFLE DE DIEU,
-NOUS T’ACCUEILLONS, VIENS PURIFIER NOS CŒURS
-Ô, SOUFFLE, SOUFFLE DE DIEU,
-NOUS T’ACCUEILLONS, VIENS PURIFIER NOS CŒURS
+NOUS T’ACCUEILLONS, 
+VIENS PURIFIER NOS CŒURS. BIS
+
 1.
 Rends-nous souples devant toi, à l’écoute de ta voix,
 Rends-nous sensibles à ton cœur.
@@ -1168,20 +4294,20 @@ R.
 À TOI HONNEUR ET FORCE,
 À TOI LA MAJESTÉ, Ô DIEU, À JAMAIS !
 1.
-Toi l'Agneau immolé,  Toi l'Agneau immolé,
-Tu t'es livré pour nous ;  Tu t'es livré pour nous ;
-Tu as versé ton sang  Tu as versé ton sang
-     pour nous sauver.
+Toi l'Agneau immolé, 	Toi l'Agneau immolé,
+Tu t'es livré pour nous ; 	Tu t'es livré pour nous ;
+Tu as versé ton sang 	Tu as versé ton sang
+					pour nous sauver.
 2.
-Et Dieu t'a exalté :   Et Dieu t'a exalté :
-Il t'a donné le nom   Il t'a donné le nom
-au-dessus de tout nom,  au-dessus de tout nom,
-     Jésus vainqueur.
+Et Dieu t'a exalté : 		Et Dieu t'a exalté :
+Il t'a donné le nom 		Il t'a donné le nom
+au-dessus de tout nom, 	au-dessus de tout nom,
+					Jésus vainqueur.
 3.
-Sur la terre et aux cieux,  Sur la terre et aux cieux,
-tout genou fléchira ;   tout genou fléchira ;
-toute langue dira :   toute langue dira :
-     Tu es Seigneur.
+Sur la terre et aux cieux, 	Sur la terre et aux cieux,
+tout genou fléchira ; 		tout genou fléchira ;
+toute langue dira : 		toute langue dira :
+					Tu es Seigneur.
 
 24 - À L’AGNEAU DE DIEU
 # type : louange, intercession
@@ -1214,7 +4340,7 @@ LE SEIGNEUR EST MON BERGER,
 JE NE MANQUE DE RIEN
 SUR DES PRÉS D’HERBE FRAÎCHE 
 IL ME FAIT REPOSER
-ALLÉLUIA, ALLÉLUIA, ALLÉLUIA, A ! (bis)
+ALLÉLUIA, ALLÉLUIA, ALLÉLUIA, A (bis) !
 1.
 Il me donne la Paix, Il me fait revivre,
 Lui seul est mon chemin, de justice et de joie
@@ -1226,7 +4352,7 @@ Face à mes ennemis, Il refait mes forces,
 Sans fin j’habiterai la maison du Seigneur.
 
 146 - TANTUM ERGO
-R.
+
 Tantum.ergo sacramentum veneremur cernui et antiqum documentum novo cedat ritui prestet fides suplementum sensuum defectui.
 
 Genitori genitoque laus et jubilatio salus honor virtus quoque sit et benedictio procedenti ab utroque compar sit laudatio
@@ -1243,20 +4369,20 @@ Genitori genitoque laus et jubilatio salus honor virtus quoque sit et benedictio
 148 – ADORONS
 # type : intercession+
 1.
-Adorons, adorons l’Agneau immolé pour nos péchés. (bis)
+Adorons, adorons l’Agneau immolé pour nos péchés (bis).
 R.
 LUI EST SEUL EST DIGNE DE RECEVOIR NOS LOUANGES
-LUI EST SEUL EST DIGNE D’ÊTRE ADORE  (bis)
+LUI EST SEUL EST DIGNE D’ÊTRE ADORÉ BIS.
 2.
-Adorons, adorons Jésus crucifié pour nos péchés. (bis)
+Adorons, adorons Jésus crucifié pour nos péchés (bis).
 3.
-Adorons le ressuscité fils de Dieu, fils bien-aimé. (bis)
+Adorons le ressuscité fils de Dieu, fils bien-aimé (bis).
 
 149 - PÈRE, UNIS NOUS TOUS
 # type : intercession+
-R.
-PÈRE UNIS NOUS TOUS. PÈRE UNIS NOUS TOUS.
-QUE LE MONDE CROIE A TON AMOUR ! 
+
+PÈRE UNIS NOUS TOUS (bis)
+QUE LE MONDE CROIE À TON AMOUR ! 
 PÈRE UNIS NOUS TOUS. 
 
 150 - COURONNÉE D’ÉTOILES
@@ -1289,7 +4415,7 @@ Tu nous accueilleras un jour auprès de Dieu.
 
 151 - JE SUIS TOUT À TOI
 # type : marie
-R.
+
 JE SUIS TOUT À TOI, MARIE VIERGE SAINTE.
 TOUT CE QUE J’AI EST TIEN, MARIE VIERGE PURE.
 SOIS MON GUIDE EN TOUT MARIE, NOTRE MÈRE.
@@ -1319,19 +4445,19 @@ J’espère le Seigneur !
 
 142 - MON ÂME A SOIF DE TOI
 # type : intercession+
-R.
+
 Mon âme a soif de toi, Dieu vivant, Très-Haut.
 Prends-moi, pacifie-moi, Seigneur mon roi.
 Tu es toute ma joie, ô viens en moi !
 
 143 – PROSTERNEZ-VOUS
 # type : intercession+
-R.
+
 PROSTERNEZ-VOUS DEVANT VOTRE ROI,
 ACCLAMEZ-LE DE TOUT VOTRE CŒUR,
 FAITES MONTER VERS SA MAJESTÉ
 DES CHANTS DE GLOIRE POUR VOTRE ROI DES ROIS !
-1.
+
 Déposez-lui, toute votre vie
 Accueillez-le, il est le Sauveur !
 Reconnaissez son immensité !
@@ -1385,18 +4511,18 @@ Qui a triomphé du combat
 Vivre en Toi, Seigneur, voilà mon bonheur,
 Je veux m’approcher du séjour de ta gloire,
 Élever les mains, croire en ton amour,
-Demeurer dans ta présence au long des jours
+Demeurer dans ta présence au long des jours. BIS
 2.
 Vivre en Toi, Seigneur, voilà mon bonheur,
 Je veux célébrer la joie de ta présence,
 Apprendre à aimer, apprendre à servir,
-Demeurer dans la confiance et dans l’amour
+Demeurer dans la confiance et dans l’amour. BIS
 3.
 Vivre en toi, Seigneur, voilà mon bonheur
 Je veux te laisser me saisir en silence
 Brûler de désir, t’attendre en secret
-Demeurer fidèle à l’ombre de ta paix,
-  Vivre en toi, Seigneur... !
+Demeurer fidèle à l’ombre de ta paix. BIS
+		Vivre en toi, Seigneur !
 
 
 
@@ -1404,7 +4530,7 @@ Demeurer fidèle à l’ombre de ta paix,
 # type : louange
 R.
 JE VEUX TE LOUER, Ô MON DIEU,
-A TON NOM ÉLEVER LES MAINS.
+À TON NOM ÉLEVER LES MAINS.
 JE VEUX TE BÉNIR, T’ADORER, TE CHANTER
 Ô MON DIEU, ÉTERNEL EST TON AMOUR !
 1.
@@ -1427,7 +4553,7 @@ O mon Dieu éternel est ton amour !
 # type : louange
 R.
 SOYONS TOUJOURS JOYEUX ET PRIONS SANS CESSE,
-EN TOUTE CHOSE RENDONS GLOIRE A DIEU !
+EN TOUTE CHOSE RENDONS GLOIRE À DIEU !
 C'EST SA VOLONTÉ SUR NOUS DANS LE CHRIST.
 GLOIRE À TOI, Ô SEIGNEUR NOTRE DIEU !
 1.
@@ -1461,9 +4587,8 @@ Je te bénis, ô Éternel,
 Toi mon conseiller, Tu es avec moi.
 R.
 GARDE-MOI MON DIEU, MA FORCE EST EN TOI,
-GARDE-MOI MON DIEU, MON BONHEUR C'EST TOI.
-GARDE-MOI MON DIEU, MA FORCE EST EN TOI,
-GARDE-MOI MON DIEU, MON BONHEUR C'EST TOI.
+GARDE-MOI MON DIEU, MON BONHEUR C'EST TOI. (BIS)
+
 2.
 Mon cœur exulte, mon âme est en fête,
 ma chair repose, j'ai confiance en Toi.
@@ -1495,7 +4620,7 @@ demeurez près de moi, alors vous vivrez !
 
 139 - PRENEZ ET MANGEZ
 # type : célébration
-R.
+
 PRENEZ ET MANGEZ, CECI EST MON CORPS,
 PRENEZ ET BUVEZ, VOICI MON SANG !
 OUVREZ VOS CŒURS !
@@ -1519,7 +4644,7 @@ afin que le Père, soit glorifié en vous !
 
 140 - DANS TA PRÉSENCE
 # type : intercession+
-R.
+
 Dans ta présence, Seigneur, je m’attends à toi,
 j’ai soif de ta présence, ô Jésus.
 Tu marches devant moi, me montrant le chemin ; prends-moi par la main et conduis-moi vers toi.
@@ -1552,9 +4677,9 @@ des fleuves d’eau vive.
 # type : intercession+
 R.
 JE TE CHERCHE, DIEU, TU ES MON DIEU,
- ET JE T’APPELLE.
+ET JE T’APPELLE.
 JE TE CHERCHE, DIEU, ENTENDS LA VOIX
- DE MA PRIÈRE
+DE MA PRIÈRE
 1.
 Comme une biche vient au torrent,
 Je te cherche et te désire ;
@@ -1623,10 +4748,8 @@ LE LOUER TANT QUE JE DURE ;
 DE TOUT MON CŒUR, JE CHANTE MON SEIGNEUR,
 À TOI MES HYMNES, MON DIEU !
 1.
-Me voici venu, Seigneur,
-Pour faire ta volonté.
-Je te donne tout mon cœur, 
-Mon Sauveur !
+Me voici venu, Seigneur, pour faire ta volonté.
+Je te donne tout mon cœur, mon Sauveur !
 2.
 Je célébrerai ton nom, c’est toi qui m’as racheté,
 Et mes lèvres annonceront ta bonté.
@@ -1736,8 +4859,8 @@ afin que nous l’aimions jusqu’au bout.
 130 - LAVE-MOI, SEIGNEUR MON DIEU
 # type : intercession+
 R.
-LAVE-MOI, SEIGNEUR MON DIEU,   }
-PURIFIE-MOI, PRENDS PITIÉ DE MOI  } bis
+LAVE-MOI, SEIGNEUR MON DIEU,
+PURIFIE-MOI, PRENDS PITIÉ DE MOI. BIS
 1.
 Pitié pour moi en ta bonté, 
 en ta tendresse, efface mon péché ;
@@ -1770,7 +4893,7 @@ R.
 SOURCE DE VIE, DE PAIX, D'AMOUR,
 VERS TOI JE CRIE, LA NUIT, LE JOUR,
 GUIDE MON ÂME, SOIS MON SOUTIEN,
-REMPLIS MA VIE, TOI MON SEUL BIEN;
+REMPLIS MA VIE, TOI MON SEUL BIEN.
 2.
 Du mal perfide, ô garde moi,
 Sois seul mon guide, chef de ma foi,
@@ -1822,7 +4945,7 @@ R.
 SEIGNEUR, TU ES MON REFUGE, 
 MON REPOS, MA DOUCEUR ;
 QUAND GRONDE EN MOI LA TOURMENTE, 
-TU APAISES MON CŒUR
+TU APAISES MON CŒUR.
 2.
 Seigneur, tu gardes mes jours et mes nuits, 
 Sans me quitter, dans la Paix
@@ -1969,9 +5092,9 @@ Dès l’aube, de ta joie tu m’as comblé.
 44 - IL A CHANGÉ NOS VIES
 # type : louange
 R.
-IL A CHANGÉ NOS VIES,    }
-IL A CHANGÉ NOS CŒURS,    }
-IL EST VIVANT ! ALLÉLUIA     } bis
+IL A CHANGÉ NOS VIES,
+IL A CHANGÉ NOS CŒURS,
+IL EST VIVANT ! ALLÉLUIA ! BIS
 1.
 Jésus a donné sa lumière,
 Ne restons pas sous le boisseau :
@@ -2056,12 +5179,12 @@ R.
 TU ENTENDS MON CRI, TENDRE PÈRE,
 TOI L’INFINIE MISÉRICORDE.
 JE M’APPUIE SUR TOI, JE T’ESPÈRE,
-PARLE SEIGNEUR, MON CŒUR EST PRÊT
+PARLE SEIGNEUR, MON CŒUR EST PRÊT.
 1.
 Comme l’or au creuset, purifie mon cœur,
 Ne m’abandonne pas.
 Par l’eau et par le feu renouvelle-moi,
-Revêts-moi de ta joie
+Revêts-moi de ta joie.
 2.
 Sans crainte devant toi, je remets ma vie,
 Ne m’abandonne pas.
@@ -2125,7 +5248,7 @@ TU ES LÀ PRÉSENT, LIVRÉ POUR NOUS
 TOI LE TOUT PETIT, LE SERVITEUR.
 TOI, LE TOUT PUISSANT, 
 HUMBLEMENT TU T’ABAISSES ;
-TU FAIS TA DEMEURE EN NOUS SEIGNEUR
+TU FAIS TA DEMEURE EN NOUS SEIGNEUR.
 1.
 Le pain que nous mangeons, le vin que nous buvons,
 c’est ton corps et ton sang, 
@@ -2194,15 +5317,13 @@ Bienheureuse Trinité, notre joie et notre vie !
 
 52 - TU ES LE ROI
 # type : intercession+
-R.
 Tu es le Roi de gloire, le Seigneur des seigneurs,
 Le soleil de la justice, sous tes ailes est la guérison.
 
 
 
-113 - JE LAISSE A TES PIEDS
+113 - JE LAISSE À TES PIEDS
 # type : intercession+
-R.
 Je laisse à tes pieds mes fardeaux
 Devant toi , je dépose tous mes soucis
 Et chaque fois que je ne sais pas me diriger,
@@ -2213,9 +5334,9 @@ J’abandonne à tes pieds mes fardeaux.
 R.
 Que ferai-je pour l’Éternel en retour de toutes ses bontés ?
 Que ferai-je pour l’Éternel en retour de toutes ses bontés ?
- J’élèverai la coupe du salut
- J’invoquerai le Nom d’Adonaï
- Je bénirai le Nom du Seigneur !
+	J’élèverai la coupe du salut
+	J’invoquerai le Nom d’Adonaï
+	Je bénirai le Nom du Seigneur !
 
 
 117 - JE VIENS VERS TOI, JÉSUS
@@ -2226,8 +5347,7 @@ Entre les mains agiles du potier,
 Ainsi mon âme se laisse faire, 
 Ainsi mon cœur te cherche toi mon Dieu
 R.
-JE VIENS VERS TOI, JÉSUS    }
-JE VIENS VERS TOI, JÉSUS   } bis
+JE VIENS VERS TOI, JÉSUS (x4)
 2.
 Comme une terre qui est aride, 
 Ainsi mon cœur désire ton eau vive
@@ -2242,7 +5362,8 @@ Une lumière allumée sur mes pas
 118 - JÉSUS NOUS T’ADORONS
 # type : intercession+
 R.
-Jésus, Jésus, Jésus  Nous t’adorons, nous t’aimons
+Jésus, Jésus, Jésus		
+Nous t’adorons, nous t’aimons
 
 
 
@@ -2254,7 +5375,6 @@ JE T’AI RACHETÉ ;
 NE CRAINS PAS, NE CRAINS PAS,
 JE SUIS AVEC TOI.
 1.
-
 Mon enfant bien-aimé, tu es avec moi :
 Je suis ton Seigneur Dieu, Créateur et Sauveur.
 2.
@@ -2276,13 +5396,13 @@ Un peuple nombreux s’assemble
 Pour louer Dieu et proclamer ensemble : oh, oh, oh
 Qu’Il est le Créateur, Qu’Il fait de nous Sa demeure
 Pour être sel et lumière, 
-Dieu nous appelle à servir sur la terre
+Dieu nous appelle à servir sur la terre.
 R.
 NOUS ANNONÇONS LE ROI, ALLÉLUIA
-NOUS PROCLAMONS SON NOM SUR LE PAYS
+NOUS PROCLAMONS SON NOM SUR CE PAYS
 NOUS CÉLÉBRONS SA GLOIRE,
 NOUS CHANTONS SA VICTOIRE
-1) ET NOUS VIVONS LES DONS DE SON ESPRIT (bis)
+1) ET NOUS VIVONS LES DONS DE SON ESPRIT. BIS
 2) NOUS ÉLEVONS LE NOM DE JÉSUS-CHRIST.
 2.
 Le roi rassemble son armée,
@@ -2303,7 +5423,7 @@ dans la force de l’Esprit !
 Car nos yeux ont vu et reconnu le Sauveur ressuscité,
 Le Saint d’Israël, né de Marie, Fils de Dieu qui donne vie !
 R.
-CRIEZ DE JOIE, CHRIST EST RESSUSCITE !
+CRIEZ DE JOIE, CHRIST EST RESSUSCITÉ !
 IL NOUS ENVOIE ANNONCER LA VÉRITÉ !
 CRIEZ DE JOIE, BRÛLEZ DE SON AMOUR
 CAR IL EST LÀ, AVEC NOUS POUR TOUJOURS !
@@ -2328,7 +5448,7 @@ Gloire à notre Dieu, Roi tout-puissant,
 
 55 - GRANDES ET MERVEILLEUSES
 # type : louange
-1.
+
 Grandes et merveilleuses sont toutes tes œuvres, 
 ô Seigneur, notre Dieu tout-puissant,
 Juste et véritable dans toute ta volonté, toi le Roi éternel.
@@ -2349,10 +5469,10 @@ Alléluia, Alléluia, Alléluia, Amen ! Lai, Lai, Lai …
 106 - METS TA JOIE DANS LE SEIGNEUR
 # type : louange
 R.
-METS TA JOIE DANS LE SEIGNEUR,   }
-COMPTE SUR LUI ET TU VERRAS   } bis
-IL AGIRA ET T’ACCORDERA    }
-PLUS QUE LES DÉSIRS DE TON CŒUR }
+METS TA JOIE DANS LE SEIGNEUR,
+COMPTE SUR LUI ET TU VERRAS
+IL AGIRA ET T’ACCORDERA
+PLUS QUE LES DÉSIRS DE TON CŒUR. BIS
 1.
 Remets ta vie dans les mains du Seigneur,
 Compte sur lui : il agira
@@ -2367,14 +5487,14 @@ Et ton chemin lui plaît.
 Dieu connaît les jours de tous les hommes droits,
 Il leur promet la vraie vie,
 Grâce à son amour, ils observent sa voie,
-Ils mettent leur espoir en lui ;
+Ils mettent leur espoir en lui.
 
 
 108 - AIMER, C’EST TOUT DONNER
 # type : intercession+
 R.
 AIMER, C’EST TOUT DONNER, (ter)
-ET SE DONNER SOI-MÊME
+ET SE DONNER SOI-MÊME.
 1.
 Quand je parlerais, 
 Les langues des hommes et des anges
@@ -2396,7 +5516,7 @@ Cela ne me sert à rien…
 R.
 SEIGNEUR, MON SECOURS, 
 EN TOI SEUL MON BONHEUR,
-MA VIE REPOSE ENTRE TES MAINS (bis)
+MA VIE REPOSE ENTRE TES MAINS. BIS
 1.
 J’élève les yeux au loin, d’où me vient le secours.
 Le secours me vient de Dieu, de Dieu seul.
@@ -2470,14 +5590,13 @@ REGINA CAELI LAETARE, ALLELUIA, ALLELUIA,
 REGINA CAELI LAETARE, ALLELUIA.
 1.
 Car tu as mérité de porter le Seigneur, Alléluia,
- Exulte donc de joie, ô Marie, Alléluia !
+Exulte donc de joie, ô Marie, Alléluia !
 2.
 Sois toujours dans la joie, ô Marie, Alléluia, 
- Car c’est vrai, le Seigneur est ressuscité, Alléluia !
+Car c’est vrai, le Seigneur est ressuscité, Alléluia !
 
 63 - IL EST EXALTÉ
 # type : intercession+
-R.
 Il est exalté, le Roi est au-dessus des cieux,
 Je veux Le louer.
 Il est élevé, à jamais exalté,
@@ -2493,7 +5612,7 @@ BÉNISSEZ DIEU, VOUS SERVITEURS DE DIEU,
 VOUS TOUS QUI DEMEUREZ DANS LA MAISON DE DIEU
 LEVEZ LES MAINS VERS LE DIEU TROIS FOIS SAINT,
 PROCLAMEZ QU’IL EST GRAND,
-QUE SON NOM EST PUISSANT
+QUE SON NOM EST PUISSANT.
 1.
 Oui je le sais, notre Seigneur est grand,
 Tout ce qu’il veut, sa main peut l’accomplir,
@@ -2508,7 +5627,7 @@ Béni soit Dieu par toutes les nations !
 66 - JÉSUS EST NOTRE JOIE
 # type : louange
 R.
-JÉSUS, JÉSUS ALLÉLUIA (ter)
+JÉSUS, JÉSUS ALLÉLUIA (ter) !
 JÉSUS EST NOTRE JOIE
 R.
 Venez chanter Alléluia
@@ -2518,7 +5637,7 @@ Jésus est notre joie !
 
 67 - CHANTEZ GLOIRE
 # type : louange
-R.
+
 Chantez « Gloire ! », Chantez « Gloire ! »
 Chantez « Gloire ! », Hosanna au Roi des rois !
 
@@ -2527,7 +5646,7 @@ Chantez « Gloire ! », Hosanna au Roi des rois !
 
 Ce qu’il y a de fou dans le monde, voilà ce que Dieu a choisi ;
 Ce qu’il y a de faible dans le monde, voilà ce que Dieu a choisi.
-R.
+
 VIENS, ESPRIT DE FEU, VIENS, ESPRIT D’AMOUR,
 VIENS, ESPRIT DE DIEU, VIENS, NOUS T’ATTENDONS !
 
@@ -2538,7 +5657,7 @@ Esprit de sainteté, viens combler nos cœurs,
 Tout au fond de nos vies, réveille ta puissance,
 Esprit de sainteté, viens combler nos cœurs,
 Chaque jour, fais de nous des témoins du Seigneur.
-R.
+
 TU ES LA LUMIÈRE QUI VIENT NOUS ÉCLAIRER,
 LE LIBÉRATEUR QUI VIENT NOUS DÉLIVRER,
 LE CONSOLATEUR, ESPRIT DE VÉRITÉ, 
@@ -2546,7 +5665,7 @@ EN TOI L’ESPÉRANCE ET LA FIDÉLITÉ.
 
 70 – MANIFESTE-TOI
 # type : intercession+
-R.
+
 Manifeste-toi, donne-nous de l’assurance ;
 révèle-toi, remplis-nous de ta présence.
 Étends ta main,
@@ -2582,7 +5701,7 @@ JE VOUDRAIS MARCHER
 AUX CÔTÉS DE MON SEIGNEUR
 SUR LE CHEMIN QUI MÈNE À DIEU.
 RIEN NE POURRA M’EMPÊCHER, 
-J’IRAI JUSQU’AU BOUT
+J’IRAI JUSQU’AU BOUT.
 1.
 C’est le chemin de la joie, 
 C’est le chemin du Seigneur ;
@@ -2651,10 +5770,8 @@ VIENS ESPRIT DE LUMIÈRE,
 VIENS, ESPRIT DE FEU,
 VIENS NOUS EMBRASER
 1.
-Viens, Esprit du Père, 
-Sois la lumière,
-Fais jaillir des cieux
-Ta splendeur de gloire.
+Viens, Esprit du Père, Sois la lumière,
+Fais jaillir des cieux Ta splendeur de gloire.
 2.
 Viens, onction céleste, source d’eau vive,
 Affermis nos cœurs et guéris nos corps.
@@ -2669,7 +5786,7 @@ Feu qui illumine, souffle de Vie,
 Par toi resplendit la croix du Seigneur.
 6.
 Témoin véridique, tu nous entraînes
-A proclamer : Christ est ressuscité !
+À proclamer : Christ est ressuscité !
 
 
 
@@ -2714,8 +5831,8 @@ Source d’où jaillit la vie.
 Laisse se creuser mon désir en toi,
 Pour renaître de l’Esprit,
 Si le grain tombé en terre ne meurt,
-Il ne peut porter du fruit,
-laisse mon cœur se consumer en Toi
+Il ne peut porter du fruit.
+Laisse mon cœur se consumer en Toi
 De l’Amour qui donne vie (bis).
 3.
 Laisse-moi façonner ton cœur à mon gré,
@@ -2764,7 +5881,7 @@ Dans les cieux vous serez comblés ! (bis)
 95 - IL N’Y A PERSONNE QUI SOIT COMME JÉSUS
 # type : louange
 R.
-IL N’Y A PERSONNE QUI SOIT COMME JÉSUS, (ter)
+IL N’Y A PERSONNE QUI SOIT COMME JÉSUS (ter),
 IL N’Y A VRAIMENT PERSONNE COMME LUI !
 1.
 J’ai marché, marché : personne, personne !
@@ -2798,7 +5915,7 @@ Viens, nous t’attendons.
 
 89 - VIENS ESPRIT-SAINT DESCENDS SUR NOUS
 # type : esprit-saint
-R.
+
 Viens, Esprit-Saint descends sur nous,
 Comble-nous de ton amour,
 Que rayonne ta bonté !
@@ -2811,7 +5928,7 @@ Viens briller dans nos nuits
 Toi le consolateur,
 Viens Esprit de vérité,
 Viens purifier nos cœurs
-Viens nous renouveler
+Viens nous renouveler.
 
 90 - JÉSUS, TOI QUI AS PROMIS
 # type : esprit-saint, intercession+
@@ -2849,21 +5966,21 @@ Viens, Saint Esprit, viens par ton vent,
 Remplis le temple que je suis.
 Oh, viens, Saint Esprit, Souffle Puissant,
 Brise d’amour, courant de vie.
-Souffle sur moi, souffle sur moi, souffle (bis)
+Souffle sur moi, souffle sur moi, souffle (bis).
 Souffle sur moi, souffle, Vent de Dieu.
 2.
 Viens, Saint Esprit, viens par ta pluie
 Mouiller la terre que je suis.
 Oh, viens, Saint Esprit, flot impétueux,
 Source d’Amour, fleuve de Vie.
-Coule sur moi, coule sur moi, coule (bis)
+Coule sur moi, coule sur moi, coule (bis).
 Coule sur moi, coule, pluie de Dieu.
 3.
 Viens, Saint-Esprit, viens par ton Feu
 Brûler l’offrande que je suis.
 Oh, viens, Saint Esprit, Feu Dévorant,
 Brasier d’Amour, Flamme de Vie.
-Embrase-moi, embrase-moi, brûle (bis)
+Embrase-moi, embrase-moi, brûle (bis).
 Embrase-moi, brûle, Feu de Dieu
 
 79 - SEIGNEUR PAR LA CLARTÉ
@@ -2878,7 +5995,7 @@ R.
 BRILLE, Ô JÉSUS, COUVRE CE PAYS DE TA GLOIRE.
 BRÛLE, ESPRIT-SAINT, EMBRASE NOS CŒURS,
 COULE EN TORRENT,
- DE TA GRACE, REMPLIS LES NATIONS
+DE TA GRACE, REMPLIS LES NATIONS
 PARLE, SEIGNEUR, QUE TA LUMIÈRE SOIT !
 2.
 Seigneur tu me conduis dans ta présence,
@@ -2896,16 +6013,16 @@ Brille sur moi, brille sur moi,
 80 - VOUS RECEVREZ UNE FORCE
 # type : esprit-saint
 1.
-Vous recevrez une force celle de l’Esprit-Saint
-Vous deviendrez des Apôtres 
+Vous recevrez une force celle de l’Esprit-Saint !
+Vous deviendrez des Apôtres.
 En son nom élevez les mains (bis)
 R.
 VIENS SAINT-ESPRIT EMBRASER LES NATIONS
-VIENS SAINT-ESPRIT SUR CETT’ GÉNÉRATION (BIS)
+VIENS SAINT-ESPRIT SUR CET’ GÉNÉRATION BIS !
 2.
-Vous partirez sur les routes proclamer : Jésus est la Vie
-Et vous n’aurez aucun doute 
-Embrasés par le Saint Esprit (bis)
+Vous partirez sur les routes proclamer : Jésus est la Vie !
+Et vous n’aurez aucun doute ;
+Embrasés par le Saint Esprit (bis).
 
 81 - VIENS DANS NOS CŒURS
 # type : esprit-saint
@@ -2930,24 +6047,23 @@ Et notre froideur peut brûler,
 Ce monde clos va s’ouvrir,
 Un monde nouveau va venir !
 5.
-Alléluia, Amen ! Alléluia, Amen !
-Alléluia, Amen ! Alléluia, Amen !
+Alléluia, Amen ! (x4)
 
 82 - QUE MON ESPRIT SOIT SUR VOUS
 # type : esprit-saint
 1.
 Que mon Esprit soit sur vous, 
- que votre joie soit parfaite (bis)
+que votre joie soit parfaite (bis).
 Demeurez en mon amour, gardez mon commandement.
 Celui qui demeure en Moi portera beaucoup de fruits.
 2.
 Ce qu'au Père vous demandez 
- en mon Nom, Il vous le donne (bis)
+en mon Nom, Il vous le donne (bis).
 Demandez-vous recevrez, votre joie sera parfaite.
 Par l'Esprit de vérité, allez et portez du fruit;
 3.
 C'est Moi qui vous ai choisis,
- de moi vous serez témoins (bis)
+de moi vous serez témoins (bis).
 Ma parole est vérité, je suis le chemin de Vie.
 Comme je vous ai aimés, aimez-vous les uns les autres.
 
@@ -2978,8 +6094,8 @@ Vent qui fait revivre, Esprit de Dieu,
 Souffle de tempête, Esprit de Dieu,
 Ouvre nos fenêtres, Esprit de Dieu !
 R.
-ESPRIT DE VÉRITÉ, BRISE DU SEIGNEUR,  }
-ESPRIT DE LIBERTÉ, PASSE DANS NOS CŒURS !  } bis
+ESPRIT DE VÉRITÉ, BRISE DU SEIGNEUR,
+ESPRIT DE LIBERTÉ, PASSE DANS NOS CŒURS ! BIS
 2.
 Source de Sagesse, Esprit de Dieu,
 Puits de la tendresse. Esprit de Dieu,

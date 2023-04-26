@@ -115,8 +115,12 @@ function parse_song(text: string): Song {
 
 export function parse_file(file: string): Song[] {
   const songs = file
+    // Remove non-breaking spaces, tabulations, etc.
+    .replace(/ /g, ' ')
+    // Normalize quotes, drop tabulations
     .replace(/[’´\t]/g, (c) => (c === '\t' ? '' : "'"))
-    .replace(/\s+([!?;:])/g, ' $1')
+    // Add non-breaking spaces
+    .replace(/\s*([!?;:])/g, ' $1')
     .split(/[0-9]+\s*[-—–]/)
     .map((it) => it.trim())
     .filter((it) => !!it)

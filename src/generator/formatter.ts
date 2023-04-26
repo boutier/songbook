@@ -64,6 +64,16 @@ export const DEFAULT_STYLES: FormatDefinition = {
   chunkGap: 10
 }
 
+export type SeparatorStyle = {
+  lineMargin: number
+  lineThickness: number
+}
+
+export const DEFAULT_SEPARATOR_STYLE = {
+  lineMargin: 3,
+  lineThickness: 1
+}
+
 export type PageFormat = {
   unit: 'mm' | 'pts'
 
@@ -124,7 +134,7 @@ type FormattedText = {
   style: Style
 }
 
-type FormattedSong = {
+export type FormattedSong = {
   height: number
   elements: FormattedText[]
 }
@@ -267,6 +277,7 @@ async function toFormat(pdfDoc: PDFDocument, formatDefinition: FormatDefinition)
 export async function generate(
   pageFormat: PageFormat,
   formatDefinition: FormatDefinition,
+  separatorStyle: SeparatorStyle,
   parsed_songs: Song[]
 ): Promise<string> {
   pageFormat = {
@@ -280,8 +291,7 @@ export async function generate(
   const format: Format = await toFormat(pdfDoc, formatDefinition)
   const formatted_songs = parsed_songs.map((it) => format_song(pageFormat, format, it))
 
-  const lineMargin = 3
-  const lineThickness = 1
+  const { lineMargin, lineThickness } = separatorStyle
   const separator_height = 2 * lineMargin + lineThickness
 
   // Do some bin-packing (songs may be reordered)
@@ -289,7 +299,7 @@ export async function generate(
   const bins = bin_packing(
     formatted_songs.map((it) => ({ size: it.height + separator_height, song: it })),
     pageFormat.displayHeight + separator_height,
-    2,
+    5,
     errors
   )
 

@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { PageSizes } from 'pdf-lib'
 import VueMultiselect from 'vue-multiselect'
+import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
 </script>
 
 <template>
   <div class="m-3 d-flex flex-column">
     <div>Format de document (unités en millimètres)</div>
     <div class="d-flex justify-content-start">
-      <div class="fw-bold">Page</div>
+      <div class="fw-bold my-auto">Page</div>
       <label class="form-label mx-3 my-auto">Largeur</label>
       <input v-model="pageFormat.pageWidth" class="form-control size-input" type="number" />
       <div class="form-label mx-3 my-auto">Hauteur</div>
@@ -15,7 +16,7 @@ import VueMultiselect from 'vue-multiselect'
 
       <div class="form-label mx-3 my-auto">Prédéfini :</div>
       <VueMultiselect
-        class="ml-3"
+        class="ms-3"
         style="width: 30em"
         v-model="pageSize"
         @update:model-value="selectPageSizes"
@@ -25,7 +26,17 @@ import VueMultiselect from 'vue-multiselect'
         placeholder="Taille de page"
         label="0"
         track-by="0"
-      />
+      >
+        <!-- <template v-slot:selection="{ value }">
+          {{ value }}
+        </template> -->
+      </VueMultiselect>
+      <div class="my-auto ms-2">
+        <label>
+          <input type="checkbox" v-bind="landskape" @click="switchLandskape" value="newsletter" />
+          Paysage
+        </label>
+      </div>
     </div>
 
     <StyleInput :title="'default'" :style="stylesheet.default" />
@@ -34,8 +45,16 @@ import VueMultiselect from 'vue-multiselect'
     <StyleInput :title="'verse'" :style="stylesheet.verse" />
     <StyleInput :title="'coda'" :style="stylesheet.coda" />
 
+    <div class="d-flex justify-content-start">
+      <label class="form-label me-3 my-auto">Marge lors d'un retour à la ligne</label>
+      <input v-model="pageFormat.wrapAlineaWidth" class="form-control size-input" type="number" />
+    </div>
+
+    <SeparatorStyleInput :style="separatorStyle" />
+
     <textarea v-model="rawsongs"></textarea>
 
+    <button class="btn btn-primary" @click="plop()">SECLI</button>
     <button class="btn btn-primary" @click="gen()">Générer</button>
     <div>Nombre de chants: {{ songs.length }}</div>
     <div v-if="error" class="text-danger">{{ error }}</div>
@@ -47,9 +66,16 @@ import VueMultiselect from 'vue-multiselect'
 
 <script lang="ts">
 import StyleInput from './components/StyleInput.vue'
+import { parse_secli_xml } from './data/secli-parser'
 import { RAW_DATA } from './generator/data-real'
-import type { FormatDefinition } from './generator/formatter'
-import { DEFAULT_STYLES, generate, PageFormat } from './generator/formatter'
+import {
+  DEFAULT_SEPARATOR_STYLE,
+  DEFAULT_STYLES,
+  generate,
+  PageFormat,
+  type FormatDefinition,
+  type SeparatorStyle
+} from './generator/formatter'
 import { parse_file, type Song } from './generator/parser'
 import { mmFromPoints } from './generator/pdf-utils'
 import { fullErrorMessage } from './generator/utils'
@@ -68,16 +94,18 @@ const DEFAULT_PAGE_FORMAT: PageFormat = {
   displayWidth: 0,
   displayHeight: 0,
 
-  wrapAlineaWidth: 0
+  wrapAlineaWidth: 5
 }
 
 export default {
-  components: { VueMultiselect, StyleInput },
+  components: { VueMultiselect, StyleInput, SeparatorStyleInput },
   data(): {
     pageSizes: [string, [number, number]][]
     pageSize: keyof typeof PageSizes | 'custom'
+    landskape: boolean
     pageFormat: PageFormat
     stylesheet: FormatDefinition
+    separatorStyle: SeparatorStyle
     rawsongs: string
     songs: Song[]
     error?: string
@@ -86,8 +114,10 @@ export default {
     return {
       pageSizes: Object.entries(PageSizes),
       pageSize: 'A4' as keyof typeof PageSizes | 'custom',
+      landskape: false,
       pageFormat: PageFormat.convertTo('mm', DEFAULT_PAGE_FORMAT),
       stylesheet: DEFAULT_STYLES,
+      separatorStyle: DEFAULT_SEPARATOR_STYLE,
       rawsongs: RAW_DATA,
       songs: [],
       error: undefined,
@@ -98,6 +128,23 @@ export default {
     selectPageSizes(selection: { 0: string; 1: [number, number] }) {
       this.pageFormat.pageWidth = Math.round(mmFromPoints(selection[1][0]))
       this.pageFormat.pageHeight = Math.round(mmFromPoints(selection[1][1]))
+      if (this.landskape) {
+        const tmp = this.pageFormat.pageWidth
+        this.pageFormat.pageWidth = this.pageFormat.pageHeight
+        this.pageFormat.pageHeight = tmp
+      }
+    },
+    switchLandskape() {
+      const isLandskape = this.pageFormat.pageWidth > this.pageFormat.pageHeight
+      this.landskape = !this.landskape
+      if (this.landskape !== isLandskape) {
+        const tmp = this.pageFormat.pageWidth
+        this.pageFormat.pageWidth = this.pageFormat.pageHeight
+        this.pageFormat.pageHeight = tmp
+      }
+    },
+    plop() {
+      parse_secli_xml()
     },
     async gen() {
       this.songs = parse_file(this.rawsongs)
@@ -105,7 +152,12 @@ export default {
 
       try {
         const pageFormat = PageFormat.convertTo('pts', this.pageFormat)
-        this.pdfDataUri = await generate(pageFormat, this.stylesheet, this.songs)
+        this.pdfDataUri = await generate(
+          pageFormat,
+          this.stylesheet,
+          this.separatorStyle,
+          this.songs
+        )
       } catch (e) {
         this.error = fullErrorMessage(e)
       }
