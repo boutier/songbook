@@ -65,12 +65,14 @@ export const DEFAULT_STYLES: FormatDefinition = {
 }
 
 export type SeparatorStyle = {
-  lineMargin: number
+  lineMarginTop: number
+  lineMarginBottom: number
   lineThickness: number
 }
 
-export const DEFAULT_SEPARATOR_STYLE = {
-  lineMargin: 3,
+export const DEFAULT_SEPARATOR_STYLE: SeparatorStyle = {
+  lineMarginTop: 6,
+  lineMarginBottom: 3,
   lineThickness: 1
 }
 
@@ -195,6 +197,7 @@ function format_song(page: PageFormat, styles: Format, song: Song): FormattedSon
       page.wrapAlineaWidth,
       0
     )
+    y += styles.chunkGap
   } catch (e) {
     throw Error(`cannot format "${song.title}"`, { cause: e })
   }
@@ -247,8 +250,8 @@ function format_song(page: PageFormat, styles: Format, song: Song): FormattedSon
 function toStyle(definition: StyleDefinition, font: PDFFont): Style {
   return {
     font: font,
-    size: 12,
-    case: 'capitalized',
+    size: definition.size,
+    case: definition.case,
     widthOf: (text) => font.widthOfTextAtSize(text, 12),
     height: font.heightAtSize(12)
   }
@@ -278,7 +281,9 @@ export async function generate(
   pageFormat: PageFormat,
   formatDefinition: FormatDefinition,
   separatorStyle: SeparatorStyle,
-  parsed_songs: Song[]
+  parsed_songs: Song[],
+
+  errorsOut: string[]
 ): Promise<string> {
   pageFormat = {
     ...pageFormat,
@@ -291,16 +296,17 @@ export async function generate(
   const format: Format = await toFormat(pdfDoc, formatDefinition)
   const formatted_songs = parsed_songs.map((it) => format_song(pageFormat, format, it))
 
-  const { lineMargin, lineThickness } = separatorStyle
-  const separator_height = 2 * lineMargin + lineThickness
+  const { lineMarginTop, lineMarginBottom, lineThickness } = separatorStyle
+  const separator_height = lineMarginTop + lineMarginBottom + lineThickness
 
   // Do some bin-packing (songs may be reordered)
-  const errors: string[] = []
   const bins = bin_packing(
-    formatted_songs.map((it) => ({ size: it.height + separator_height, song: it })),
+    formatted_songs
+      .map((it) => ({ size: it.height + separator_height, song: it }))
+      .sort((a, b) => b.size - a.size),
     pageFormat.displayHeight + separator_height,
     5,
-    errors
+    errorsOut
   )
 
   // Renumber each songs.
@@ -312,8 +318,6 @@ export async function generate(
     })
   )
 
-  console.log(formatted_songs)
-  console.log(bins)
   for (const bin of bins) {
     const page = pdfDoc.addPage([pageFormat.pageWidth, pageFormat.pageHeight])
     const songs = bin.objs.map((it) => it.song)
@@ -332,18 +336,17 @@ export async function generate(
       if (i !== songs.length - 1) {
         cursorY -= song.height
 
-        cursorY -= lineMargin + lineThickness
+        cursorY -= lineMarginTop + lineThickness / 2
         page.drawLine({
           start: { x: pageFormat.marginLeft, y: cursorY },
           end: { x: pageFormat.marginLeft + pageFormat.displayWidth, y: cursorY },
           thickness: lineThickness,
           opacity: 0.3
         })
-        cursorY -= lineMargin
+        cursorY -= lineMarginBottom + lineThickness / 2
       }
     }
   }
-  console.log('terminated')
 
   const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true })
   return pdfDataUri

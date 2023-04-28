@@ -39,18 +39,18 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
       </div>
     </div>
 
-    <StyleInput :title="'default'" :style="stylesheet.default" />
-    <StyleInput :title="'title'" :style="stylesheet.title" />
-    <StyleInput :title="'refrain'" :style="stylesheet.refrain" />
-    <StyleInput :title="'verse'" :style="stylesheet.verse" />
-    <StyleInput :title="'coda'" :style="stylesheet.coda" />
+    <StyleInput :title="'default'" v-model:style="stylesheet.default" />
+    <StyleInput :title="'title'" v-model:style="stylesheet.title" />
+    <StyleInput :title="'refrain'" v-model:style="stylesheet.refrain" />
+    <StyleInput :title="'verse'" v-model:style="stylesheet.verse" />
+    <StyleInput :title="'coda'" v-model:style="stylesheet.coda" />
 
     <div class="d-flex justify-content-start">
       <label class="form-label me-3 my-auto">Marge lors d'un retour à la ligne</label>
       <input v-model="pageFormat.wrapAlineaWidth" class="form-control size-input" type="number" />
     </div>
 
-    <SeparatorStyleInput :style="separatorStyle" />
+    <SeparatorStyleInput v-model:style="separatorStyle" />
 
     <textarea v-model="rawsongs"></textarea>
 
@@ -116,7 +116,7 @@ export default {
       pageSize: 'A4' as keyof typeof PageSizes | 'custom',
       landskape: false,
       pageFormat: PageFormat.convertTo('mm', DEFAULT_PAGE_FORMAT),
-      stylesheet: DEFAULT_STYLES,
+      stylesheet: { ...DEFAULT_STYLES },
       separatorStyle: DEFAULT_SEPARATOR_STYLE,
       rawsongs: RAW_DATA,
       songs: [],
@@ -152,12 +152,16 @@ export default {
 
       try {
         const pageFormat = PageFormat.convertTo('pts', this.pageFormat)
+        const errors: string[] = []
         this.pdfDataUri = await generate(
           pageFormat,
           this.stylesheet,
           this.separatorStyle,
-          this.songs
+          this.songs,
+
+          errors
         )
+        this.error = errors.length > 0 ? errors.join('\n') : undefined
       } catch (e) {
         this.error = fullErrorMessage(e)
       }
