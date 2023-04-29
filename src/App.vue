@@ -55,7 +55,8 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
     <textarea v-model="rawsongs"></textarea>
 
     <button class="btn btn-primary" @click="plop()">SECLI</button>
-    <button class="btn btn-primary" @click="gen()">Générer</button>
+    <button class="btn btn-primary" @click="gen_pdf()">Générer PDF</button>
+    <button class="btn btn-primary" @click="gen_docx()">Générer DocX</button>
     <div>Nombre de chants: {{ songs.length }}</div>
     <div v-if="error" class="text-danger">{{ error }}</div>
   </div>
@@ -68,10 +69,12 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
 import StyleInput from './components/StyleInput.vue'
 import { parse_secli_xml } from './data/secli-parser'
 import { RAW_DATA } from './generator/data-real'
+import { exportDocx } from './generator/export-docx'
 import {
   DEFAULT_SEPARATOR_STYLE,
   DEFAULT_STYLES,
-  generate,
+  generate_bins,
+  generate_pdf,
   PageFormat,
   type FormatDefinition,
   type SeparatorStyle
@@ -146,22 +149,42 @@ export default {
     plop() {
       parse_secli_xml()
     },
-    async gen() {
+    async gen_pdf() {
       this.songs = parse_file(this.rawsongs)
       this.error = undefined
 
       try {
         const pageFormat = PageFormat.convertTo('pts', this.pageFormat)
         const errors: string[] = []
-        this.pdfDataUri = await generate(
+        const [pdfDoc, bins] = await generate_bins(
           pageFormat,
           this.stylesheet,
           this.separatorStyle,
           this.songs,
-
           errors
         )
         this.error = errors.length > 0 ? errors.join('\n') : undefined
+        this.pdfDataUri = await generate_pdf(pdfDoc, pageFormat, this.separatorStyle, bins)
+      } catch (e) {
+        this.error = fullErrorMessage(e)
+      }
+    },
+    async gen_docx() {
+      this.songs = parse_file(this.rawsongs)
+      this.error = undefined
+
+      try {
+        const pageFormat = PageFormat.convertTo('pts', this.pageFormat)
+        const errors: string[] = []
+        const [_pdfDoc, bins] = await generate_bins(
+          pageFormat,
+          this.stylesheet,
+          this.separatorStyle,
+          this.songs,
+          errors
+        )
+        this.error = errors.length > 0 ? errors.join('\n') : undefined
+        exportDocx(pageFormat, this.stylesheet, bins)
       } catch (e) {
         this.error = fullErrorMessage(e)
       }

@@ -139,6 +139,7 @@ type FormattedText = {
 export type FormattedSong = {
   height: number
   elements: FormattedText[]
+  song: Song
 }
 
 /** Format a chunk of text and wrap it if it is too long.
@@ -244,7 +245,7 @@ function format_song(page: PageFormat, styles: Format, song: Song): FormattedSon
     if (index != lastIndex) y += styles.chunkGap
   })
 
-  return { height: y, elements }
+  return { height: y, elements, song }
 }
 
 function toStyle(definition: StyleDefinition, font: PDFFont): Style {
@@ -276,15 +277,23 @@ async function toFormat(pdfDoc: PDFDocument, formatDefinition: FormatDefinition)
   }
 }
 
-/** Return base64 encoded pdf */
-export async function generate(
+export type Bin = {
+  capacity: number
+  size: number
+  objs: {
+    size: number
+    song: FormattedSong
+  }[]
+}
+
+export async function generate_bins(
   pageFormat: PageFormat,
   formatDefinition: FormatDefinition,
   separatorStyle: SeparatorStyle,
   parsed_songs: Song[],
 
   errorsOut: string[]
-): Promise<string> {
+): Promise<[PDFDocument, Bin[]]> {
   pageFormat = {
     ...pageFormat,
     displayWidth: pageFormat.pageWidth - pageFormat.marginLeft - pageFormat.marginRight,
@@ -300,7 +309,7 @@ export async function generate(
   const separator_height = lineMarginTop + lineMarginBottom + lineThickness
 
   // Do some bin-packing (songs may be reordered)
-  const bins = bin_packing(
+  const bins: Bin[] = bin_packing(
     formatted_songs
       .map((it) => ({ size: it.height + separator_height, song: it }))
       .sort((a, b) => b.size - a.size),
@@ -308,6 +317,24 @@ export async function generate(
     5,
     errorsOut
   )
+  return [pdfDoc, bins]
+}
+
+/** Return base64 encoded pdf */
+export async function generate_pdf(
+  pdfDoc: PDFDocument,
+  pageFormat: PageFormat,
+  separatorStyle: SeparatorStyle,
+  bins: Bin[]
+): Promise<string> {
+  pageFormat = {
+    ...pageFormat,
+    displayWidth: pageFormat.pageWidth - pageFormat.marginLeft - pageFormat.marginRight,
+    displayHeight: pageFormat.pageHeight - pageFormat.marginTop - pageFormat.marginBottom
+  }
+
+  // PDF Creation
+  const { lineMarginTop, lineMarginBottom, lineThickness } = separatorStyle
 
   // Renumber each songs.
   let song_num = 0
