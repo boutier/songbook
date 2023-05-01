@@ -103,7 +103,7 @@ Tous les jours de ma vie, alléluia…
 
 
 1 - LOUANGE À TOI, Ô CHRIST 
-# type : intercession+
+# type : méditation
 R. 
 Louange à toi, ô Christ
 Berger de ton Église,
@@ -135,7 +135,7 @@ Que se lève pour chanter ton Église bienheureuse !
 
 
 1 - LEVONS LES YEUX 
-# type : intercession+
+# type : méditation
 R. Levons les yeux, voici la vraie lumière,
 Voici le Christ qui nous donne la paix !
 Ouvrons nos cœurs à sa miséricorde,
@@ -424,7 +424,7 @@ Et tous les chrétiens du monde sont les membres de son Corps.
 Rien ne peut les séparer de son Amour.
 
  1 - LE SEIGNEUR EST MA LUMIÈRE 
-# type : intercession+
+# type : méditation
 Le Seigneur est ma lumière et mon salut de qui aurais-je crainte? 
 Le Seigneur est le rempart de ma vie devant qui tremblerais-je? 
 
@@ -459,7 +459,7 @@ Toi Jésus vrai Dieu fait homme, ô Emmanuel !
 
 
 1 -  Le Christ va se manifester
-# type : intercession+
+# type : méditation
 R.
 Le Christ va se manifester parmi nous.
 Celui qui est, qui était et qui vient,
@@ -522,7 +522,7 @@ omnes gentes, alleluia ! BIS
 
 
 1 - Laissons la présence
-# type : intercession+
+# type : méditation
 Laissons la présence du Dieu amour
 Devenir le soleil irradiant notre vie.
 
@@ -611,7 +611,7 @@ Des cœurs de pauvres et d'affamés ?
 
 
 1 - LA TÉNÈBRE N'EST POINT TÉNÈBRE 
-# type : intercession+
+# type : méditation
 La ténèbre n’est point ténèbre devant toi : 
 la nuit comme le jour est lumière.
 
@@ -860,7 +860,7 @@ Nous avons mis nos pas dans les tiens !
 
 
 1 - L'AMOUR JAMAIS NE PASSERA 
-# type : intercession+
+# type : méditation
 R.
 L'amour jamais ne passera, l'amour demeurera.
 L'amour, l'amour seul, la charité jamais ne passera,
@@ -898,7 +898,7 @@ Seul l'Amour restera.
 
 
 1 - JÉSUS LE CHRIST 
-# type : intercession+
+# type : méditation
 Jésus le Christ, lumière intérieure,
 ne laisse pas mes ténèbres me parler.
 Jésus le Christ, lumière intérieure,
@@ -988,7 +988,7 @@ D’où coule l’eau de la grâce, Alléluia (bis) !
 
 
 1 - IN MANUS TUAS, PATER 
-# type : intercession+
+# type : méditation
 In manus tuas, Pater, commendo spiritum meum. BIS
 
 
@@ -1262,7 +1262,7 @@ pour te ramener, ô fille bien aimée !
 
 
 1 - DANS NOS OBSCURITÉS 
-# type : intercession+
+# type : méditation
 Dans nos obscurités, allume le feu qui ne s’éteint jamais,
 qui ne s’éteint jamais. BIS
 
@@ -1291,7 +1291,7 @@ Et son Esprit nous fait chanter.
 
 
 1 - BONUM EST 
-# type : intercession+
+# type : méditation
 Bonum est confidere in Domino, 
 bonum sperare in Domino.
 
@@ -1427,7 +1427,7 @@ Nous sommes tous de sa race !
 
  
 1 - JÉSUS, MON ROI 
-# type : intercession+
+# type : méditation
 R. Jésus, mon Roi ! Jésus, ma joie ! 
 Jésus, tu es là, viens à moi !
 
@@ -1449,7 +1449,7 @@ Pour nous offrir dans la gloire à notre Père.
 
 
 1 - JÉSUS, MON DIEU, JE T'ADORE 
-# type : intercession+
+# type : méditation
 Jésus, Jésus,
 Mon Dieu je t’adore.
 Jésus, Jésus,
@@ -1459,7 +1459,7 @@ Jésus, Jésus, mon Dieu, mon Seigneur.
 
 
 1 - JÉSUS ME VOICI DEVANT TOI 
-# type : intercession+
+# type : méditation
 R. Jésus, me voici devant toi,
 Tout simplement dans le silence ;
 Rien n'est plus important pour moi
@@ -1497,7 +1497,7 @@ Tu es venu sauver ceux qui étaient pécheurs.
 
 
 1 - JÉSUS, AGNEAU DE DIEU 
-# type : intercession+
+# type : méditation
 Jésus, Agneau de Dieu
 Digne es-tu de recevoir
 Honneur, puissance et gloire,
@@ -1640,7 +1640,7 @@ Et qu’Il règne éternellement !
 
 
 1 - HUMBLEMENT DANS LE SILENCE 
-# type : intercession+
+# type : méditation
 R. Humblement dans le silence de mon cœur, 
 je me donne à Toi, mon Seigneur. 
 
@@ -1878,7 +1878,7 @@ Sois le maître en nous, et fais de nous des témoins.
 
 
 1 - GARDE-MOI MON SEIGNEUR 
-# type : intercession+
+# type : méditation
 R. Garde-moi mon Seigneur,
 J’ai fait de toi mon refuge.
 J’ai dit au Seigneur : “ Tu es mon Dieu,
@@ -2080,7 +2080,7 @@ Viens, Esprit Saint, viens transformer nos vies !
 
 
 1 - EN TOI J'AI MIS MA CONFIANCE 
-# type : intercession+
+# type : méditation
 En toi j’ai mis ma confiance 
 Ô Dieu très Saint, 
 Toi seul es mon espérance 
@@ -2092,7 +2092,7 @@ J’ai foi en toi, ô Dieu très Saint.
 
 
 1 - En Esprit et en Vérité
-# type : intercession+
+# type : méditation
 1. Seigneur je m’offre tout à Toi, je m’offre pour devenir
 Ton enfant, afin que par moi, à jamais Tu puisses agir.
 Seigneur je m’offre tout à toi, afin que plus rien en moi,
@@ -2192,7 +2192,7 @@ Rejoins ton frère.
 
 
 1 - Écoute en toi la source
-# type : intercession+
+# type : méditation
 R. ÉCOUTE EN TOI LA SOURCE
 QUI TE PARLE D'AIMER,
 ÉCOUTE EN TOI LA SOURCE
@@ -2218,7 +2218,7 @@ D'un Dieu qui se fait présent.
 
 
 1 - ÉCOUTE 
-# type : intercession+
+# type : méditation
 1. Écoute,
 Entends la voix de Dieu
 À celui qui a soif,
@@ -2322,7 +2322,7 @@ Au milieu de nos croix et nos larmes
 Tu nous montres ton Fils
 
 1 - DONNE-MOI SEULEMENT DE T'AIMER 
-# type : intercession+
+# type : méditation
 1. Prends, Seigneur et reçois
 Toute ma liberté,
 Ma mémoire, mon intelligence,
@@ -2705,7 +2705,7 @@ Au milieu de notre monde.
 
 
 1 - CŒUR DE JÉSUS BRÛLANT D'AMOUR 
-# type : intercession+
+# type : méditation
 Cœur de Jésus brûlant d’amour, 
 Embrase-nous par ton Esprit. 
 Que nos cœurs soient semblables au tien, 
@@ -3087,7 +3087,7 @@ Vous deviendrez mes biens-aimés ; Je suis « Dieu-avec-vous »
 
 
 1 -  Bénis le Seigneur, ô mon âme
-# type : louange, intercession+
+# type : louange, méditation
 R. Bénis le Seigneur, ô mon âme, 
 Du fond de mon être, son Saint Nom. 
 Bénis le Seigneur, ô mon âme, 
@@ -3450,7 +3450,7 @@ Proclamez que le Seigneur est bon
 
 
 1 - ADOREZ-LE 
-# type : intercession+
+# type : méditation
 R.
 Adorez-le, bénissez-le !
 Que la louange de vos chants le glorifie !
@@ -3839,7 +3839,7 @@ Ouvrez grand votre cœur, recevez son Esprit.
 
 
 165 - CAR TON AMOUR NOUS DONNE LA VIE
-# type : louange, intercession+
+# type : louange, méditation
 1.
 Car ton amour nous donne la vie, (bis)
 Mes lèvres célèbrent tes louanges
@@ -4015,7 +4015,7 @@ Pour les siècles. Amen
 
 
 157 - TA MAIN ME CONDUIT
-# type : intercession+
+# type : méditation
 R.
 Ta main me conduit, 
 ta droite me saisit.
@@ -4042,7 +4042,7 @@ Bénis sois-tu de me guider
 Sur ton chemin d'éternité.
 
 158 - JE SUIS NÉ POUR TE LOUER
-# type : louange, intercession+
+# type : louange, méditation
 
 Je suis né pour Te louer
 Je suis né pour glorifier Ton nom en toutes circonstances,
@@ -4079,7 +4079,7 @@ Il est ma victoire, mon libérateur,
 Ma vie et ma gloire, le Christ mon sauveur !
 
 161 – GRAIN DE BLÉ
-# type : intercession+
+# type : méditation
 1.
 Grain de blé qui tombe en terre,
 Si tu ne meurs pas,
@@ -4196,7 +4196,7 @@ Chantez au Seigneur un chant nouveau
 Maintenant et à jamais !
 
 156 - JE VEUX VOIR DIEU
-# type : intercession+
+# type : méditation
 R.
 Je veux voir Dieu, Le voir de mes yeux,
 Joie sans fin des bienheureux,
@@ -4310,7 +4310,7 @@ toute langue dira : 		toute langue dira :
 					Tu es Seigneur.
 
 24 - À L’AGNEAU DE DIEU
-# type : louange, intercession
+# type : louange, méditation
 1.
 Élevé à la droite de Dieu,
 Couronné de mille couronnes,
@@ -4358,7 +4358,7 @@ Tantum.ergo sacramentum veneremur cernui et antiqum documentum novo cedat ritui 
 Genitori genitoque laus et jubilatio salus honor virtus quoque sit et benedictio procedenti ab utroque compar sit laudatio
 
 147 - LOUANGE À L’AGNEAU
-# type : intercession+
+# type : méditation
 
 1. Louange à l’Agneau (x4)
 2. Honneur à l’Agneau (x4)
@@ -4367,7 +4367,7 @@ Genitori genitoque laus et jubilatio salus honor virtus quoque sit et benedictio
 5. Jésus est l’Agneau (x4)
 
 148 – ADORONS
-# type : intercession+
+# type : méditation
 1.
 Adorons, adorons l’Agneau immolé pour nos péchés (bis).
 R.
@@ -4379,7 +4379,7 @@ Adorons, adorons Jésus crucifié pour nos péchés (bis).
 Adorons le ressuscité fils de Dieu, fils bien-aimé (bis).
 
 149 - PÈRE, UNIS NOUS TOUS
-# type : intercession+
+# type : méditation
 
 PÈRE UNIS NOUS TOUS (bis)
 QUE LE MONDE CROIE À TON AMOUR ! 
@@ -4426,7 +4426,7 @@ SOIS MON GUIDE EN TOUT MARIE, NOTRE MÈRE.
 
 
 141 - VENEZ A MOI, VOUS QUI PORTEZ UN FARDEAU
-# type : intercession+
+# type : méditation
 R.
 VENEZ A MOI, VOUS QUI PORTEZ UN FARDEAU
 VENEZ VOUS TOUS QUI PEINEZ 
@@ -4444,14 +4444,14 @@ Seigneur, mon âme espère en toi ! en silence et dans la foi
 J’espère le Seigneur !
 
 142 - MON ÂME A SOIF DE TOI
-# type : intercession+
+# type : méditation
 
 Mon âme a soif de toi, Dieu vivant, Très-Haut.
 Prends-moi, pacifie-moi, Seigneur mon roi.
 Tu es toute ma joie, ô viens en moi !
 
 143 – PROSTERNEZ-VOUS
-# type : intercession+
+# type : méditation
 
 PROSTERNEZ-VOUS DEVANT VOTRE ROI,
 ACCLAMEZ-LE DE TOUT VOTRE CŒUR,
@@ -4464,7 +4464,7 @@ Reconnaissez son immensité !
 Sa Vérité, sa Puissance et sa Gloire.
 
 144 - MON ÂME A SOIF DE TOI
-# type : intercession+
+# type : méditation
 R.
 DIEU, C’EST TOI MON DIEU, JE TE CHERCHE,
 MON ÂME A SOIF DE TOI.
@@ -4579,7 +4579,7 @@ Les cris de joie, ô les chansons !
 
 
 137 – Ô ÉTERNEL
-# type : intercession+
+# type : méditation
 1.
 Ô Éternel, de Toi dépend ma vie,
 Tu es mon Dieu et je viens à Toi.
@@ -4596,7 +4596,7 @@ Tu ne peux m'abandonner,
 Tu montres le chemin tu es toute ma joie.
 
 138 - JE VOUS AI CHOISIS
-# type : intercession+
+# type : méditation
 1.
 Je vous ai choisis, je vous ai établis,
 Pour que vous alliez et viviez de ma vie.
@@ -4643,7 +4643,7 @@ Cherchez, vous trouverez, demandez, vous obtiendrez,
 afin que le Père, soit glorifié en vous !
 
 140 - DANS TA PRÉSENCE
-# type : intercession+
+# type : méditation
 
 Dans ta présence, Seigneur, je m’attends à toi,
 j’ai soif de ta présence, ô Jésus.
@@ -4655,7 +4655,7 @@ J’ouvre mon cœur à ton amour et sans crainte je te reçois.
 
 
 133 - SI TU SAVAIS LE DON DU FILS DE DIEU
-# type : intercession+
+# type : méditation
 R.
 SI TU SAVAIS LE DON DU FILS DE DIEU
 TU LE PRIERAIS DE TE DONNER À BOIRE
@@ -4674,7 +4674,7 @@ S’il croit en moi, de son sein jailliront
 des fleuves d’eau vive.
 
 134 - JE TE CHERCHE DIEU
-# type : intercession+
+# type : méditation
 R.
 JE TE CHERCHE, DIEU, TU ES MON DIEU,
 ET JE T’APPELLE.
@@ -4702,7 +4702,7 @@ En toi la nuit est comme le jour,
 Tu es lumière.
 
 135 – NOUS T’ADORONS, NOUS T’AIMONS (Glorifie…)
-# type : intercession+
+# type : méditation
 1.
 Nous t’adorons, nous t’aimons tendre Père.
 Glorifie ton Nom sur la terre ! 
@@ -4741,7 +4741,7 @@ Il est le roi vainqueur, il est le Sauveur !
 
 
 36 - JE VEUX CHANTER MES HYMNES
-# type : louange, intercession+
+# type : louange, méditation
 R.
 JE VEUX CHANTER MES HYMNES POUR MON DIEU,
 LE LOUER TANT QUE JE DURE ;
@@ -4857,7 +4857,7 @@ Aujourd’hui, il allume une flamme,
 afin que nous l’aimions jusqu’au bout.
 
 130 - LAVE-MOI, SEIGNEUR MON DIEU
-# type : intercession+
+# type : méditation
 R.
 LAVE-MOI, SEIGNEUR MON DIEU,
 PURIFIE-MOI, PRENDS PITIÉ DE MOI. BIS
@@ -4883,7 +4883,7 @@ Fais que j’entende les chants d’allégresse,
 Afin qu’ils dansent les os que tu broyas !
 
 131 - Ô PRENDS MON ÂME
-# type : intercession+
+# type : méditation
 1.
 Ô prends mon âme, prends-la, Seigneur
 Et que ta flamme brûle en mon cœur.
@@ -4907,7 +4907,7 @@ Levons nos têtes, il va venir.
 
 
 126 - PUISQUE TU FAIS MISÉRICORDE
-# type : intercession+
+# type : méditation
 R.
 PUISQUE TU FAIS MISÉRICORDE
 PUISQUE NOS VIES SONT DEVANT TOI
@@ -4935,7 +4935,7 @@ C'est lui qui crée, qui sauve et qui guérit,
 Car sa puissance est sans mesure.
 
 127 - QUAND JE TRAVERSE
-# type : intercession+
+# type : méditation
 1.
 Quand je traverse les eaux de la mer,
 Je ne crains rien ; tu es là,
@@ -4963,7 +4963,7 @@ GRACE ET BONHEUR M’ACCOMPAGNENT,
 JE NE MANQUE DE RIEN.
 
 128 - TA FACE EST MA SEULE PATRIE
-# type : intercession+
+# type : méditation
 R.
 TA FACE EST MA SEULE PATRIE,
 ELLE EST MON ROYAUME D’AMOUR,
@@ -5145,7 +5145,7 @@ A l’Esprit de lumière, pour les siècles des siècles
 
 
 123 - JE TE BÉNIS, MON CRÉATEUR
-# type : intercession+
+# type : méditation
 
 R.
 JE TE BÉNIS MON CRÉATEUR,
@@ -5174,7 +5174,7 @@ Dans mes combats, mes désespoirs,
 C'est toi qui as vaincu la mort.
 
 124 - TU ENTENDS MON CRI, TENDRE PÈRE
-# type : intercession+
+# type : méditation
 R.
 TU ENTENDS MON CRI, TENDRE PÈRE,
 TOI L’INFINIE MISÉRICORDE.
@@ -5202,7 +5202,7 @@ Ma bouche redira sans fin ton amour,
 Revêts-moi de ta joie.
 
 125 - MON SEIGNEUR ET MON DIEU (Doux Jésus)
-# type : intercession+
+# type : méditation
 1.
 Doux Jésus Agneau vainqueur,
 Sois le maître de mon cœur.
@@ -5224,7 +5224,7 @@ Garde moi près de ton cœur.
 
 
 120 - MON PÈRE, JE M'ABANDONNE À TOI
-# type : intercession+
+# type : méditation
 1.
 Mon Père, mon Père, je m'abandonne à toi.
 Fais de moi ce qu'il te plaira.
@@ -5316,14 +5316,14 @@ Louange au Père et au Fils, louange à l’Esprit de gloire.
 Bienheureuse Trinité, notre joie et notre vie !
 
 52 - TU ES LE ROI
-# type : intercession+
+# type : méditation
 Tu es le Roi de gloire, le Seigneur des seigneurs,
 Le soleil de la justice, sous tes ailes est la guérison.
 
 
 
 113 - JE LAISSE À TES PIEDS
-# type : intercession+
+# type : méditation
 Je laisse à tes pieds mes fardeaux
 Devant toi , je dépose tous mes soucis
 Et chaque fois que je ne sais pas me diriger,
@@ -5340,7 +5340,7 @@ Que ferai-je pour l’Éternel en retour de toutes ses bontés ?
 
 
 117 - JE VIENS VERS TOI, JÉSUS
-# type : intercession+
+# type : méditation
 1.
 Comme l’argile se laisse faire, 
 Entre les mains agiles du potier,
@@ -5360,7 +5360,7 @@ Car ta Parole est une lampe,
 Une lumière allumée sur mes pas
 
 118 - JÉSUS NOUS T’ADORONS
-# type : intercession+
+# type : méditation
 R.
 Jésus, Jésus, Jésus		
 Nous t’adorons, nous t’aimons
@@ -5368,7 +5368,7 @@ Nous t’adorons, nous t’aimons
 
 
 111 - NE CRAINS PAS
-# type : intercession+
+# type : méditation
 R.
 NE CRAINS PAS, NE CRAINS PAS,
 JE T’AI RACHETÉ ;
@@ -5491,7 +5491,7 @@ Ils mettent leur espoir en lui.
 
 
 108 - AIMER, C’EST TOUT DONNER
-# type : intercession+
+# type : méditation
 R.
 AIMER, C’EST TOUT DONNER, (ter)
 ET SE DONNER SOI-MÊME.
@@ -5512,7 +5512,7 @@ Et si je livrais mon corps à brûler dans les flammes
 Cela ne me sert à rien…
 
 109 - SEIGNEUR MON SECOURS
-# type : intercession+
+# type : méditation
 R.
 SEIGNEUR, MON SECOURS, 
 EN TOI SEUL MON BONHEUR,
@@ -5556,7 +5556,7 @@ Tu seras notre lumière, il n’y aura plus de nuit.
 Ton Nom sera sur nos lèvres, de larmes il n’y aura plus.
 
 105 – PARDON, SEIGNEUR, PARDON
-# type : intercession+
+# type : méditation
 1.
 Pardon, Seigneur, pardon
 pour notre orgueil, nos résistances :
@@ -5596,7 +5596,7 @@ Sois toujours dans la joie, ô Marie, Alléluia,
 Car c’est vrai, le Seigneur est ressuscité, Alléluia !
 
 63 - IL EST EXALTÉ
-# type : intercession+
+# type : méditation
 Il est exalté, le Roi est au-dessus des cieux,
 Je veux Le louer.
 Il est élevé, à jamais exalté,
@@ -5642,7 +5642,7 @@ Chantez « Gloire ! », Chantez « Gloire ! »
 Chantez « Gloire ! », Hosanna au Roi des rois !
 
 68 - CE QUE DIEU A CHOISI
-# type : intercession+
+# type : méditation
 
 Ce qu’il y a de fou dans le monde, voilà ce que Dieu a choisi ;
 Ce qu’il y a de faible dans le monde, voilà ce que Dieu a choisi.
@@ -5664,7 +5664,7 @@ LE CONSOLATEUR, ESPRIT DE VÉRITÉ,
 EN TOI L’ESPÉRANCE ET LA FIDÉLITÉ.
 
 70 – MANIFESTE-TOI
-# type : intercession+
+# type : méditation
 
 Manifeste-toi, donne-nous de l’assurance ;
 révèle-toi, remplis-nous de ta présence.
@@ -5676,7 +5676,7 @@ des guérisons et des signes.
 
 
 101 - JE N’AI D’AUTRE DÉSIR
-# type : intercession+
+# type : méditation
 1.
 Je n’ai d’autre désir que de t’appartenir,
 Être à toi pour toujours, et livré à l’amour.
@@ -5741,7 +5741,7 @@ reposer près de toi pour la Vie Éternelle
 
 
 98 - C’EST PAR TA GRACE
-# type : louange, intercession+
+# type : louange, méditation
 1.
 Tout mon être cherche, d’où viendra le secours ?
 Mon secours est en Dieu, qui a créé les cieux.
@@ -5791,7 +5791,7 @@ Témoin véridique, tu nous entraînes
 
 
 74 - TU RÉPANDS SUR NOS PLAIES
-# type : intercession+
+# type : méditation
 1.
 Tu répands sur nos plaies ta douceur et ta paix,
 Tu répands ta clarté sur nos nuits de péché.
@@ -5815,7 +5815,7 @@ Tu sanctifies les dons de nos eucharisties.
 
 
 93 - ACCEPTES-TU ?
-# type : intercession+
+# type : méditation
 1.
 Acceptes-tu de mourir avec Moi,
 Toi à qui je donne vie ?
@@ -5847,7 +5847,7 @@ Sois l’instrument de mon cœur, de ma joie,
 Va, je suis là près de toi.
 
 94 - HEUREUX, BIENHEUREUX
-# type : intercession+
+# type : méditation
 R.
 HEUREUX, BIENHEUREUX 
 QUI ÉCOUTE LA PAROLE DE DIEU
@@ -5931,7 +5931,7 @@ Viens purifier nos cœurs
 Viens nous renouveler.
 
 90 - JÉSUS, TOI QUI AS PROMIS
-# type : esprit-saint, intercession+
+# type : esprit-saint, méditation
 1.
 Jésus, toi qui as promis
 d’envoyer l’Esprit à ceux qui te prient,
@@ -6113,7 +6113,7 @@ Vent que rien n’arrête, Esprit de Dieu,
 Parle en tes prophètes, Esprit de Dieu,
 
 86 - PLONGE-MOI DANS TA RIVIÈRE
-# type : intercession+, esprit-saint
+# type : méditation, esprit-saint
 R.
 PLONGE-MOI DANS TA RIVIÈRE D’AMOUR,
 PLONGE MON ESPRIT 
@@ -6124,7 +6124,7 @@ quand ton onction m’envahit,
 je suis restauré, guéri, quand ton onction m’envahit.
 
 87 - OH QU’IL EST DOUX POUR DES FRÈRES
-# type : intercession+
+# type : méditation
 R.
 OH QU’IL EST DOUX POUR DES FRÈRES
 DE DEMEURER ENSEMBLE,
