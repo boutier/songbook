@@ -6,6 +6,7 @@ export type Song = {
   title: string
   stanzas: Stanza[]
   tags: string[]
+  number?: number
 }
 
 export type PrefixType = 'R' | '#' | 'Coda' | ''
@@ -76,9 +77,9 @@ function parse_next_stanza(lines: string[]): Stanza | undefined {
 
 function parse_comment(tags: string[], line: string) {
   line
-    .split(/type\s+:/, 1)[1]
+    .split(/type\s*:\s*/, 2)[1]
     ?.split(/[\s,;]+/)
-    ?.forEach((tag) => tags.push(tag))
+    ?.forEach((tag) => tags.push(tag.toLocaleLowerCase()))
 }
 
 function parse_song(text: string): Song {

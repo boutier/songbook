@@ -76,11 +76,13 @@ import {
   generate_bins,
   generate_pdf,
   PageFormat,
+  renumber_songs,
   type FormatDefinition,
   type SeparatorStyle
 } from './generator/formatter'
 import { parse_file, type Song } from './generator/parser'
 import { mmFromPoints } from './generator/pdf-utils'
+import { append_table_of_content_to_pdf } from './generator/table-of-contents'
 import { fullErrorMessage } from './generator/utils'
 
 const DEFAULT_PAGE_FORMAT: PageFormat = {
@@ -164,7 +166,11 @@ export default {
           errors
         )
         this.error = errors.length > 0 ? errors.join('\n') : undefined
-        this.pdfDataUri = await generate_pdf(pdfDoc, pageFormat, this.separatorStyle, bins)
+        renumber_songs(bins)
+        await generate_pdf(pdfDoc, pageFormat, this.separatorStyle, bins)
+        await append_table_of_content_to_pdf(pdfDoc, pageFormat, this.stylesheet, bins)
+
+        this.pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true })
       } catch (e) {
         this.error = fullErrorMessage(e)
       }

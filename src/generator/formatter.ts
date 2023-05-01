@@ -2,6 +2,7 @@ import { PDFDocument, PDFFont, StandardFonts } from 'pdf-lib'
 import { bin_packing } from './bin-packing'
 import type { PrefixType, Song } from './parser'
 import { mmFromPoints, mmToPoints } from './pdf-utils'
+import { capitalize } from './utils'
 
 export type StyleDefinition = {
   font: StandardFonts
@@ -185,8 +186,6 @@ function format_element(
 
 function format_song(page: PageFormat, styles: Format, song: Song): FormattedSong {
   const elements: FormattedText[] = []
-  // const songNumberMaxWidth = styles.title.widthOf('000 —')
-  // const spaceWidth = songNumberMaxWidth - styles.title.widthOf('000—')
   let y: number
   try {
     y = format_element(
@@ -220,7 +219,7 @@ function format_song(page: PageFormat, styles: Format, song: Song): FormattedSon
     for (const line of stanza.lines) {
       const transformedLine =
         style.case === 'capitalized'
-          ? line.toLocaleLowerCase().replace(/^./, (x) => x.toLocaleUpperCase())
+          ? capitalize(line)
           : style.case === 'upper'
           ? line.toLocaleUpperCase()
           : style.case === 'lower'
@@ -253,12 +252,15 @@ function toStyle(definition: StyleDefinition, font: PDFFont): Style {
     font: font,
     size: definition.size,
     case: definition.case,
-    widthOf: (text) => font.widthOfTextAtSize(text, 12),
+    widthOf: (text) => font.widthOfTextAtSize(text, definition.size),
     height: font.heightAtSize(12)
   }
 }
 
-async function toFormat(pdfDoc: PDFDocument, formatDefinition: FormatDefinition): Promise<Format> {
+export async function toFormat(
+  pdfDoc: PDFDocument,
+  formatDefinition: FormatDefinition
+): Promise<Format> {
   const fonts: { [k: string]: PDFFont } = {}
 
   fonts[formatDefinition.default.font] ??= await pdfDoc.embedFont(formatDefinition.default.font)
@@ -320,30 +322,26 @@ export async function generate_bins(
   return [pdfDoc, bins]
 }
 
-/** Return base64 encoded pdf */
+export function renumber_songs(bins: Bin[]) {
+  let song_num = 0
+  bins.forEach((bin) =>
+    bin.objs.forEach((song) => {
+      const title = song.song.elements[0]
+      song.song.song.number = song_num
+      title.text = title.text.replace(/^000/, (++song_num).toString())
+    })
+  )
+}
+
+/** Append bin contents to pdfDoc with the given format. */
 export async function generate_pdf(
   pdfDoc: PDFDocument,
   pageFormat: PageFormat,
   separatorStyle: SeparatorStyle,
   bins: Bin[]
-): Promise<string> {
-  pageFormat = {
-    ...pageFormat,
-    displayWidth: pageFormat.pageWidth - pageFormat.marginLeft - pageFormat.marginRight,
-    displayHeight: pageFormat.pageHeight - pageFormat.marginTop - pageFormat.marginBottom
-  }
-
+) {
   // PDF Creation
   const { lineMarginTop, lineMarginBottom, lineThickness } = separatorStyle
-
-  // Renumber each songs.
-  let song_num = 0
-  bins.forEach((bin) =>
-    bin.objs.forEach((song) => {
-      const title = song.song.elements[0]
-      title.text = title.text.replace(/^000/, (++song_num).toString())
-    })
-  )
 
   for (const bin of bins) {
     const page = pdfDoc.addPage([pageFormat.pageWidth, pageFormat.pageHeight])
@@ -374,12 +372,4 @@ export async function generate_pdf(
       }
     }
   }
-
-  const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true })
-  return pdfDataUri
-  // const element = document.getElementById('pdf')
-  // if (element instanceof HTMLIFrameElement) {
-  //   element.src = pdfDataUri
-  // }
-  // const pdfBytes = await pdfDoc.save();
 }

@@ -4,3 +4,7 @@ export function fullErrorMessage(e: any): string {
   }
   return `${e}`
 }
+
+export function capitalize(str: string): string {
+  return str.toLocaleLowerCase().replace(/^./, (x) => x.toLocaleUpperCase())
+}
