@@ -122,6 +122,7 @@ export function parse_file(file: string): Song[] {
     .replace(/[’´\t]/g, (c) => (c === '\t' ? '' : "'"))
     // Add non-breaking spaces
     .replace(/\s*([!?;:])/g, ' $1')
+    .normalize('NFC')
     .split(/[0-9]+\s*[-—–]/)
     .map((it) => it.trim())
     .filter((it) => !!it)
