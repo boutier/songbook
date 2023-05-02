@@ -54,7 +54,7 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
 
     <textarea v-model="rawsongs"></textarea>
 
-    <button class="btn btn-primary" @click="plop()">SECLI</button>
+    <!-- <button class="btn btn-primary" @click="plop()">SECLI</button> -->
     <button class="btn btn-primary" @click="gen_pdf()">Générer PDF</button>
     <button class="btn btn-primary" @click="gen_docx()">Générer DocX</button>
     <div>Nombre de chants: {{ songs.length }}</div>
@@ -102,6 +102,16 @@ const DEFAULT_PAGE_FORMAT: PageFormat = {
   wrapAlineaWidth: 5
 }
 
+const SAMPLE = `
+1 - LA SAGESSE A DRESSÉ UNE TABLE 
+# type : célébration
+R.
+La sagesse a dressé une table,
+Elle invite les hommes au festin.
+Venez au banquet du fils de l'homme,
+Mangez et buvez la Pâque de Dieu.
+`
+
 export default {
   components: { VueMultiselect, StyleInput, SeparatorStyleInput },
   data(): {
@@ -123,7 +133,7 @@ export default {
       pageFormat: PageFormat.convertTo('mm', DEFAULT_PAGE_FORMAT),
       stylesheet: { ...DEFAULT_STYLES },
       separatorStyle: DEFAULT_SEPARATOR_STYLE,
-      rawsongs: RAW_DATA,
+      rawsongs: false ? SAMPLE : RAW_DATA,
       songs: [],
       error: undefined,
       pdfDataUri: undefined
