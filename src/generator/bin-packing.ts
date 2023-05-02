@@ -143,6 +143,7 @@ export function bin_packing<T>(
       continue
     }
     if (max_capacity < obj.size) {
+      console.log('cannot fit:', obj)
       errors.push('Some objects are too big to fit in any bin.')
       continue
     }

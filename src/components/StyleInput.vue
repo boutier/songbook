@@ -14,7 +14,9 @@ export default {
       const style: StyleDefinition = {
         font: this.style.font,
         size: size || this.style.size,
-        case: (this.$refs.caseStyle as HTMLSelectElement).value as any
+        toUpper: (this.$refs.toUpper as HTMLInputElement).checked,
+        interLine: (this.$refs.interLine as HTMLInputElement).valueAsNumber,
+        afterParagraph: (this.$refs.afterParagraph as HTMLInputElement).valueAsNumber
       }
       this.$emit('update:style', style)
     }
@@ -25,11 +27,29 @@ export default {
 <template>
   <div class="d-flex">
     <div class="size-input">{{ title }}</div>
-    <input ref="fontSize" class="size-input" :value="style.size" type="number" @input="emit" />
-    <select ref="caseStyle" :value="style.case" @input="emit">
-      <option value="capitalized">Capitalize</option>
-      <option value="upper">Upper</option>
-      <option value="lower">Lower</option>
-    </select>
+    <div class="my-auto">Taille (pt)</div>
+    <input ref="fontSize" class="size-input me-3" :value="style.size" type="number" @input="emit" />
+    <div class="my-auto me-3">
+      <label>
+        <input ref="toUpper" type="checkbox" @click="emit" :value="style.toUpper" />
+        majuscule
+      </label>
+    </div>
+    <div class="my-auto">inter-ligne</div>
+    <input
+      ref="interLine"
+      class="size-input me-3"
+      :value="style.interLine"
+      type="number"
+      @input="emit"
+    />
+    <div class="my-auto">inter-paragraphe</div>
+    <input
+      ref="afterParagraph"
+      class="size-input me-3"
+      :value="style.afterParagraph"
+      type="number"
+      @input="emit"
+    />
   </div>
 </template>

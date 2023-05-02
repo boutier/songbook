@@ -2,12 +2,13 @@ import { PDFDocument, PDFFont, StandardFonts } from 'pdf-lib'
 import { bin_packing } from './bin-packing'
 import type { PrefixType, Song } from './parser'
 import { mmFromPoints, mmToPoints } from './pdf-utils'
-import { capitalize } from './utils'
 
 export type StyleDefinition = {
   font: StandardFonts
   size: number
-  case: 'upper' | 'lower' | 'capitalized'
+  toUpper: boolean
+  interLine: number
+  afterParagraph: number
 }
 
 export type FormatDefinition = {
@@ -16,14 +17,17 @@ export type FormatDefinition = {
   refrain: StyleDefinition
   verse: StyleDefinition
   coda: StyleDefinition
-  chunkGap: number // Space between paragraphs
 }
 
 export type Style = {
   font: PDFFont
   size: number
-  case: 'upper' | 'lower' | 'capitalized'
+  toUpper: boolean
+  interLine: number
+  afterParagraph: number
+
   widthOf: (text: string) => number
+  /** Height of the text, excluding interLine */
   height: number
 }
 
@@ -33,36 +37,44 @@ export type Format = {
   refrain: Style
   verse: Style
   coda: Style
-  chunkGap: number // Space between paragraphs
 }
 
 export const DEFAULT_STYLES: FormatDefinition = {
   default: {
     font: StandardFonts.TimesRoman,
     size: 12,
-    case: 'capitalized'
+    toUpper: false,
+    interLine: 2,
+    afterParagraph: 10
   },
   title: {
     font: StandardFonts.TimesRomanBold,
     size: 14,
-    case: 'capitalized'
+    toUpper: false,
+    interLine: 2,
+    afterParagraph: 10
   },
   refrain: {
     font: StandardFonts.TimesRomanBold,
     size: 12,
-    case: 'capitalized'
+    toUpper: false,
+    interLine: 2,
+    afterParagraph: 10
   },
   verse: {
     font: StandardFonts.TimesRoman,
     size: 12,
-    case: 'capitalized'
+    toUpper: false,
+    interLine: 2,
+    afterParagraph: 10
   },
   coda: {
     font: StandardFonts.TimesRoman,
     size: 12,
-    case: 'capitalized'
-  },
-  chunkGap: 10
+    toUpper: false,
+    interLine: 2,
+    afterParagraph: 10
+  }
 }
 
 export type SeparatorStyle = {
@@ -176,7 +188,7 @@ function format_element(
       style,
       alineaX,
       alineaX,
-      y + style.height
+      y + style.height // We may add interline here.
     )
   } else {
     elements.push({ x, y, text, style })
@@ -188,16 +200,17 @@ function format_song(page: PageFormat, styles: Format, song: Song): FormattedSon
   const elements: FormattedText[] = []
   let y: number
   try {
+    const transformedLine = styles.title.toUpper ? song.title.toLocaleUpperCase() : song.title
     y = format_element(
       elements,
-      '000 — ' + song.title,
+      '000 — ' + transformedLine,
       page.displayWidth,
       styles.title,
       0,
       page.wrapAlineaWidth,
       0
     )
-    y += styles.chunkGap
+    y += styles.title.afterParagraph
   } catch (e) {
     throw Error(`cannot format "${song.title}"`, { cause: e })
   }
@@ -216,15 +229,8 @@ function format_song(page: PageFormat, styles: Format, song: Song): FormattedSon
     const width = page.displayWidth - contentX
     elements.push({ x: 0, y: y, text: stanza.prefix, style })
 
-    for (const line of stanza.lines) {
-      const transformedLine =
-        style.case === 'capitalized'
-          ? capitalize(line)
-          : style.case === 'upper'
-          ? line.toLocaleUpperCase()
-          : style.case === 'lower'
-          ? line.toLocaleLowerCase()
-          : line
+    for (const [lineIndex, line] of stanza.lines.entries()) {
+      const transformedLine = style.toUpper ? line.toLocaleUpperCase() : line
       try {
         y = format_element(
           elements,
@@ -239,9 +245,11 @@ function format_song(page: PageFormat, styles: Format, song: Song): FormattedSon
         const msg = `cannot format song "${song.title}" at stanza "${index}": ${line}`
         throw Error(msg, { cause: e })
       }
+
+      if (lineIndex != stanza.lines.length - 1) y += style.interLine
     }
 
-    if (index != lastIndex) y += styles.chunkGap
+    if (index != lastIndex) y += style.afterParagraph
   })
 
   return { height: y, elements, song }
@@ -251,9 +259,11 @@ function toStyle(definition: StyleDefinition, font: PDFFont): Style {
   return {
     font: font,
     size: definition.size,
-    case: definition.case,
+    toUpper: definition.toUpper,
+    interLine: definition.interLine,
+    afterParagraph: definition.afterParagraph,
     widthOf: (text) => font.widthOfTextAtSize(text, definition.size),
-    height: font.heightAtSize(12)
+    height: font.heightAtSize(definition.size)
   }
 }
 
@@ -274,8 +284,7 @@ export async function toFormat(
     title: toStyle(formatDefinition.title, fonts[formatDefinition.title.font]),
     refrain: toStyle(formatDefinition.refrain, fonts[formatDefinition.refrain.font]),
     verse: toStyle(formatDefinition.verse, fonts[formatDefinition.verse.font]),
-    coda: toStyle(formatDefinition.coda, fonts[formatDefinition.coda.font]),
-    chunkGap: formatDefinition.chunkGap
+    coda: toStyle(formatDefinition.coda, fonts[formatDefinition.coda.font])
   }
 }
 
@@ -353,8 +362,8 @@ export async function generate_pdf(
         page.drawText(element.text, {
           x: pageFormat.marginLeft + element.x,
           y: cursorY - element.y - element.style.height,
-          size: element.style.size,
-          font: element.style.font
+          font: element.style.font,
+          size: element.style.size
         })
       }
 
