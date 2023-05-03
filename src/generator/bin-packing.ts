@@ -176,7 +176,7 @@ export function bin_packing<T>(
   }
 
   var total_size_packed = buckets.reduce((acc, bin) => acc + bin.size, 0)
-  if (total_size_packed != total_size_to_be_packed) {
+  if (Math.round(total_size_packed) != Math.round(total_size_to_be_packed)) {
     errors.push(
       'packed: ' + total_size_packed + '\n' + 'should be packed: ' + total_size_to_be_packed
     )

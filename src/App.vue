@@ -40,10 +40,11 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
     </div>
 
     <StyleInput :title="'default'" v-model:style="stylesheet.default" />
-    <StyleInput :title="'title'" v-model:style="stylesheet.title" />
-    <StyleInput :title="'refrain'" v-model:style="stylesheet.refrain" />
-    <StyleInput :title="'verse'" v-model:style="stylesheet.verse" />
-    <StyleInput :title="'coda'" v-model:style="stylesheet.coda" />
+    <StyleInput :title="'Titre'" v-model:style="stylesheet.title" />
+    <StyleInput :title="'Refrain'" v-model:style="stylesheet.refrain" />
+    <StyleInput :title="'Couplet'" v-model:style="stylesheet.verse" />
+    <StyleInput :title="'Coda'" v-model:style="stylesheet.coda" />
+    <StyleInput :title="'Pont'" v-model:style="stylesheet.bridge" />
 
     <div class="d-flex justify-content-start">
       <label class="form-label me-3 my-auto">Marge lors d'un retour à la ligne</label>

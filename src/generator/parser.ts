@@ -9,7 +9,7 @@ export type Song = {
   number?: number
 }
 
-export type PrefixType = 'R' | '#' | 'Coda' | ''
+export type PrefixType = 'refrain' | 'numbered-verse' | 'coda' | 'bridge' | 'none'
 
 export type Stanza = {
   prefixType: PrefixType
@@ -29,7 +29,7 @@ function next_non_empty(lines: string[]): string | undefined {
 function parse_next_stanza(lines: string[]): Stanza | undefined {
   const stanza: Stanza = {
     prefix: '',
-    prefixType: '',
+    prefixType: 'none',
     lines: []
   }
 
@@ -41,9 +41,16 @@ function parse_next_stanza(lines: string[]): Stanza | undefined {
   for (; line && line.length > 0; line = lines.pop()) {
     // First line determine paragraph type.
     const m = line.match(
-      /^((?<num>[0-9]+)|(?<r>[r])|(?<coda>coda)|(?<other>[^a-z]+))\s*[.:/]\s*(?<text>.*)/i
+      /^((?<num>[0-9]+)|(?<r>[r])|(?<coda>coda)|(?<pont>pont)|(?<other>[a-z0-9]+))\s*[.:/]\s*(?<text>.*)/i
     ) as null | {
-      groups: { num?: string; r?: string; coda?: string; other?: string; text: string }
+      groups: {
+        num?: string
+        r?: string
+        coda?: string
+        pont?: string
+        other?: string
+        text: string
+      }
     }
     if (m) {
       if (stanza.lines.length > 0) {
@@ -52,19 +59,23 @@ function parse_next_stanza(lines: string[]): Stanza | undefined {
         break
       }
 
-      const { num, r, coda, other, text } = m.groups
+      const { num, r, coda, pont, other, text } = m.groups
       if (r) {
-        stanza.prefixType = 'R'
+        stanza.prefixType = 'refrain'
         stanza.prefix = 'R.'
       } else if (num) {
-        stanza.prefixType = '#'
+        stanza.prefixType = 'numbered-verse'
         stanza.prefix = num // Rewritten afterwards
       } else if (coda) {
-        stanza.prefixType = 'Coda'
-        stanza.prefix = 'Coda'
+        stanza.prefixType = 'coda'
+        stanza.prefix = 'Coda.'
+      } else if (pont) {
+        stanza.prefixType = 'bridge'
+        stanza.prefix = 'Pont.'
       } else if (other) {
-        stanza.prefixType = ''
+        stanza.prefixType = 'none'
         stanza.prefix = other
+        console.log('unknown prefix detected', other)
       }
       const trimmed_text = text.trim()
       if (trimmed_text) stanza.lines.push(trimmed_text)
@@ -109,7 +120,7 @@ function parse_song(text: string): Song {
 
   let stanzaNum = 1
   song.stanzas.forEach((it) => {
-    if (it.prefixType === '#') it.prefix = `${stanzaNum++}.`
+    if (it.prefixType === 'numbered-verse') it.prefix = `${stanzaNum++}.`
   })
   return song
 }

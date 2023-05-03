@@ -17,6 +17,7 @@ export type FormatDefinition = {
   refrain: StyleDefinition
   verse: StyleDefinition
   coda: StyleDefinition
+  bridge: StyleDefinition
 }
 
 export type Style = {
@@ -37,6 +38,7 @@ export type Format = {
   refrain: Style
   verse: Style
   coda: Style
+  bridge: Style
 }
 
 export const DEFAULT_STYLES: FormatDefinition = {
@@ -69,7 +71,14 @@ export const DEFAULT_STYLES: FormatDefinition = {
     afterParagraph: 10
   },
   coda: {
-    font: StandardFonts.TimesRoman,
+    font: StandardFonts.TimesRomanBold,
+    size: 12,
+    toUpper: false,
+    interLine: 2,
+    afterParagraph: 10
+  },
+  bridge: {
+    font: StandardFonts.TimesRomanBold,
     size: 12,
     toUpper: false,
     interLine: 2,
@@ -216,10 +225,11 @@ function format_song(page: PageFormat, styles: Format, song: Song): FormattedSon
   }
 
   const styleByPrefixType: { [t in PrefixType]: Style } = {
-    '': styles.default,
-    R: styles.refrain,
-    '#': styles.verse,
-    Coda: styles.coda
+    none: styles.default,
+    refrain: styles.refrain,
+    'numbered-verse': styles.verse,
+    coda: styles.coda,
+    bridge: styles.bridge
   }
 
   const lastIndex = song.stanzas.length - 1
@@ -278,13 +288,15 @@ export async function toFormat(
   fonts[formatDefinition.refrain.font] ??= await pdfDoc.embedFont(formatDefinition.refrain.font)
   fonts[formatDefinition.verse.font] ??= await pdfDoc.embedFont(formatDefinition.verse.font)
   fonts[formatDefinition.coda.font] ??= await pdfDoc.embedFont(formatDefinition.coda.font)
+  fonts[formatDefinition.bridge.font] ??= await pdfDoc.embedFont(formatDefinition.coda.font)
 
   return {
     default: toStyle(formatDefinition.default, fonts[formatDefinition.default.font]),
     title: toStyle(formatDefinition.title, fonts[formatDefinition.title.font]),
     refrain: toStyle(formatDefinition.refrain, fonts[formatDefinition.refrain.font]),
     verse: toStyle(formatDefinition.verse, fonts[formatDefinition.verse.font]),
-    coda: toStyle(formatDefinition.coda, fonts[formatDefinition.coda.font])
+    coda: toStyle(formatDefinition.coda, fonts[formatDefinition.coda.font]),
+    bridge: toStyle(formatDefinition.bridge, fonts[formatDefinition.bridge.font])
   }
 }
 

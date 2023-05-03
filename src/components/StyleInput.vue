@@ -26,27 +26,33 @@ export default {
 
 <template>
   <div class="d-flex">
-    <div class="size-input">{{ title }}</div>
-    <div class="my-auto">Taille (pt)</div>
-    <input ref="fontSize" class="size-input me-3" :value="style.size" type="number" @input="emit" />
-    <div class="my-auto me-3">
+    <div class="size-input my-auto">{{ title }}</div>
+    <div class="form-label my-auto">Taille (pt)</div>
+    <input
+      ref="fontSize"
+      class="form-control size-input me-3"
+      :value="style.size"
+      type="number"
+      @input="emit"
+    />
+    <div class="me-3 my-auto">
       <label>
         <input ref="toUpper" type="checkbox" @click="emit" :value="style.toUpper" />
         majuscule
       </label>
     </div>
-    <div class="my-auto">inter-ligne</div>
+    <div class="form-label my-auto">inter-ligne</div>
     <input
       ref="interLine"
-      class="size-input me-3"
+      class="form-control size-input me-3"
       :value="style.interLine"
       type="number"
       @input="emit"
     />
-    <div class="my-auto">inter-paragraphe</div>
+    <div class="form-label my-auto">inter-paragraphe</div>
     <input
       ref="afterParagraph"
-      class="size-input me-3"
+      class="form-control size-input me-3"
       :value="style.afterParagraph"
       type="number"
       @input="emit"

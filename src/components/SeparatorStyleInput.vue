@@ -23,27 +23,27 @@ export default {
 
 <template>
   <div class="d-flex">
-    <div class="size-input">{{ title }}</div>
-    <label class="ms-3 text-muted me-1 my-auto">marge supérieure (pts)</label>
+    <div class="size-input my-auto">{{ title }}</div>
+    <label class="form-label ms-3 me-1 my-auto">marge supérieure (pts)</label>
     <input
       ref="lineMarginTop"
-      class="size-input"
+      class="size-input form-control"
       :value="style.lineMarginTop"
       @input="emit"
       type="number"
     />
-    <label class="ms-3 text-muted me-1 my-auto">marge inférieure (pts)</label>
+    <label class="form-label ms-3 me-1 my-auto">marge inférieure (pts)</label>
     <input
       ref="lineMarginTop"
-      class="size-input"
+      class="size-input form-control"
       :value="style.lineMarginBottom"
       @input="emit"
       type="number"
     />
-    <label class="ms-3 text-muted me-1 my-auto">épaisseur (pts)</label>
+    <label class="form-label ms-3 me-1 my-auto">épaisseur (pts)</label>
     <input
       ref="lineThickness"
-      class="size-input"
+      class="size-input form-control"
       :value="style.lineThickness"
       @input="emit"
       type="number"
