@@ -74,7 +74,7 @@ function parse_next_stanza(lines: string[]): Stanza | undefined {
         stanza.prefix = 'Pont.'
       } else if (other) {
         stanza.prefixType = 'none'
-        stanza.prefix = other
+        stanza.prefix = other + '.'
         console.log('unknown prefix detected', other)
       }
       const trimmed_text = text.trim()
@@ -131,6 +131,7 @@ export function parse_file(file: string): Song[] {
     .replace(/ /g, ' ')
     // Normalize quotes, drop tabulations
     .replace(/[’´\t]/g, (c) => (c === '\t' ? '' : "'"))
+    .replaceAll('...', '…')
     // Add non-breaking spaces
     .replace(/\s*([!?;:])/g, ' $1')
     .normalize('NFC')

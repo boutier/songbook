@@ -6,9 +6,9 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
 
 <template>
   <div class="m-3 d-flex flex-column">
-    <div>Format de document (unités en millimètres)</div>
+    <div class="h6">Format du document (unités en millimètres)</div>
     <div class="d-flex justify-content-start">
-      <div class="fw-bold my-auto">Page</div>
+      <div class="fw-bold mx-3 my-auto">Papier</div>
       <label class="form-label mx-3 my-auto">Largeur</label>
       <input v-model="pageFormat.pageWidth" class="form-control size-input" type="number" />
       <div class="form-label mx-3 my-auto">Hauteur</div>
@@ -38,22 +38,52 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
         </label>
       </div>
     </div>
-
-    <StyleInput :title="'default'" v-model:style="stylesheet.default" />
-    <StyleInput :title="'Titre'" v-model:style="stylesheet.title" />
-    <StyleInput :title="'Refrain'" v-model:style="stylesheet.refrain" />
-    <StyleInput :title="'Couplet'" v-model:style="stylesheet.verse" />
-    <StyleInput :title="'Coda'" v-model:style="stylesheet.coda" />
-    <StyleInput :title="'Pont'" v-model:style="stylesheet.bridge" />
-
     <div class="d-flex justify-content-start">
-      <label class="form-label me-3 my-auto">Marge lors d'un retour à la ligne</label>
-      <input v-model="pageFormat.wrapAlineaWidth" class="form-control size-input" type="number" />
+      <div class="fw-bold mx-3 my-auto">Marges</div>
+      <label class="form-label mx-3 my-auto">Haut</label>
+      <input v-model="pageFormat.marginTop" class="form-control size-input" type="number" />
+      <label class="form-label mx-3 my-auto">Bas</label>
+      <input v-model="pageFormat.marginBottom" class="form-control size-input" type="number" />
+      <div class="form-label mx-3 my-auto">Gauche</div>
+      <input v-model="pageFormat.marginLeft" class="form-control size-input" type="number" />
+      <div class="form-label mx-3 my-auto">Droite</div>
+      <input v-model="pageFormat.marginRight" class="form-control size-input" type="number" />
     </div>
 
-    <SeparatorStyleInput v-model:style="separatorStyle" />
+    <div class="h6">Styles des chants</div>
+    <div class="ms-2">
+      <StyleInput :title="'default'" v-model:style="stylesheet.default" />
+      <StyleInput :title="'Titre'" v-model:style="stylesheet.title" />
+      <StyleInput :title="'Refrain'" v-model:style="stylesheet.refrain" />
+      <StyleInput :title="'Couplet'" v-model:style="stylesheet.verse" />
+      <StyleInput :title="'Coda'" v-model:style="stylesheet.coda" />
+      <StyleInput :title="'Pont'" v-model:style="stylesheet.bridge" />
 
-    <textarea v-model="rawsongs"></textarea>
+      <div class="d-flex justify-content-start">
+        <label class="form-label me-3 my-auto">Marge lors d'un retour à la ligne</label>
+        <input v-model="pageFormat.wrapAlineaWidth" class="form-control size-input" type="number" />
+      </div>
+
+      <SeparatorStyleInput v-model:style="separatorStyle" />
+    </div>
+
+    <div class="h6">Styles de l'index</div>
+    <div class="ms-2">
+      <StyleInput :title="'En-tête'" v-model:style="tableOfContentStylesheet.header" />
+      <StyleInput
+        :title="'Titres de groupe impair'"
+        v-model:style="tableOfContentStylesheet.oddTitle"
+      />
+      <StyleInput
+        :title="'Titres du groupe pair'"
+        v-model:style="tableOfContentStylesheet.evenTitle"
+      />
+      <StyleInput :title="'Champs'" v-model:style="tableOfContentStylesheet.otherFields" />
+    </div>
+
+    <div class="h6">Contenu du livret</div>
+
+    <textarea v-model="rawsongs" rows="20"></textarea>
 
     <!-- <button class="btn btn-primary" @click="plop()">SECLI</button> -->
     <button class="btn btn-primary" @click="gen_pdf()">Générer PDF</button>
@@ -74,16 +104,20 @@ import { exportDocx } from './generator/export-docx'
 import {
   DEFAULT_SEPARATOR_STYLE,
   DEFAULT_STYLES,
+  PageFormat,
   generate_bins,
   generate_pdf,
-  PageFormat,
   renumber_songs,
   type FormatDefinition,
   type SeparatorStyle
 } from './generator/formatter'
 import { parse_file, type Song } from './generator/parser'
 import { mmFromPoints } from './generator/pdf-utils'
-import { append_table_of_content_to_pdf } from './generator/table-of-contents'
+import {
+  DEFAULT_TABLE_OF_CONTENT_STYLES,
+  append_table_of_content_to_pdf,
+  type TableOfContentFormatDefinition
+} from './generator/table-of-contents'
 import { fullErrorMessage } from './generator/utils'
 
 const DEFAULT_PAGE_FORMAT: PageFormat = {
@@ -104,13 +138,28 @@ const DEFAULT_PAGE_FORMAT: PageFormat = {
 }
 
 const SAMPLE = `
-1 - LA SAGESSE A DRESSÉ UNE TABLE 
-# type : célébration
+24 - À l’Agneau de Dieu pif paf pouf tra la la
+# type : louange, intercession, esprit-saint, célébration
+1.
+Élevé à la droite de Dieu,
+Couronné de mille couronnes,
+Tu resplendis comme un soleil radieux ;
+Les êtres crient autour de ton trône :
 R.
-La sagesse a dressé une table,
-Elle invite les hommes au festin.
-Venez au banquet du fils de l'homme,
-Mangez et buvez la Pâque de Dieu.
+À l’Agneau de Dieu soit la gloire,
+À l’Agneau de Dieu, la victoire,
+À l’Agneau de Dieu soit le règne
+Pour tous les siècles, amen.
+2.
+L’Esprit Saint et l’Épouse fidèle
+Disent « Viens ! », c’est leur cœur qui appelle.
+Viens, ô Jésus, toi l’Époux bien-aimé ;
+Tous les élus ne cessent de chanter :
+3
+Tous les peuples et toutes les nations,
+D’un seul cœur avec les milliers d’anges,
+Entonneront en l’honneur de ton Nom
+Ce chant de gloire, avec force et louange :
 `
 
 export default {
@@ -121,6 +170,7 @@ export default {
     landskape: boolean
     pageFormat: PageFormat
     stylesheet: FormatDefinition
+    tableOfContentStylesheet: TableOfContentFormatDefinition
     separatorStyle: SeparatorStyle
     rawsongs: string
     songs: Song[]
@@ -133,8 +183,9 @@ export default {
       landskape: false,
       pageFormat: PageFormat.convertTo('mm', DEFAULT_PAGE_FORMAT),
       stylesheet: { ...DEFAULT_STYLES },
+      tableOfContentStylesheet: { ...DEFAULT_TABLE_OF_CONTENT_STYLES },
       separatorStyle: DEFAULT_SEPARATOR_STYLE,
-      rawsongs: false ? SAMPLE : RAW_DATA,
+      rawsongs: true ? SAMPLE : RAW_DATA,
       songs: [],
       error: undefined,
       pdfDataUri: undefined
@@ -179,7 +230,12 @@ export default {
         this.error = errors.length > 0 ? errors.join('\n') : undefined
         renumber_songs(bins)
         await generate_pdf(pdfDoc, pageFormat, this.separatorStyle, bins)
-        await append_table_of_content_to_pdf(pdfDoc, pageFormat, this.stylesheet, bins)
+        await append_table_of_content_to_pdf(
+          pdfDoc,
+          pageFormat,
+          this.tableOfContentStylesheet,
+          bins
+        )
 
         this.pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true })
       } catch (e) {

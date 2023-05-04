@@ -1,6 +1,12 @@
-import { degrees, type PDFDocument } from 'pdf-lib'
-import type { Bin, Format, FormatDefinition, PageFormat } from './formatter'
-import { toFormat } from './formatter'
+import { StandardFonts, degrees, type PDFDocument } from 'pdf-lib'
+import {
+  format_element,
+  toFormat,
+  type Bin,
+  type FormattedText,
+  type PageFormat,
+  type StyleDefinition
+} from './formatter'
 import type { Song } from './parser'
 import { capitalize } from './utils'
 
@@ -10,10 +16,48 @@ function removeDiacritics(str: string) {
   return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 }
 
+export type TableOfContentFormatDefinition = {
+  header: StyleDefinition
+  oddTitle: StyleDefinition
+  evenTitle: StyleDefinition
+  otherFields: StyleDefinition
+}
+
+export const DEFAULT_TABLE_OF_CONTENT_STYLES: TableOfContentFormatDefinition = {
+  header: {
+    font: StandardFonts.TimesRomanBold,
+    size: 10,
+    toUpper: false,
+    interLine: 2,
+    afterParagraph: 0
+  },
+  oddTitle: {
+    font: StandardFonts.TimesRomanBold,
+    size: 10,
+    toUpper: false,
+    interLine: 2,
+    afterParagraph: 0
+  },
+  evenTitle: {
+    font: StandardFonts.TimesRoman,
+    size: 10,
+    toUpper: false,
+    interLine: 2,
+    afterParagraph: 0
+  },
+  otherFields: {
+    font: StandardFonts.TimesRoman,
+    size: 10,
+    toUpper: false,
+    interLine: 2,
+    afterParagraph: 0
+  }
+}
+
 export async function append_table_of_content_to_pdf(
   pdfDoc: PDFDocument,
   pageFormat: PageFormat,
-  formatDefinition: FormatDefinition,
+  formatDefinition: TableOfContentFormatDefinition,
   bins: Bin[]
 ) {
   const tags = new Set<string>()
@@ -37,12 +81,12 @@ export async function append_table_of_content_to_pdf(
     }
   }
 
-  const format: Format = await toFormat(pdfDoc, formatDefinition)
+  const format = await toFormat(pdfDoc, formatDefinition)
 
-  const headerFormat = format.verse
-  const oddFormat = format.refrain
-  const evenFormat = format.verse
-  const mainFormat = evenFormat
+  const headerFormat = format.header
+  const oddFormat = format.oddTitle
+  const evenFormat = format.evenTitle
+  const mainFormat = format.otherFields
   const tagHeaders = [...tags].map((tag) => ({ text: tag, size: headerFormat.widthOf(tag) }))
   const widestTag = tagHeaders.reduce((acc, it) => Math.max(acc, it.size), 0)
 
@@ -55,6 +99,7 @@ export async function append_table_of_content_to_pdf(
   )
   const markShiftForCentering = (headerFormat.height - evenFormat.widthOf('+')) / 2
 
+  // Helper to create headers on each new page
   const newPageWithHeader = () => {
     const page = pdfDoc.addPage([pageFormat.pageWidth, pageFormat.pageHeight])
     let cursorY = pageFormat.pageHeight - pageFormat.marginTop
@@ -91,16 +136,13 @@ export async function append_table_of_content_to_pdf(
     cursorX += headerLineMargin
 
     // Song number
+    const maxTitleWidth = pageFormat.displayWidth - cursorX + pageFormat.marginLeft
     page.drawText('Titre', {
       x: cursorX,
       y: cursorY,
       size: headerFormat.size,
       font: headerFormat.font
     })
-
-    cursorX += headerLineMargin
-    cursorX += headerLineThickness
-    cursorX += headerLineMargin
 
     // Horizontal line
     const lineMarginTop = 1
@@ -114,10 +156,11 @@ export async function append_table_of_content_to_pdf(
     })
     cursorY -= lineMarginBottom + lineThickness / 2
 
-    return [page, cursorY] as const
+    return [page, cursorY, maxTitleWidth] as const
   }
 
-  let [page, cursorY] = newPageWithHeader()
+  // Ok, let's build the index!
+  let [page, cursorY, maxTitleWidth] = newPageWithHeader()
   alphabetic_ordered_songs.forEach((song) => {
     let cursorX = pageFormat.marginLeft
     const format =
@@ -125,11 +168,26 @@ export async function append_table_of_content_to_pdf(
         ? evenFormat
         : oddFormat
 
-    cursorY -= format.height
-    if (cursorY < pageFormat.marginBottom) {
-      ;[page, cursorY] = newPageWithHeader()
-      cursorY -= format.height
+    const titleLines: FormattedText[] = []
+    let titleHeight = format_element(
+      titleLines,
+      capitalize(song.title),
+      maxTitleWidth,
+      format,
+      0,
+      0,
+      0
+    )
+    if (titleLines.length === 0) {
+      console.warn('No title line?', song)
+      titleLines.push({ x: 0, y: 0, style: format, text: '' })
+      titleHeight = format.height
     }
+
+    if (cursorY - titleHeight < pageFormat.marginBottom) {
+      ;[page, cursorY] = newPageWithHeader()
+    }
+    cursorY -= format.height
 
     // Tags
     tagHeaders.forEach((header) => {
@@ -161,16 +219,15 @@ export async function append_table_of_content_to_pdf(
     cursorX += headerLineMargin
 
     // Song number
-    page.drawText(capitalize(song.title), {
-      x: cursorX,
-      y: cursorY,
-      size: format.size,
-      font: format.font
-    })
-
-    cursorX += headerLineMargin
-    cursorX += headerLineThickness
-    cursorX += headerLineMargin
+    titleLines.forEach((line) =>
+      page.drawText(line.text, {
+        x: cursorX,
+        y: cursorY - line.y,
+        size: format.size,
+        font: format.font
+      })
+    )
+    cursorY -= titleHeight - format.height
   })
 
   return

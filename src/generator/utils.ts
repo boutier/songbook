@@ -6,5 +6,5 @@ export function fullErrorMessage(e: any): string {
 }
 
 export function capitalize(str: string): string {
-  return str.toLocaleLowerCase().replace(/^./, (x) => x.toLocaleUpperCase())
+  return str.replace(/^./, (x) => x.toLocaleUpperCase())
 }
