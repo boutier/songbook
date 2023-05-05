@@ -162,7 +162,9 @@ export async function append_table_of_content_to_pdf(
   let prevLetter = ''
   let format = oddFormat
   let [page, cursorY, maxTitleWidth] = newPageWithHeader()
+  let stripped = false
   alphabetic_ordered_songs.forEach((song) => {
+    const top = cursorY
     let cursorX = pageFormat.marginLeft
 
     // Switch format on letter change
@@ -190,6 +192,7 @@ export async function append_table_of_content_to_pdf(
 
     if (cursorY - titleHeight < pageFormat.marginBottom) {
       ;[page, cursorY] = newPageWithHeader()
+      stripped = false
     }
     cursorY -= format.height
 
@@ -232,37 +235,21 @@ export async function append_table_of_content_to_pdf(
       })
     )
     cursorY -= titleHeight - format.height
+
+    if (stripped) {
+      page.drawRectangle({
+        x: pageFormat.marginLeft,
+        y: cursorY - format.height / 20,
+        width: pageFormat.displayWidth,
+        height: format.height * titleLines.length,
+        opacity: 0.1
+      })
+      // page.drawLine({
+      //   start: { x: pageFormat.marginLeft, y: cursorY },
+      //   end: { x: pageFormat.marginLeft + pageFormat.displayWidth, y: cursorY },
+      //   thickness: lineThickness
+      // })
+    }
+    stripped = !stripped
   })
-
-  return
-
-  // for (const bin of bins) {
-  //   const page = pdfDoc.addPage([pageFormat.pageWidth, pageFormat.pageHeight])
-  //   const songs = bin.objs.map((it) => it.song)
-
-  //   let cursorY = pageFormat.pageHeight - pageFormat.marginTop
-  //   for (const [i, song] of songs.entries()) {
-  //     for (const element of song.elements) {
-  //       page.drawText(element.text, {
-  //         x: pageFormat.marginLeft + element.x,
-  //         y: cursorY - element.y - element.style.height,
-  //         size: element.style.size,
-  //         font: element.style.font
-  //       })
-  //     }
-
-  //     if (i !== songs.length - 1) {
-  //       cursorY -= song.height
-
-  //       cursorY -= lineMarginTop + lineThickness / 2
-  //       page.drawLine({
-  //         start: { x: pageFormat.marginLeft, y: cursorY },
-  //         end: { x: pageFormat.marginLeft + pageFormat.displayWidth, y: cursorY },
-  //         thickness: lineThickness,
-  //         opacity: 0.3
-  //       })
-  //       cursorY -= lineMarginBottom + lineThickness / 2
-  //     }
-  //   }
-  // }
 }
