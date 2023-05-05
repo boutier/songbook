@@ -71,7 +71,6 @@ export async function append_table_of_content_to_pdf(
     )
     .sort((a, b) => a.title.localeCompare(b.title))
 
-  console.log(tags)
   const ordered_tags = ['louange', 'méditation', 'esprit-saint', 'marie', 'célébration'].filter(
     (it) => tags.has(it)
   )
@@ -81,12 +80,12 @@ export async function append_table_of_content_to_pdf(
     }
   }
 
-  const format = await toFormat(pdfDoc, formatDefinition)
+  const formats = await toFormat(pdfDoc, formatDefinition)
 
-  const headerFormat = format.header
-  const oddFormat = format.oddTitle
-  const evenFormat = format.evenTitle
-  const mainFormat = format.otherFields
+  const headerFormat = formats.header
+  const oddFormat = formats.oddTitle
+  const evenFormat = formats.evenTitle
+  const mainFormat = formats.otherFields
   const tagHeaders = [...tags].map((tag) => ({ text: tag, size: headerFormat.widthOf(tag) }))
   const widestTag = tagHeaders.reduce((acc, it) => Math.max(acc, it.size), 0)
 
@@ -160,18 +159,23 @@ export async function append_table_of_content_to_pdf(
   }
 
   // Ok, let's build the index!
+  let prevLetter = ''
+  let format = oddFormat
   let [page, cursorY, maxTitleWidth] = newPageWithHeader()
   alphabetic_ordered_songs.forEach((song) => {
     let cursorX = pageFormat.marginLeft
-    const format =
-      (removeDiacritics(song.title[0]).charCodeAt(0) - 'A'.charCodeAt(0)) % 2 === 0
-        ? evenFormat
-        : oddFormat
+
+    // Switch format on letter change
+    const firstTitleLetter = removeDiacritics(song.title[0])
+    if (prevLetter !== firstTitleLetter) {
+      prevLetter = firstTitleLetter
+      format = format === oddFormat ? evenFormat : oddFormat
+    }
 
     const titleLines: FormattedText[] = []
     let titleHeight = format_element(
       titleLines,
-      capitalize(song.title),
+      capitalize(song.title + (song.context ? ' ' + song.context : '')),
       maxTitleWidth,
       format,
       0,

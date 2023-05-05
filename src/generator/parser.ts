@@ -4,6 +4,7 @@ function err(e: string): any {
 
 export type Song = {
   title: string
+  context?: string
   stanzas: Stanza[]
   tags: string[]
   number?: number
@@ -86,21 +87,35 @@ function parse_next_stanza(lines: string[]): Stanza | undefined {
   return stanza
 }
 
-function parse_comment(tags: string[], line: string) {
-  line
-    .split(/type\s*:\s*/, 2)[1]
-    ?.split(/[\s,;]+/)
-    ?.forEach((tag) => tags.push(tag.toLocaleLowerCase()))
+function parse_comment(opts: { type: string[]; context?: string }, line: string) {
+  const m = line.match(/(?<key>type|context)\s*:\s*(?<value>.*)/)
+  const key = m?.groups?.key as 'type' | 'context' | undefined
+  const value = m?.groups?.value
+  if (!key) {
+    console.error('Unmatched comment:', line)
+    return
+  }
+  if (!value) {
+    return
+  }
+  if (key === 'type') {
+    value
+      .replace(/(#.*)intercession\+?/, '$1méditation')
+      .split(/[\s,;]+/)
+      .forEach((tag) => opts.type.push(tag.toLocaleLowerCase()))
+  } else {
+    opts.context = value.trim()
+  }
 }
 
 function parse_song(text: string): Song {
-  const tags: string[] = []
+  const opts: { type: string[]; context?: string } = { type: [] }
   const lines = text
     .trim()
     .split(/\s*[\n\u2028\u2029]\s*/)
     .filter((line) => {
       if (line.match(/\s*#/)) {
-        parse_comment(tags, line)
+        parse_comment(opts, line)
         return false
       }
       return true
@@ -110,7 +125,8 @@ function parse_song(text: string): Song {
   const song: Song = {
     title: next_non_empty(lines) ?? err('Empty song'),
     stanzas: [],
-    tags: tags
+    tags: opts.type,
+    context: opts.context
   }
 
   let stanza: Stanza | undefined
