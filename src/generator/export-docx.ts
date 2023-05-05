@@ -5,16 +5,53 @@ import {
   LevelFormat,
   Packer,
   PageBreak,
-  Paragraph
+  Paragraph,
+  type IParagraphStyleOptions
 } from 'docx'
 import type { IParagraphStylePropertiesOptions } from 'docx/build/file/paragraph/properties'
 import FileSaver from 'file-saver'
-import type { FormatDefinition, FormattedSong, PageFormat } from './formatter'
+import type { FormatDefinition, FormattedSong, PageFormat, StyleDefinition } from './formatter'
 import type { PrefixType, Stanza } from './parser'
 import { mmToPoints } from './pdf-utils'
+import { capitalize } from './utils'
 
 function pointsToTwip(points: number): number {
   return 20 * points
+}
+
+function styleToDocxStyle(id: string, style: StyleDefinition): IParagraphStyleOptions {
+  return {
+    id: id,
+    name: capitalize(id),
+    run: {
+      size: `${style.size}pt`,
+      bold: style.font.includes('Bold'),
+      italics: style.font.includes('Italic') || style.font.includes('Oblique')
+    },
+    paragraph: {
+      spacing: { after: pointsToTwip(style.afterParagraph) },
+      indent: { left: 0, right: 0, start: 0, end: 0 }
+    }
+  }
+
+  // {
+  //   id: 'aside',
+  //   name: 'Aside',
+  //   basedOn: 'Normal',
+  //   next: 'Normal',
+  //   run: {
+  //     color: '999999',
+  //     italics: true
+  //   },
+  //   paragraph: {
+  //     indent: {
+  //       left: convertInchesToTwip(0.5)
+  //     },
+  //     spacing: {
+  //       line: 276
+  //     }
+  //   }
+  // },
 }
 
 export async function exportDocx(
@@ -22,16 +59,17 @@ export async function exportDocx(
   format: FormatDefinition,
   bins: { objs: { song: FormattedSong }[] }[]
 ) {
-  const styleByPrefixType: { [t in PrefixType]: string } = {
-    '': 'default',
-    R: 'refrain',
-    '#': 'verse',
-    Coda: 'coda'
+  const styleByPrefixType: { [t in PrefixType]: IParagraphStyleOptions } = {
+    none: styleToDocxStyle('sb-default', format.default),
+    refrain: styleToDocxStyle('sb-refrain', format.refrain),
+    'numbered-verse': styleToDocxStyle('sb-verse', format.verse),
+    coda: styleToDocxStyle('sb-coda', format.coda),
+    bridge: styleToDocxStyle('sb-bridge', format.bridge)
   }
 
   const numberingByPrefixType: { [t in PrefixType]?: string } = {
-    R: 'refrain',
-    '#': 'verse'
+    refrain: 'refrain',
+    'numbered-verse': 'verse'
     // Coda: 'coda'
   }
 
@@ -71,7 +109,7 @@ export async function exportDocx(
         })
       )
       for (const stanza of song.song.stanzas) {
-        const styleId = styleByPrefixType[stanza.prefixType]
+        const styleId = styleByPrefixType[stanza.prefixType].id
 
         contentSectionChildren.push(
           new Paragraph({
@@ -100,86 +138,14 @@ export async function exportDocx(
           },
           paragraph: {
             spacing: {
-              after: pointsToTwip(format.chunkGap)
+              after: pointsToTwip(format.title.afterParagraph)
             },
             indent: { left: 0, right: 0, start: 0, end: 0 }
           }
         }
       },
-      paragraphStyles: [
-        {
-          id: 'default',
-          name: 'Default',
-          run: {
-            size: `${format.default.size}pt`,
-            bold: format.default.font.includes('Bold'),
-            italics:
-              format.default.font.includes('Italic') || format.default.font.includes('Oblique')
-          },
-          paragraph: {
-            spacing: { after: pointsToTwip(format.chunkGap) },
-            indent: { left: 0, right: 0, start: 0, end: 0 }
-          }
-        },
-        {
-          id: 'refrain',
-          name: 'Refrain',
-          run: {
-            size: `${format.refrain.size}pt`,
-            bold: format.refrain.font.includes('Bold'),
-            italics:
-              format.refrain.font.includes('Italic') || format.refrain.font.includes('Oblique')
-          },
-          paragraph: {
-            spacing: { after: pointsToTwip(format.chunkGap) },
-            indent: { left: 0, right: 0, start: 0, end: 0 }
-          }
-        },
-        {
-          id: 'verse',
-          name: 'Verse',
-          run: {
-            size: `${format.verse.size}pt`,
-            bold: format.verse.font.includes('Bold'),
-            italics: format.verse.font.includes('Italic') || format.verse.font.includes('Oblique')
-          },
-          paragraph: {
-            spacing: { after: pointsToTwip(format.chunkGap) },
-            indent: { left: 0, right: 0, start: 0, end: 0 }
-          }
-        },
-        {
-          id: 'coda',
-          name: 'Coda',
-          run: {
-            size: `${format.coda.size}pt`,
-            bold: format.coda.font.includes('Bold'),
-            italics: format.coda.font.includes('Italic') || format.coda.font.includes('Oblique')
-          },
-          paragraph: {
-            spacing: { after: pointsToTwip(format.chunkGap) },
-            indent: { left: 0, right: 0, start: 0, end: 0 }
-          }
-        }
-        // {
-        //   id: 'aside',
-        //   name: 'Aside',
-        //   basedOn: 'Normal',
-        //   next: 'Normal',
-        //   run: {
-        //     color: '999999',
-        //     italics: true
-        //   },
-        //   paragraph: {
-        //     indent: {
-        //       left: convertInchesToTwip(0.5)
-        //     },
-        //     spacing: {
-        //       line: 276
-        //     }
-        //   }
-        // },
-      ]
+      paragraphStyles: Object.values(styleByPrefixType)
+
       //   characterStyles: [
       //     {
       //       id: 'strikeUnderlineCharacter',
