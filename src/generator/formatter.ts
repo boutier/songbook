@@ -51,8 +51,8 @@ export const DEFAULT_STYLES: FormatDefinition = {
   },
   title: {
     font: StandardFonts.TimesRomanBold,
-    size: 14,
-    toUpper: false,
+    size: 11,
+    toUpper: true,
     interLine: 2,
     afterParagraph: 10
   },
@@ -151,16 +151,34 @@ export namespace PageFormat {
   But we are writing from top to bottom, so, in FormattedText, y is from the
   top of the text, and we should consider the text height before rendering.
 */
-type FormattedText = {
+export type FormattedText = {
   x: number
   y: number
   text: string
   style: Style
 }
 
+/**
+ *
+ *             0 +-------------------------------+
+ *         ╭     | +---------------------------+ |
+ *   height│     | |                           | |
+ *         │     | |                           | |
+ *         ╰  ╭  | +---------------------------+ |
+ *      margin│  |                               |
+ *            ╰  | +---------------------------+ |
+ *               | |                           | |
+ *               | |                           | |
+ *               | +---------------------------+ |
+ */
 export type FormattedSong = {
   height: number
-  elements: FormattedText[]
+  /** Doing this that complex to allow splitting a song on multiple columns. */
+  elements: {
+    height: number
+    marginBottom: number
+    elements: FormattedText[]
+  }[]
   song: Song
 }
 
@@ -170,7 +188,7 @@ export type FormattedSong = {
  *               |text         |
  *    returned y +-------------+
  */
-function format_element(
+export function format_element(
   elements: FormattedText[],
   text: string,
   maxWidth: number,
@@ -206,18 +224,19 @@ function format_element(
 }
 
 function format_song(page: PageFormat, styles: Format, song: Song): FormattedSong {
-  const elements: FormattedText[] = []
-  let y: number
+  const elements: { height: number; marginBottom: number; elements: FormattedText[] }[] = []
+  let subElements: FormattedText[] = []
+  let y: number = 0
   try {
     const transformedLine = styles.title.toUpper ? song.title.toLocaleUpperCase() : song.title
     y = format_element(
-      elements,
-      '000 — ' + transformedLine,
+      subElements,
+      '000 ' + transformedLine,
       page.displayWidth,
       styles.title,
       0,
       page.wrapAlineaWidth,
-      0
+      y
     )
     y += styles.title.afterParagraph
   } catch (e) {
@@ -232,18 +251,17 @@ function format_song(page: PageFormat, styles: Format, song: Song): FormattedSon
     bridge: styles.bridge
   }
 
-  const lastIndex = song.stanzas.length - 1
   song.stanzas.forEach((stanza, index) => {
     const style = styleByPrefixType[stanza.prefixType]
     const contentX = style.widthOf(`${stanza.prefix} A`) - style.widthOf('A')
     const width = page.displayWidth - contentX
-    elements.push({ x: 0, y: y, text: stanza.prefix, style })
+    subElements.push({ x: 0, y: y, text: stanza.prefix, style })
 
     for (const [lineIndex, line] of stanza.lines.entries()) {
       const transformedLine = style.toUpper ? line.toLocaleUpperCase() : line
       try {
         y = format_element(
-          elements,
+          subElements,
           transformedLine,
           width,
           style,
@@ -259,10 +277,20 @@ function format_song(page: PageFormat, styles: Format, song: Song): FormattedSon
       if (lineIndex != stanza.lines.length - 1) y += style.interLine
     }
 
-    if (index != lastIndex) y += style.afterParagraph
+    elements.push({
+      height: y,
+      marginBottom: style.afterParagraph,
+      elements: subElements
+    })
+    y = 0
+    subElements = []
   })
 
-  return { height: y, elements, song }
+  const totalHeight = elements.reduce(
+    (acc, it, index) => acc + it.height + (index === elements.length - 1 ? 0 : it.marginBottom),
+    0
+  )
+  return { height: totalHeight, elements, song }
 }
 
 function toStyle(definition: StyleDefinition, font: PDFFont): Style {
@@ -277,27 +305,19 @@ function toStyle(definition: StyleDefinition, font: PDFFont): Style {
   }
 }
 
-export async function toFormat(
+export async function toFormat<T extends { [k: string]: StyleDefinition }>(
   pdfDoc: PDFDocument,
-  formatDefinition: FormatDefinition
-): Promise<Format> {
+  formatDefinition: T
+): Promise<{ [k in keyof T]: Style }> {
   const fonts: { [k: string]: PDFFont } = {}
 
-  fonts[formatDefinition.default.font] ??= await pdfDoc.embedFont(formatDefinition.default.font)
-  fonts[formatDefinition.title.font] ??= await pdfDoc.embedFont(formatDefinition.title.font)
-  fonts[formatDefinition.refrain.font] ??= await pdfDoc.embedFont(formatDefinition.refrain.font)
-  fonts[formatDefinition.verse.font] ??= await pdfDoc.embedFont(formatDefinition.verse.font)
-  fonts[formatDefinition.coda.font] ??= await pdfDoc.embedFont(formatDefinition.coda.font)
-  fonts[formatDefinition.bridge.font] ??= await pdfDoc.embedFont(formatDefinition.coda.font)
-
-  return {
-    default: toStyle(formatDefinition.default, fonts[formatDefinition.default.font]),
-    title: toStyle(formatDefinition.title, fonts[formatDefinition.title.font]),
-    refrain: toStyle(formatDefinition.refrain, fonts[formatDefinition.refrain.font]),
-    verse: toStyle(formatDefinition.verse, fonts[formatDefinition.verse.font]),
-    coda: toStyle(formatDefinition.coda, fonts[formatDefinition.coda.font]),
-    bridge: toStyle(formatDefinition.bridge, fonts[formatDefinition.bridge.font])
+  for (const def of Object.values(formatDefinition)) {
+    fonts[def.font] ??= await pdfDoc.embedFont(def.font)
   }
+
+  return Object.fromEntries(
+    Object.entries(formatDefinition).map(([k, def]) => [k, toStyle(def, fonts[def.font])])
+  ) as any
 }
 
 export type Bin = {
@@ -347,9 +367,9 @@ export function renumber_songs(bins: Bin[]) {
   let song_num = 0
   bins.forEach((bin) =>
     bin.objs.forEach((song) => {
-      const title = song.song.elements[0]
-      song.song.song.number = song_num
+      const title = song.song.elements[0].elements[0]
       title.text = title.text.replace(/^000/, (++song_num).toString())
+      song.song.song.number = song_num
     })
   )
 }
@@ -370,18 +390,22 @@ export async function generate_pdf(
 
     let cursorY = pageFormat.pageHeight - pageFormat.marginTop
     for (const [i, song] of songs.entries()) {
-      for (const element of song.elements) {
-        page.drawText(element.text, {
-          x: pageFormat.marginLeft + element.x,
-          y: cursorY - element.y - element.style.height,
-          font: element.style.font,
-          size: element.style.size
-        })
+      let lastMargin = 0
+      for (const chunk of song.elements) {
+        for (const element of chunk.elements) {
+          page.drawText(element.text, {
+            x: pageFormat.marginLeft + element.x,
+            y: cursorY - element.y - element.style.height,
+            font: element.style.font,
+            size: element.style.size
+          })
+        }
+        cursorY -= chunk.height + chunk.marginBottom
+        lastMargin = chunk.marginBottom
       }
 
       if (i !== songs.length - 1) {
-        cursorY -= song.height
-
+        cursorY += lastMargin
         cursorY -= lineMarginTop + lineThickness / 2
         page.drawLine({
           start: { x: pageFormat.marginLeft, y: cursorY },

@@ -86,8 +86,12 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
     <textarea v-model="rawsongs" rows="20"></textarea>
 
     <!-- <button class="btn btn-primary" @click="plop()">SECLI</button> -->
-    <button class="btn btn-primary" @click="gen_pdf()">Générer PDF</button>
-    <button class="btn btn-primary" @click="gen_docx()">Générer DocX</button>
+    <div class="d-flex my-2">
+      <button class="btn btn-outline-primary" @click="reset()">Reset</button>
+      <button class="ms-2 btn btn-primary" @click="gen_pdf()">Générer PDF</button>
+      <button class="ms-2 btn btn-primary" @click="gen_docx()">Générer DocX</button>
+    </div>
+
     <div>Nombre de chants: {{ songs.length }}</div>
     <div v-if="error" class="text-danger">{{ error }}</div>
   </div>
@@ -127,9 +131,9 @@ const DEFAULT_PAGE_FORMAT: PageFormat = {
   pageHeight: Math.round(mmFromPoints(PageSizes.A4[1])),
 
   marginTop: 10,
-  marginRight: 10,
+  marginRight: 5,
   marginBottom: 10,
-  marginLeft: 10,
+  marginLeft: 5,
 
   displayWidth: 0,
   displayHeight: 0,
@@ -162,36 +166,80 @@ Entonneront en l’honneur de ton Nom
 Ce chant de gloire, avec force et louange :
 `
 
+type DataContent = {
+  pageSizes: [string, [number, number]][]
+  pageSize: keyof typeof PageSizes | 'custom'
+  landskape: boolean
+  pageFormat: PageFormat
+  stylesheet: FormatDefinition
+  tableOfContentStylesheet: TableOfContentFormatDefinition
+  separatorStyle: SeparatorStyle
+  rawsongs: string
+  songs: Song[]
+  error?: string
+  pdfDataUri?: string
+}
+
 export default {
   components: { VueMultiselect, StyleInput, SeparatorStyleInput },
-  data(): {
-    pageSizes: [string, [number, number]][]
-    pageSize: keyof typeof PageSizes | 'custom'
-    landskape: boolean
-    pageFormat: PageFormat
-    stylesheet: FormatDefinition
-    tableOfContentStylesheet: TableOfContentFormatDefinition
-    separatorStyle: SeparatorStyle
-    rawsongs: string
-    songs: Song[]
-    error?: string
-    pdfDataUri?: string
-  } {
-    return {
-      pageSizes: Object.entries(PageSizes),
-      pageSize: 'A4' as keyof typeof PageSizes | 'custom',
-      landskape: false,
-      pageFormat: PageFormat.convertTo('mm', DEFAULT_PAGE_FORMAT),
-      stylesheet: { ...DEFAULT_STYLES },
-      tableOfContentStylesheet: { ...DEFAULT_TABLE_OF_CONTENT_STYLES },
-      separatorStyle: DEFAULT_SEPARATOR_STYLE,
-      rawsongs: true ? SAMPLE : RAW_DATA,
-      songs: [],
-      error: undefined,
-      pdfDataUri: undefined
-    }
+  data(): DataContent {
+    return this.load()
   },
   methods: {
+    defaults(): DataContent {
+      return {
+        pageSizes: Object.entries(PageSizes),
+        pageSize: 'A4' as keyof typeof PageSizes | 'custom',
+        landskape: false,
+        pageFormat: PageFormat.convertTo('mm', DEFAULT_PAGE_FORMAT),
+        stylesheet: { ...DEFAULT_STYLES },
+        tableOfContentStylesheet: { ...DEFAULT_TABLE_OF_CONTENT_STYLES },
+        separatorStyle: DEFAULT_SEPARATOR_STYLE,
+        rawsongs: false ? SAMPLE : RAW_DATA,
+        songs: [],
+        error: undefined,
+        pdfDataUri: undefined
+      }
+    },
+    resetData(from: DataContent) {
+      this.pageSizes = from?.pageSizes
+      this.pageSize = from?.pageSize
+      this.landskape = from?.landskape
+      this.pageFormat = from?.pageFormat
+      this.stylesheet = from?.stylesheet
+      this.tableOfContentStylesheet = from?.tableOfContentStylesheet
+      this.separatorStyle = from?.separatorStyle
+      this.rawsongs = from?.rawsongs
+
+      this.songs = []
+      this.error = undefined
+      this.pdfDataUri = undefined
+    },
+    save() {
+      const toSave: DataContent = {
+        pageSizes: this.pageSizes,
+        pageSize: this.pageSize,
+        landskape: this.landskape,
+        pageFormat: this.pageFormat,
+        stylesheet: this.stylesheet,
+        tableOfContentStylesheet: this.tableOfContentStylesheet,
+        separatorStyle: this.separatorStyle,
+        rawsongs: this.rawsongs,
+
+        songs: [],
+        error: undefined,
+        pdfDataUri: ''
+      }
+      window.localStorage.setItem('options', JSON.stringify(toSave))
+    },
+    load(): DataContent | undefined {
+      const tmp = window.localStorage.getItem('options')
+      return (tmp && JSON.parse(tmp)) ?? this.defaults()
+    },
+    reset() {
+      window.localStorage.removeItem('options')
+      this.resetData(this.defaults())
+    },
     selectPageSizes(selection: { 0: string; 1: [number, number] }) {
       this.pageFormat.pageWidth = Math.round(mmFromPoints(selection[1][0]))
       this.pageFormat.pageHeight = Math.round(mmFromPoints(selection[1][1]))
@@ -214,6 +262,8 @@ export default {
       parse_secli_xml()
     },
     async gen_pdf() {
+      this.save()
+
       this.songs = parse_file(this.rawsongs)
       this.error = undefined
 
@@ -243,6 +293,8 @@ export default {
       }
     },
     async gen_docx() {
+      this.save()
+
       this.songs = parse_file(this.rawsongs)
       this.error = undefined
 
