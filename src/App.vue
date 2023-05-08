@@ -104,7 +104,6 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
 import StyleInput from './components/StyleInput.vue'
 import { parse_secli_xml } from './data/secli-parser'
 import { RAW_DATA } from './generator/data-real'
-import { exportDocx } from './generator/export-docx'
 import {
   DEFAULT_SEPARATOR_STYLE,
   DEFAULT_STYLES,
@@ -284,7 +283,7 @@ export default {
           pdfDoc,
           pageFormat,
           this.tableOfContentStylesheet,
-          bins
+          bins.flatMap((bin) => bin.objects.map((it) => it.obj.song))
         )
 
         this.pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true })
@@ -309,7 +308,7 @@ export default {
           errors
         )
         this.error = errors.length > 0 ? errors.join('\n') : undefined
-        exportDocx(pageFormat, this.stylesheet, bins)
+        // exportDocx(pageFormat, this.stylesheet, bins)
       } catch (e) {
         this.error = fullErrorMessage(e)
       }

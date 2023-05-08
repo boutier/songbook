@@ -1,5 +1,5 @@
 import { PDFDocument, PDFFont, StandardFonts } from 'pdf-lib'
-import { bin_packing } from './bin-packing'
+import { naive_packing, type Bin, type ObjectToPack } from './bin-packing-2'
 import type { PrefixType, Song } from './parser'
 import { mmFromPoints, mmToPoints } from './pdf-utils'
 
@@ -158,6 +158,19 @@ export type FormattedText = {
   style: Style
 }
 
+export type FormattedChunk = {
+  type: 'chunk'
+  height: number
+  marginBottom: number
+  elements: FormattedText[]
+}
+
+export type FormattedSeparator = {
+  type: 'separator'
+  height: number
+  separatorStyle: SeparatorStyle
+}
+
 /**
  *
  *             0 +-------------------------------+
@@ -174,11 +187,7 @@ export type FormattedText = {
 export type FormattedSong = {
   height: number
   /** Doing this that complex to allow splitting a song on multiple columns. */
-  elements: {
-    height: number
-    marginBottom: number
-    elements: FormattedText[]
-  }[]
+  elements: FormattedChunk[]
   song: Song
 }
 
@@ -224,7 +233,7 @@ export function format_element(
 }
 
 function format_song(page: PageFormat, styles: Format, song: Song): FormattedSong {
-  const elements: { height: number; marginBottom: number; elements: FormattedText[] }[] = []
+  const elements: FormattedChunk[] = []
   let subElements: FormattedText[] = []
   let y: number = 0
   try {
@@ -278,6 +287,7 @@ function format_song(page: PageFormat, styles: Format, song: Song): FormattedSon
     }
 
     elements.push({
+      type: 'chunk',
       height: y,
       marginBottom: style.afterParagraph,
       elements: subElements
@@ -320,14 +330,7 @@ export async function toFormat<T extends { [k: string]: StyleDefinition }>(
   ) as any
 }
 
-export type Bin = {
-  capacity: number
-  size: number
-  objs: {
-    size: number
-    song: FormattedSong
-  }[]
-}
+export type PackedPage = Bin<FormattedSong, FormattedChunk | FormattedSeparator>
 
 export async function generate_bins(
   pageFormat: PageFormat,
@@ -336,7 +339,7 @@ export async function generate_bins(
   parsed_songs: Song[],
 
   errorsOut: string[]
-): Promise<[PDFDocument, Bin[]]> {
+): Promise<[PDFDocument, PackedPage[]]> {
   pageFormat = {
     ...pageFormat,
     displayWidth: pageFormat.pageWidth - pageFormat.marginLeft - pageFormat.marginRight,
@@ -346,30 +349,44 @@ export async function generate_bins(
   // PDF Creation
   const pdfDoc = await PDFDocument.create()
   const format: Format = await toFormat(pdfDoc, formatDefinition)
-  const formatted_songs = parsed_songs.map((it) => format_song(pageFormat, format, it))
+  const formatted_songs: FormattedSong[] = parsed_songs.map((it) =>
+    format_song(pageFormat, format, it)
+  )
 
   const { lineMarginTop, lineMarginBottom, lineThickness } = separatorStyle
-  const separator_height = lineMarginTop + lineMarginBottom + lineThickness
+  const separator: FormattedSeparator = {
+    type: 'separator',
+    height: lineMarginTop + lineMarginBottom + lineThickness,
+    separatorStyle: separatorStyle
+  }
 
   // Do some bin-packing (songs may be reordered)
-  const bins: Bin[] = bin_packing(
-    formatted_songs
-      .map((it) => ({ size: it.height + separator_height, song: it }))
-      .sort((a, b) => b.size - a.size),
-    pageFormat.displayHeight + separator_height,
-    5,
-    errorsOut
+  const bins: PackedPage[] = naive_packing<FormattedSong, FormattedChunk | FormattedSeparator>(
+    formatted_songs.map(
+      (song): ObjectToPack<FormattedSong, FormattedChunk> => ({
+        size: song.height,
+        elements: song.elements.map((it) => ({
+          size: it.height + it.marginBottom,
+          objChunk: it
+        })),
+        obj: song
+      })
+    ),
+    {
+      binCapacities: [pageFormat.displayHeight],
+      separator: { size: separator.height, objChunk: separator }
+    }
   )
   return [pdfDoc, bins]
 }
 
-export function renumber_songs(bins: Bin[]) {
+export function renumber_songs(bins: PackedPage[]) {
   let song_num = 0
   bins.forEach((bin) =>
-    bin.objs.forEach((song) => {
-      const title = song.song.elements[0].elements[0]
+    bin.objects.forEach((song) => {
+      const title = song.obj.elements[0].elements[0]
       title.text = title.text.replace(/^000/, (++song_num).toString())
-      song.song.song.number = song_num
+      song.obj.song.number = song_num
     })
   )
 }
@@ -379,41 +396,60 @@ export async function generate_pdf(
   pdfDoc: PDFDocument,
   pageFormat: PageFormat,
   separatorStyle: SeparatorStyle,
-  bins: Bin[]
+  bins: PackedPage[]
 ) {
+  const columnsByPage = 1
+
+  const gutterLeftMargin = 5
+  const gutterRightMargin = 5
+  const gutterSeparatorThickness = 1
+  const gutterWidth = gutterLeftMargin + gutterRightMargin + gutterSeparatorThickness
+  const columnWidth = pageFormat.displayWidth / columnsByPage - (columnsByPage - 1) * gutterWidth
+
   // PDF Creation
-  const { lineMarginTop, lineMarginBottom, lineThickness } = separatorStyle
+  const { lineMarginTop, lineThickness } = separatorStyle
 
   for (const bin of bins) {
-    const page = pdfDoc.addPage([pageFormat.pageWidth, pageFormat.pageHeight])
-    const songs = bin.objs.map((it) => it.song)
-
-    let cursorY = pageFormat.pageHeight - pageFormat.marginTop
-    for (const [i, song] of songs.entries()) {
-      let lastMargin = 0
-      for (const chunk of song.elements) {
-        for (const element of chunk.elements) {
-          page.drawText(element.text, {
-            x: pageFormat.marginLeft + element.x,
-            y: cursorY - element.y - element.style.height,
-            font: element.style.font,
-            size: element.style.size
+    let currentPage = pdfDoc.addPage([pageFormat.pageWidth, pageFormat.pageHeight])
+    let cursorX = pageFormat.marginLeft
+    for (const [columnIndex, columnChunks] of bin.elementsByColumn.entries()) {
+      // New column
+      let cursorY = pageFormat.pageHeight - pageFormat.marginTop
+      for (const chunk of columnChunks) {
+        if (chunk.type === 'chunk') {
+          for (const element of chunk.elements) {
+            currentPage.drawText(element.text, {
+              x: cursorX + element.x,
+              y: cursorY - element.y - element.style.height,
+              font: element.style.font,
+              size: element.style.size
+            })
+          }
+          cursorY -= chunk.height + chunk.marginBottom
+        } else {
+          const y = cursorY - lineMarginTop + lineThickness / 2
+          currentPage.drawLine({
+            start: { x: cursorX, y },
+            end: { x: cursorX + columnWidth, y },
+            thickness: lineThickness,
+            opacity: 0.3
           })
+          cursorY -= chunk.height
         }
-        cursorY -= chunk.height + chunk.marginBottom
-        lastMargin = chunk.marginBottom
       }
 
-      if (i !== songs.length - 1) {
-        cursorY += lastMargin
-        cursorY -= lineMarginTop + lineThickness / 2
-        page.drawLine({
-          start: { x: pageFormat.marginLeft, y: cursorY },
-          end: { x: pageFormat.marginLeft + pageFormat.displayWidth, y: cursorY },
-          thickness: lineThickness,
-          opacity: 0.3
+      // draw column separator
+      if (columnIndex !== bin.elementsByColumn.length - 1) {
+        cursorX += columnWidth
+        const gutterX = cursorX + gutterLeftMargin
+        currentPage.drawLine({
+          start: { x: gutterX, y: pageFormat.pageHeight - pageFormat.marginTop },
+          end: { x: gutterX, y: pageFormat.marginBottom },
+          thickness: gutterSeparatorThickness,
+          opacity: 0.5
         })
-        cursorY -= lineMarginBottom + lineThickness / 2
+
+        cursorX += gutterWidth
       }
     }
   }

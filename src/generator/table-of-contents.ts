@@ -2,7 +2,6 @@ import { StandardFonts, degrees, type PDFDocument } from 'pdf-lib'
 import {
   format_element,
   toFormat,
-  type Bin,
   type FormattedText,
   type PageFormat,
   type StyleDefinition
@@ -58,18 +57,11 @@ export async function append_table_of_content_to_pdf(
   pdfDoc: PDFDocument,
   pageFormat: PageFormat,
   formatDefinition: TableOfContentFormatDefinition,
-  bins: Bin[]
+  songs: Song[]
 ) {
   const tags = new Set<string>()
-  const alphabetic_ordered_songs: Song[] = bins
-    .flatMap((bin) =>
-      bin.objs.map((obj) => {
-        const song = obj.song.song
-        song.tags.forEach((tag) => tags.add(tag))
-        return song
-      })
-    )
-    .sort((a, b) => a.title.localeCompare(b.title))
+  songs.forEach((song) => song.tags.forEach((tag) => tags.add(tag)))
+  const alphabetic_ordered_songs: Song[] = songs.sort((a, b) => a.title.localeCompare(b.title))
 
   const ordered_tags = ['louange', 'méditation', 'esprit-saint', 'marie', 'célébration'].filter(
     (it) => tags.has(it)
@@ -196,6 +188,31 @@ export async function append_table_of_content_to_pdf(
     }
     cursorY -= format.height
 
+    // Stripped background
+    if (stripped) {
+      /*
+        Line height (without any margin) go from the baseline (bottom of
+        letter 'A' for example) to the top of 'Ô'. We should extend it of
+        ~20% to includes bottom of 'p'. For now, instead, we just shift
+        the stripped background of 20% of the line height because there
+        is less accents on upper-case letters than letters under the
+        baseline.
+      */
+      page.drawRectangle({
+        x: pageFormat.marginLeft,
+        y: cursorY - format.height / 5,
+        width: pageFormat.displayWidth,
+        height: format.height * titleLines.length,
+        opacity: 0.1
+      })
+      // page.drawLine({
+      //   start: { x: pageFormat.marginLeft, y: cursorY },
+      //   end: { x: pageFormat.marginLeft + pageFormat.displayWidth, y: cursorY },
+      //   thickness: lineThickness
+      // })
+    }
+    stripped = !stripped
+
     // Tags
     tagHeaders.forEach((header) => {
       if (song.tags.includes(header.text))
@@ -235,21 +252,5 @@ export async function append_table_of_content_to_pdf(
       })
     )
     cursorY -= titleHeight - format.height
-
-    if (stripped) {
-      page.drawRectangle({
-        x: pageFormat.marginLeft,
-        y: cursorY - format.height / 20,
-        width: pageFormat.displayWidth,
-        height: format.height * titleLines.length,
-        opacity: 0.1
-      })
-      // page.drawLine({
-      //   start: { x: pageFormat.marginLeft, y: cursorY },
-      //   end: { x: pageFormat.marginLeft + pageFormat.displayWidth, y: cursorY },
-      //   thickness: lineThickness
-      // })
-    }
-    stripped = !stripped
   })
 }
