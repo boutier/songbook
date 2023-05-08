@@ -33,12 +33,6 @@ namespace Bin {
     }
   }
 
-  function reset<T, TChunk>(bin: Bin<T, TChunk>, def: BinDef<unknown>) {
-    bin.columns = [...def.binCapacities]
-    bin.currentColumn = 0
-    resetRemaining(bin)
-  }
-
   export function resetRemaining<T, TChunk>(bin: Bin<T, TChunk>) {
     bin.totalRemaining = 0
     for (let i = bin.currentColumn; i < bin.columns.length; i++) {
@@ -76,8 +70,8 @@ class BinSet<T, TChunk> {
     return this.addInColumn(obj, at) || this.forceAdd(obj)
   }
 
-  private addInColumn(obj: ObjectToPack<T, TChunk>, i: number): boolean {
-    let bin = this.bins[i]
+  private addInColumn(obj: ObjectToPack<T, TChunk>, binIndex: number): boolean {
+    let bin = this.bins[binIndex]
     const prefixWithSeparator =
       bin.columns[bin.currentColumn] !== this.def.binCapacities[bin.currentColumn]
     const separatorSize = prefixWithSeparator ? this.def.separator.size : 0
@@ -94,14 +88,15 @@ class BinSet<T, TChunk> {
     return false
   }
 
-  private addInColumns(obj: ObjectToPack<T, TChunk>, i: number): boolean {
-    let bin = this.bins[i]
-    let prefixWithSeparator = bin.columns[i] !== this.def.binCapacities[i]
+  private addInColumns(obj: ObjectToPack<T, TChunk>, binIndex: number): boolean {
+    let bin = this.bins[binIndex]
+    let prefixWithSeparator =
+      bin.columns[bin.currentColumn] !== this.def.binCapacities[bin.currentColumn]
     if (obj.size <= bin.totalRemaining) {
       // May fit in all columns if splitted
       let i = bin.currentColumn
       const newColumns = [...bin.columns]
-      const newElements = [...bin.elementsByColumn]
+      const newElements = bin.elementsByColumn.map((it) => [...it])
       for (const el of obj.elements) {
         if (el.size <= newColumns[i]) {
           // Fit in current column
@@ -167,11 +162,14 @@ class BinSet<T, TChunk> {
         } else if (bin.currentColumn < bin.columns.length - 1) {
           // Require a new column
           prefixWithSeparator = false
+          // bin.columns[bin.currentColumn] = 0
           ++bin.currentColumn
         } else {
           // Require a new bin
           prefixWithSeparator = false
-          Bin.resetRemaining(bin)
+          // bin.columns[bin.currentColumn] = 0
+          bin.totalRemaining = 0
+          bin.currentColumn = bin.columns.length
           bin = this.newBin()
         }
       }
@@ -195,6 +193,30 @@ export function naive_packing<T, TChunk>(
     }
   }
 
+  return bins.bins
+}
+
+/** Sort objects (biggest first) and put in the first matching bin. */
+export function packing1<T, TChunk>(
+  objects: ObjectToPack<T, TChunk>[],
+  binDefinition: BinDef<TChunk>
+): Bin<T, TChunk>[] {
+  const bins = new BinSet<T, TChunk>(binDefinition)
+  const biggestObjectsFirst = objects.sort((a, b) => b.size - a.size)
+
+  for (const obj of biggestObjectsFirst) {
+    for (let i = 0; i < bins.bins.length; i++) {
+      if (bins.add(obj, i)) {
+        obj.taken = true
+        break
+      }
+    }
+    if (!obj.taken) {
+      if (!bins.lastBinIsEmpty()) bins.newBin()
+      bins.addAndSplit(obj)
+      obj.taken = true
+    }
+  }
   return bins.bins
 }
 

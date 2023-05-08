@@ -1,5 +1,6 @@
 import { PDFDocument, PDFFont, StandardFonts } from 'pdf-lib'
-import { naive_packing, type Bin, type ObjectToPack } from './bin-packing-2'
+import type { Bin, ObjectToPack } from './bin-packing-2'
+import * as Packing from './bin-packing-2'
 import type { PrefixType, Song } from './parser'
 import { mmFromPoints, mmToPoints } from './pdf-utils'
 
@@ -332,11 +333,14 @@ export async function toFormat<T extends { [k: string]: StyleDefinition }>(
 
 export type PackedPage = Bin<FormattedSong, FormattedChunk | FormattedSeparator>
 
+export type PackingMethod = 'linear-no-split' | 'linear-split' | 'auto'
+
 export async function generate_bins(
   pageFormat: PageFormat,
   formatDefinition: FormatDefinition,
   separatorStyle: SeparatorStyle,
   parsed_songs: Song[],
+  packingMethod: PackingMethod,
 
   errorsOut: string[]
 ): Promise<[PDFDocument, PackedPage[]]> {
@@ -361,7 +365,13 @@ export async function generate_bins(
   }
 
   // Do some bin-packing (songs may be reordered)
-  const bins: PackedPage[] = naive_packing<FormattedSong, FormattedChunk | FormattedSeparator>(
+  const packingFunction =
+    packingMethod === 'linear-split'
+      ? Packing.naive_packing
+      : packingMethod === 'linear-no-split'
+      ? Packing.naive_packing
+      : Packing.packing1
+  const bins: PackedPage[] = packingFunction<FormattedSong, FormattedChunk | FormattedSeparator>(
     formatted_songs.map(
       (song): ObjectToPack<FormattedSong, FormattedChunk> => ({
         size: song.height,
@@ -415,6 +425,7 @@ export async function generate_pdf(
     for (const [columnIndex, columnChunks] of bin.elementsByColumn.entries()) {
       // New column
       let cursorY = pageFormat.pageHeight - pageFormat.marginTop
+      let lastTextMargin = 0 // To be removed before drawing a separator
       for (const chunk of columnChunks) {
         if (chunk.type === 'chunk') {
           for (const element of chunk.elements) {
@@ -425,8 +436,11 @@ export async function generate_pdf(
               size: element.style.size
             })
           }
+          lastTextMargin = chunk.marginBottom
           cursorY -= chunk.height + chunk.marginBottom
         } else {
+          cursorY += lastTextMargin // Erase last margin
+          lastTextMargin = 0
           const y = cursorY - lineMarginTop + lineThickness / 2
           currentPage.drawLine({
             start: { x: cursorX, y },

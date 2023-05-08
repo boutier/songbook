@@ -112,6 +112,7 @@ import {
   generate_pdf,
   renumber_songs,
   type FormatDefinition,
+  type PackingMethod,
   type SeparatorStyle
 } from './generator/formatter'
 import { parse_file, type Song } from './generator/parser'
@@ -141,28 +142,80 @@ const DEFAULT_PAGE_FORMAT: PageFormat = {
 }
 
 const SAMPLE = `
-24 - À l’Agneau de Dieu pif paf pouf tra la la
-# type : louange, intercession, esprit-saint, célébration
-1.
-Élevé à la droite de Dieu,
-Couronné de mille couronnes,
-Tu resplendis comme un soleil radieux ;
-Les êtres crient autour de ton trône :
-R.
-À l’Agneau de Dieu soit la gloire,
-À l’Agneau de Dieu, la victoire,
-À l’Agneau de Dieu soit le règne
-Pour tous les siècles, amen.
-2.
-L’Esprit Saint et l’Épouse fidèle
-Disent « Viens ! », c’est leur cœur qui appelle.
-Viens, ô Jésus, toi l’Époux bien-aimé ;
-Tous les élus ne cessent de chanter :
-3
-Tous les peuples et toutes les nations,
-D’un seul cœur avec les milliers d’anges,
-Entonneront en l’honneur de ton Nom
-Ce chant de gloire, avec force et louange :
+68 - CE QUE DIEU A CHOISI
+# type : intercession+
+
+A. Ce qu’il y a de fou dans le monde, voilà ce que Dieu a choisi ;
+Ce qu’il y a de faible dans le monde, voilà ce que Dieu a choisi.
+
+B. Viens, Esprit de feu, viens, Esprit d’amour,
+Viens, Esprit de Dieu, viens, nous t’attendons !
+
+70 – Manifeste-toi
+# type : intercession+
+
+Manifeste-toi, donne-nous de l’assurance ;
+révèle-toi, remplis-nous de ta présence.
+Étends ta main,
+qu’il se produise des prodiges,
+par le nom de Jésus Christ,
+des guérisons et des signes.
+
+1 – Ta grâce
+# type : méditation
+A. Je suis sauvé, aimé
+Pardonné par ta grâce. (bis)
+B. Ta grâce vient me libérer
+Ta grâce vient me racheter
+C’est par la foi que je suis sauvé. (bis)
+
+
+1 - Ne crains pas
+#context : (je suis ton Dieu)
+# type : méditation
+Ne crains pas, je suis ton Dieu,
+C’est moi qui t’ai choisi, appelé par ton nom.
+Tu as du prix à mes yeux et je t’aime. 
+Ne crains pas car je suis avec toi.
+
+1 - Mon âme se repose 
+#context : (Taizé)
+# type : méditation
+Mon âme se repose en paix sur Dieu seul : 
+de lui vient mon salut. 
+Oui, sur Dieu seul mon âme se repose,
+se repose en paix.
+
+1 - Jésus le Christ 
+#context : (Taizé)
+# type : intercession+
+Jésus le Christ, lumière intérieure,
+ne laisse pas mes ténèbres me parler.
+Jésus le Christ, lumière intérieure,
+donne-moi d’accueillir ton amour.
+
+1 - Cœur de Jésus brûlant d'amour 
+# type : intercession+
+Cœur de Jésus brûlant d’amour, 
+Embrase-nous par ton Esprit. 
+Que nos cœurs soient semblables au tien, 
+Que nous brûlions de charité ! 
+
+113 - Je laisse à tes pieds
+# type : intercession+
+Je laisse à tes pieds mes fardeaux
+Devant toi , je dépose tous mes soucis
+Et chaque fois que je ne sais pas me diriger,
+J’abandonne à tes pieds mes fardeaux.
+
+3 - Mon bien-aimé
+# type : louange
+
+Mon bien-aimé, mon bien-aimé,
+Mon bien-aimé, le voici, il vient. (bis)
+Il saute sur les montagnes et bondit sur les collines. (x2)
+
+
 `
 
 type DataContent = {
@@ -173,6 +226,7 @@ type DataContent = {
   stylesheet: FormatDefinition
   tableOfContentStylesheet: TableOfContentFormatDefinition
   separatorStyle: SeparatorStyle
+  packingMethod: PackingMethod
   rawsongs: string
   songs: Song[]
   error?: string
@@ -194,6 +248,7 @@ export default {
         stylesheet: { ...DEFAULT_STYLES },
         tableOfContentStylesheet: { ...DEFAULT_TABLE_OF_CONTENT_STYLES },
         separatorStyle: DEFAULT_SEPARATOR_STYLE,
+        packingMethod: 'auto',
         rawsongs: false ? SAMPLE : RAW_DATA,
         songs: [],
         error: undefined,
@@ -223,6 +278,7 @@ export default {
         stylesheet: this.stylesheet,
         tableOfContentStylesheet: this.tableOfContentStylesheet,
         separatorStyle: this.separatorStyle,
+        packingMethod: this.packingMethod,
         rawsongs: this.rawsongs,
 
         songs: [],
@@ -274,6 +330,7 @@ export default {
           this.stylesheet,
           this.separatorStyle,
           this.songs,
+          this.packingMethod,
           errors
         )
         this.error = errors.length > 0 ? errors.join('\n') : undefined
@@ -305,6 +362,7 @@ export default {
           this.stylesheet,
           this.separatorStyle,
           this.songs,
+          this.packingMethod,
           errors
         )
         this.error = errors.length > 0 ? errors.join('\n') : undefined
