@@ -26,7 +26,7 @@ export default {
 
 <template>
   <div class="d-flex">
-    <div class="size-input my-auto">{{ title }}</div>
+    <div class="my-auto" style="width: 12em">{{ title }}</div>
     <div class="form-label my-auto">Taille (pt)</div>
     <input
       ref="fontSize"

@@ -149,7 +149,8 @@ export function parse_file(file: string): Song[] {
     .replace(/[’´\t]/g, (c) => (c === '\t' ? '' : "'"))
     .replaceAll('...', '…')
     // Add non-breaking spaces
-    .replace(/\s*([!?;:])/g, ' $1')
+    .replace(/([«])\s*/g, '$1 ')
+    .replace(/\s*([!?;:»])/g, ' $1')
     .normalize('NFC')
     .split(/[0-9]+\s*[-—–]/)
     .map((it) => it.trim())

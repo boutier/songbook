@@ -10,7 +10,7 @@ import {
 } from 'docx'
 import type { IParagraphStylePropertiesOptions } from 'docx/build/file/paragraph/properties'
 import FileSaver from 'file-saver'
-import type { FormatDefinition, FormattedSong, PageFormat, StyleDefinition } from './formatter'
+import type { FormatDefinition, PackedPage, PageFormat, StyleDefinition } from './formatter'
 import type { PrefixType, Stanza } from './parser'
 import { mmToPoints } from './pdf-utils'
 import { capitalize } from './utils'
@@ -57,7 +57,7 @@ function styleToDocxStyle(id: string, style: StyleDefinition): IParagraphStyleOp
 export async function exportDocx(
   pageFormat: PageFormat,
   format: FormatDefinition,
-  bins: { objs: { song: FormattedSong }[] }[]
+  bins: PackedPage[]
 ) {
   const styleByPrefixType: { [t in PrefixType]: IParagraphStyleOptions } = {
     none: styleToDocxStyle('sb-default', format.default),
@@ -96,11 +96,12 @@ export async function exportDocx(
   const contentSectionChildren = []
   let songNumber = 0
   for (const bin of bins) {
-    for (const { song } of bin.objs) {
+    for (const { obj } of bin.objects) {
+      const song = obj.song
       ++songNumber
       contentSectionChildren.push(
         new Paragraph({
-          text: song.song.title,
+          text: song.title,
           heading: HeadingLevel.HEADING_1,
           numbering: {
             reference: 'title',
@@ -108,7 +109,7 @@ export async function exportDocx(
           }
         })
       )
-      for (const stanza of song.song.stanzas) {
+      for (const stanza of song.stanzas) {
         const styleId = styleByPrefixType[stanza.prefixType].id
 
         contentSectionChildren.push(

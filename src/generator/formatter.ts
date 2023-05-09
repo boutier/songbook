@@ -110,6 +110,13 @@ export type PageFormat = {
   marginBottom: number
   marginLeft: number
 
+  /** In unity */
+  columns: number
+  gutterLeftMargin: number
+  gutterRightMargin: number
+  /** Always in points */
+  gutterSeparatorThickness: number
+
   displayWidth: number
   displayHeight: number
 
@@ -125,6 +132,9 @@ export namespace PageFormat {
     const marginRight = f(page.marginRight)
     const marginBottom = f(page.marginBottom)
     const marginLeft = f(page.marginLeft)
+    const gutterLeftMargin = f(page.gutterLeftMargin)
+    const gutterRightMargin = f(page.gutterRightMargin)
+
     const displayWidth = pageWidth - marginLeft - marginRight
     const displayHeight = pageHeight - marginTop - marginBottom
 
@@ -138,6 +148,11 @@ export namespace PageFormat {
       marginLeft,
       displayWidth,
       displayHeight,
+      columns: page.columns,
+      gutterLeftMargin,
+      gutterRightMargin,
+      gutterSeparatorThickness: page.gutterSeparatorThickness,
+
       wrapAlineaWidth: f(page.wrapAlineaWidth)
     }
   }
@@ -170,6 +185,11 @@ export type FormattedSeparator = {
   type: 'separator'
   height: number
   separatorStyle: SeparatorStyle
+}
+
+export type FormattedBlank = {
+  type: 'blank'
+  height: number
 }
 
 /**
@@ -371,6 +391,12 @@ export async function generate_bins(
       : packingMethod === 'linear-no-split'
       ? Packing.naive_packing
       : Packing.packing1
+
+  const initialBins = new Packing.BinSet<FormattedSong, FormattedChunk | FormattedSeparator>({
+    binCapacities: [pageFormat.displayHeight],
+    separator: { size: separator.height, objChunk: separator }
+  })
+  initialBins
   const bins: PackedPage[] = packingFunction<FormattedSong, FormattedChunk | FormattedSeparator>(
     formatted_songs.map(
       (song): ObjectToPack<FormattedSong, FormattedChunk> => ({
@@ -382,10 +408,7 @@ export async function generate_bins(
         obj: song
       })
     ),
-    {
-      binCapacities: [pageFormat.displayHeight],
-      separator: { size: separator.height, objChunk: separator }
-    }
+    initialBins
   )
   return [pdfDoc, bins]
 }

@@ -41,7 +41,7 @@ namespace Bin {
   }
 }
 
-class BinSet<T, TChunk> {
+export class BinSet<T, TChunk> {
   bins: Bin<T, TChunk>[] = []
 
   constructor(private def: BinDef<TChunk>) {
@@ -182,10 +182,8 @@ class BinSet<T, TChunk> {
 /** Just split content into bins in sequential order. Preserve ordering. */
 export function naive_packing<T, TChunk>(
   objects: ObjectToPack<T, TChunk>[],
-  binDefinition: BinDef<TChunk>
+  bins: BinSet<T, TChunk>
 ): Bin<T, TChunk>[] {
-  const bins = new BinSet<T, TChunk>(binDefinition)
-
   for (const obj of objects) {
     if (!bins.add(obj)) {
       if (!bins.lastBinIsEmpty()) bins.newBin()
@@ -199,9 +197,8 @@ export function naive_packing<T, TChunk>(
 /** Sort objects (biggest first) and put in the first matching bin. */
 export function packing1<T, TChunk>(
   objects: ObjectToPack<T, TChunk>[],
-  binDefinition: BinDef<TChunk>
+  bins: BinSet<T, TChunk>
 ): Bin<T, TChunk>[] {
-  const bins = new BinSet<T, TChunk>(binDefinition)
   const biggestObjectsFirst = objects.sort((a, b) => b.size - a.size)
 
   for (const obj of biggestObjectsFirst) {

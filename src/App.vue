@@ -31,12 +31,10 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
           {{ value }}
         </template> -->
       </VueMultiselect>
-      <div class="my-auto ms-2">
-        <label>
-          <input type="checkbox" v-bind="landskape" @click="switchLandskape" value="newsletter" />
-          Paysage
-        </label>
-      </div>
+      <label class="my-auto ms-2">
+        <input type="checkbox" v-bind="landskape" @click="switchLandskape" value="newsletter" />
+        Paysage
+      </label>
     </div>
     <div class="d-flex justify-content-start">
       <div class="fw-bold mx-3 my-auto">Marges</div>
@@ -48,6 +46,28 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
       <input v-model="pageFormat.marginLeft" class="form-control size-input" type="number" />
       <div class="form-label mx-3 my-auto">Droite</div>
       <input v-model="pageFormat.marginRight" class="form-control size-input" type="number" />
+    </div>
+    <div class="d-flex justify-content-start">
+      <div class="fw-bold mx-3 my-auto">Colonnes (par pages)</div>
+      <input v-model="pageFormat.columns" class="form-control size-input" type="number" />
+      <div class="fw-bold mx-3 my-auto">Gouttière (séparateur)</div>
+      <label class="form-label mx-3 my-auto">Marge gauche</label>
+      <input v-model="pageFormat.gutterLeftMargin" class="form-control size-input" type="number" />
+      <div class="form-label mx-3 my-auto">Épaisseur du trait (pt)</div>
+      <input
+        v-model="pageFormat.gutterSeparatorThickness"
+        class="form-control size-input"
+        type="number"
+      />
+      <div class="form-label mx-3 my-auto">Marge droite</div>
+      <input v-model="pageFormat.gutterRightMargin" class="form-control size-input" type="number" />
+    </div>
+    <div class="d-flex justify-content-start">
+      <div class="fw-bold mx-3 my-auto">Présentation</div>
+      <label class="my-auto ms-2">
+        <input type="checkbox" v-bind="book" @click="switchLandskape" value="newsletter" />
+        Livret
+      </label>
     </div>
 
     <div class="h6">Styles des chants</div>
@@ -104,6 +124,7 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
 import StyleInput from './components/StyleInput.vue'
 import { parse_secli_xml } from './data/secli-parser'
 import { RAW_DATA } from './generator/data-real'
+import { exportDocx } from './generator/export-docx'
 import {
   DEFAULT_SEPARATOR_STYLE,
   DEFAULT_STYLES,
@@ -137,6 +158,11 @@ const DEFAULT_PAGE_FORMAT: PageFormat = {
 
   displayWidth: 0,
   displayHeight: 0,
+
+  columns: 1,
+  gutterLeftMargin: 2,
+  gutterRightMargin: 2,
+  gutterSeparatorThickness: 1,
 
   wrapAlineaWidth: 5
 }
@@ -223,6 +249,7 @@ type DataContent = {
   pageSize: keyof typeof PageSizes | 'custom'
   landskape: boolean
   pageFormat: PageFormat
+  book: boolean
   stylesheet: FormatDefinition
   tableOfContentStylesheet: TableOfContentFormatDefinition
   separatorStyle: SeparatorStyle
@@ -244,6 +271,7 @@ export default {
         pageSizes: Object.entries(PageSizes),
         pageSize: 'A4' as keyof typeof PageSizes | 'custom',
         landskape: false,
+        book: false,
         pageFormat: PageFormat.convertTo('mm', DEFAULT_PAGE_FORMAT),
         stylesheet: { ...DEFAULT_STYLES },
         tableOfContentStylesheet: { ...DEFAULT_TABLE_OF_CONTENT_STYLES },
@@ -256,14 +284,16 @@ export default {
       }
     },
     resetData(from: DataContent) {
-      this.pageSizes = from?.pageSizes
-      this.pageSize = from?.pageSize
-      this.landskape = from?.landskape
-      this.pageFormat = from?.pageFormat
-      this.stylesheet = from?.stylesheet
-      this.tableOfContentStylesheet = from?.tableOfContentStylesheet
-      this.separatorStyle = from?.separatorStyle
-      this.rawsongs = from?.rawsongs
+      this.pageSizes = from.pageSizes
+      this.pageSize = from.pageSize
+      this.landskape = from.landskape
+      this.pageFormat = from.pageFormat
+      this.book = from.book
+      this.stylesheet = from.stylesheet
+      this.tableOfContentStylesheet = from.tableOfContentStylesheet
+      this.separatorStyle = from.separatorStyle
+      this.packingMethod = from.packingMethod
+      this.rawsongs = from.rawsongs
 
       this.songs = []
       this.error = undefined
@@ -275,6 +305,7 @@ export default {
         pageSize: this.pageSize,
         landskape: this.landskape,
         pageFormat: this.pageFormat,
+        book: this.book,
         stylesheet: this.stylesheet,
         tableOfContentStylesheet: this.tableOfContentStylesheet,
         separatorStyle: this.separatorStyle,
@@ -366,7 +397,7 @@ export default {
           errors
         )
         this.error = errors.length > 0 ? errors.join('\n') : undefined
-        // exportDocx(pageFormat, this.stylesheet, bins)
+        exportDocx(pageFormat, this.stylesheet, bins)
       } catch (e) {
         this.error = fullErrorMessage(e)
       }
