@@ -122,6 +122,7 @@ export type PageFormat = {
   columnWidth: number
 
   wrapAlineaWidth: number
+  titleSeparator: string
 }
 
 export namespace PageFormat {
@@ -159,7 +160,8 @@ export namespace PageFormat {
       gutterRightMargin,
       gutterSeparatorThickness,
 
-      wrapAlineaWidth: f(page.wrapAlineaWidth)
+      wrapAlineaWidth: f(page.wrapAlineaWidth),
+      titleSeparator: page.titleSeparator
     }
   }
 }
@@ -259,7 +261,12 @@ export function format_element(
   }
 }
 
-function format_song(page: PageFormat, styles: Format, song: Song): FormattedSong {
+function format_song(
+  page: PageFormat,
+  styles: Format,
+  titlePrefixFormat: string,
+  song: Song
+): FormattedSong {
   const elements: FormattedChunk[] = []
   let subElements: FormattedText[] = []
   let y: number = 0
@@ -267,7 +274,7 @@ function format_song(page: PageFormat, styles: Format, song: Song): FormattedSon
     const transformedLine = styles.title.toUpper ? song.title.toLocaleUpperCase() : song.title
     y = format_element(
       subElements,
-      '000 ' + transformedLine,
+      titlePrefixFormat + transformedLine,
       page.columnWidth,
       styles.title,
       0,
@@ -375,8 +382,11 @@ export async function generate_bins(
   // PDF Creation
   const pdfDoc = await PDFDocument.create()
   const format: Format = await toFormat(pdfDoc, formatDefinition)
+  const titlePrefixFormat = // somethink like '000 - ' to guess the numerotation length.
+    new Array(Math.floor(Math.log10(parsed_songs.length)) + 1).fill('0').join('') +
+    (pageFormat.titleSeparator ? ' - ' : ' ')
   const formatted_songs: FormattedSong[] = parsed_songs.map((it) =>
-    format_song(pageFormat, format, it)
+    format_song(pageFormat, format, titlePrefixFormat, it)
   )
 
   const { lineMarginTop, lineMarginBottom, lineThickness } = separatorStyle
@@ -433,7 +443,7 @@ export function renumber_songs(bins: PackedPage[]) {
   bins.forEach((bin) =>
     bin.objects.forEach((song) => {
       const title = song.obj.elements[0].elements[0]
-      title.text = title.text.replace(/^000/, (++song_num).toString())
+      title.text = title.text.replace(/^0+/, (++song_num).toString())
       song.obj.song.number = song_num
     })
   )

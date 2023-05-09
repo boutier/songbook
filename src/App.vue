@@ -74,6 +74,11 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
     <div class="ms-2">
       <StyleInput :title="'default'" v-model:style="stylesheet.default" />
       <StyleInput :title="'Titre'" v-model:style="stylesheet.title" />
+      <div class="d-flex">
+        <div class="my-auto" style="width: 12em"></div>
+        <label class="form-label my-auto me-1">Séparateur de numérotation</label>
+        <input v-model="pageFormat.titleSeparator" class="form-control size-input" type="text" />
+      </div>
       <StyleInput :title="'Refrain'" v-model:style="stylesheet.refrain" />
       <StyleInput :title="'Couplet'" v-model:style="stylesheet.verse" />
       <StyleInput :title="'Coda'" v-model:style="stylesheet.coda" />
@@ -98,7 +103,7 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
         :title="'Titres du groupe pair'"
         v-model:style="tableOfContentStylesheet.evenTitle"
       />
-      <StyleInput :title="'Champs'" v-model:style="tableOfContentStylesheet.otherFields" />
+      <StyleInput :title="'Autre (n°, +)'" v-model:style="tableOfContentStylesheet.otherFields" />
     </div>
 
     <div class="h6">Contenu du livret</div>
@@ -165,7 +170,8 @@ const DEFAULT_PAGE_FORMAT: PageFormat = {
   gutterRightMargin: 2,
   gutterSeparatorThickness: 1,
 
-  wrapAlineaWidth: 5
+  wrapAlineaWidth: 5,
+  titleSeparator: '-'
 }
 
 const SAMPLE = `
