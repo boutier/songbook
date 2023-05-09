@@ -47,7 +47,7 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
       <div class="form-label mx-3 my-auto">Droite</div>
       <input v-model="pageFormat.marginRight" class="form-control size-input" type="number" />
     </div>
-    <div class="d-flex justify-content-start">
+    <!-- <div class="d-flex justify-content-start">
       <div class="fw-bold mx-3 my-auto">Colonnes (par pages)</div>
       <input v-model="pageFormat.columns" class="form-control size-input" type="number" />
       <div class="fw-bold mx-3 my-auto">Gouttière (séparateur)</div>
@@ -65,10 +65,10 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
     <div class="d-flex justify-content-start">
       <div class="fw-bold mx-3 my-auto">Présentation</div>
       <label class="my-auto ms-2">
-        <input type="checkbox" v-bind="book" @click="switchLandskape" value="newsletter" />
-        Livret
+        <input type="checkbox" v-bind="book" @click="" value="newsletter" />
+        Première page impaire (les chants de la première page ne doivent pas être coupés sur la 2e)
       </label>
-    </div>
+    </div> -->
 
     <div class="h6">Styles des chants</div>
     <div class="ms-2">
