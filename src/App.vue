@@ -47,7 +47,7 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
       <div class="form-label mx-3 my-auto">Droite</div>
       <input v-model="pageFormat.marginRight" class="form-control size-input" type="number" />
     </div>
-    <!-- <div class="d-flex justify-content-start">
+    <div class="d-flex justify-content-start">
       <div class="fw-bold mx-3 my-auto">Colonnes (par pages)</div>
       <input v-model="pageFormat.columns" class="form-control size-input" type="number" />
       <div class="fw-bold mx-3 my-auto">Gouttière (séparateur)</div>
@@ -65,10 +65,10 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
     <div class="d-flex justify-content-start">
       <div class="fw-bold mx-3 my-auto">Présentation</div>
       <label class="my-auto ms-2">
-        <input type="checkbox" v-bind="book" @click="" value="newsletter" />
+        <input type="checkbox" v-model="oddFirstPage" value="newsletter" />
         Première page impaire (les chants de la première page ne doivent pas être coupés sur la 2e)
       </label>
-    </div> -->
+    </div>
 
     <div class="h6">Styles des chants</div>
     <div class="ms-2">
@@ -158,6 +158,7 @@ const DEFAULT_PAGE_FORMAT: PageFormat = {
 
   displayWidth: 0,
   displayHeight: 0,
+  columnWidth: 0,
 
   columns: 1,
   gutterLeftMargin: 2,
@@ -249,7 +250,7 @@ type DataContent = {
   pageSize: keyof typeof PageSizes | 'custom'
   landskape: boolean
   pageFormat: PageFormat
-  book: boolean
+  oddFirstPage: boolean
   stylesheet: FormatDefinition
   tableOfContentStylesheet: TableOfContentFormatDefinition
   separatorStyle: SeparatorStyle
@@ -271,7 +272,7 @@ export default {
         pageSizes: Object.entries(PageSizes),
         pageSize: 'A4' as keyof typeof PageSizes | 'custom',
         landskape: false,
-        book: false,
+        oddFirstPage: false,
         pageFormat: PageFormat.convertTo('mm', DEFAULT_PAGE_FORMAT),
         stylesheet: { ...DEFAULT_STYLES },
         tableOfContentStylesheet: { ...DEFAULT_TABLE_OF_CONTENT_STYLES },
@@ -288,7 +289,7 @@ export default {
       this.pageSize = from.pageSize
       this.landskape = from.landskape
       this.pageFormat = from.pageFormat
-      this.book = from.book
+      this.oddFirstPage = from.oddFirstPage
       this.stylesheet = from.stylesheet
       this.tableOfContentStylesheet = from.tableOfContentStylesheet
       this.separatorStyle = from.separatorStyle
@@ -305,7 +306,7 @@ export default {
         pageSize: this.pageSize,
         landskape: this.landskape,
         pageFormat: this.pageFormat,
-        book: this.book,
+        oddFirstPage: this.oddFirstPage,
         stylesheet: this.stylesheet,
         tableOfContentStylesheet: this.tableOfContentStylesheet,
         separatorStyle: this.separatorStyle,
@@ -358,6 +359,7 @@ export default {
         const errors: string[] = []
         const [pdfDoc, bins] = await generate_bins(
           pageFormat,
+          this.oddFirstPage,
           this.stylesheet,
           this.separatorStyle,
           this.songs,
@@ -390,6 +392,7 @@ export default {
         const errors: string[] = []
         const [_pdfDoc, bins] = await generate_bins(
           pageFormat,
+          this.oddFirstPage,
           this.stylesheet,
           this.separatorStyle,
           this.songs,

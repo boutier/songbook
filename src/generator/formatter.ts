@@ -119,6 +119,7 @@ export type PageFormat = {
 
   displayWidth: number
   displayHeight: number
+  columnWidth: number
 
   wrapAlineaWidth: number
 }
@@ -135,8 +136,12 @@ export namespace PageFormat {
     const gutterLeftMargin = f(page.gutterLeftMargin)
     const gutterRightMargin = f(page.gutterRightMargin)
 
+    const gutterSeparatorThickness = page.gutterSeparatorThickness
+
     const displayWidth = pageWidth - marginLeft - marginRight
     const displayHeight = pageHeight - marginTop - marginBottom
+    const gutterWidth = gutterLeftMargin + gutterRightMargin + gutterSeparatorThickness
+    const columnWidth = displayWidth / page.columns - (page.columns - 1) * gutterWidth
 
     return {
       unit,
@@ -148,10 +153,11 @@ export namespace PageFormat {
       marginLeft,
       displayWidth,
       displayHeight,
+      columnWidth,
       columns: page.columns,
       gutterLeftMargin,
       gutterRightMargin,
-      gutterSeparatorThickness: page.gutterSeparatorThickness,
+      gutterSeparatorThickness,
 
       wrapAlineaWidth: f(page.wrapAlineaWidth)
     }
@@ -262,7 +268,7 @@ function format_song(page: PageFormat, styles: Format, song: Song): FormattedSon
     y = format_element(
       subElements,
       '000 ' + transformedLine,
-      page.displayWidth,
+      page.columnWidth,
       styles.title,
       0,
       page.wrapAlineaWidth,
@@ -284,7 +290,7 @@ function format_song(page: PageFormat, styles: Format, song: Song): FormattedSon
   song.stanzas.forEach((stanza, index) => {
     const style = styleByPrefixType[stanza.prefixType]
     const contentX = style.widthOf(`${stanza.prefix} A`) - style.widthOf('A')
-    const width = page.displayWidth - contentX
+    const width = page.columnWidth - contentX
     subElements.push({ x: 0, y: y, text: stanza.prefix, style })
 
     for (const [lineIndex, line] of stanza.lines.entries()) {
@@ -351,12 +357,14 @@ export async function toFormat<T extends { [k: string]: StyleDefinition }>(
   ) as any
 }
 
-export type PackedPage = Bin<FormattedSong, FormattedChunk | FormattedSeparator>
+export type PackedElement = FormattedChunk | FormattedSeparator | FormattedBlank
+export type PackedPage = Bin<FormattedSong, PackedElement>
 
 export type PackingMethod = 'linear-no-split' | 'linear-split' | 'auto'
 
 export async function generate_bins(
   pageFormat: PageFormat,
+  oddFirstPage: boolean,
   formatDefinition: FormatDefinition,
   separatorStyle: SeparatorStyle,
   parsed_songs: Song[],
@@ -364,12 +372,6 @@ export async function generate_bins(
 
   errorsOut: string[]
 ): Promise<[PDFDocument, PackedPage[]]> {
-  pageFormat = {
-    ...pageFormat,
-    displayWidth: pageFormat.pageWidth - pageFormat.marginLeft - pageFormat.marginRight,
-    displayHeight: pageFormat.pageHeight - pageFormat.marginTop - pageFormat.marginBottom
-  }
-
   // PDF Creation
   const pdfDoc = await PDFDocument.create()
   const format: Format = await toFormat(pdfDoc, formatDefinition)
@@ -392,12 +394,24 @@ export async function generate_bins(
       ? Packing.naive_packing
       : Packing.packing1
 
-  const initialBins = new Packing.BinSet<FormattedSong, FormattedChunk | FormattedSeparator>({
-    binCapacities: [pageFormat.displayHeight],
+  // Double the number of columns (this simulate having pages side to side)
+  const initialBins = new Packing.BinSet<FormattedSong, PackedElement>({
+    binCapacities: new Array(pageFormat.columns * 2).fill(pageFormat.displayHeight),
     separator: { size: separator.height, objChunk: separator }
   })
-  initialBins
-  const bins: PackedPage[] = packingFunction<FormattedSong, FormattedChunk | FormattedSeparator>(
+  if (oddFirstPage) {
+    // Remove the first "left" page... that does not exists.
+    const blankPage: FormattedBlank[] = [{ type: 'blank', height: pageFormat.displayHeight }]
+    const bin = initialBins.bins[0] ?? initialBins.newBin()
+    for (let i = 0; i < pageFormat.columns; i++) {
+      bin.columns[i] = 0
+      bin.elementsByColumn[i] = blankPage
+    }
+    bin.currentColumn = pageFormat.columns
+    bin.totalRemaining = pageFormat.displayHeight * pageFormat.columns
+  }
+
+  const bins: PackedPage[] = packingFunction<FormattedSong, PackedElement>(
     formatted_songs.map(
       (song): ObjectToPack<FormattedSong, FormattedChunk> => ({
         size: song.height,
@@ -410,6 +424,7 @@ export async function generate_bins(
     ),
     initialBins
   )
+
   return [pdfDoc, bins]
 }
 
@@ -431,62 +446,68 @@ export async function generate_pdf(
   separatorStyle: SeparatorStyle,
   bins: PackedPage[]
 ) {
-  const columnsByPage = 1
+  const columnsByPage = pageFormat.columns
 
-  const gutterLeftMargin = 5
-  const gutterRightMargin = 5
-  const gutterSeparatorThickness = 1
+  const { gutterLeftMargin, gutterRightMargin, gutterSeparatorThickness, columnWidth } = pageFormat
   const gutterWidth = gutterLeftMargin + gutterRightMargin + gutterSeparatorThickness
-  const columnWidth = pageFormat.displayWidth / columnsByPage - (columnsByPage - 1) * gutterWidth
 
   // PDF Creation
   const { lineMarginTop, lineThickness } = separatorStyle
 
   for (const bin of bins) {
-    let currentPage = pdfDoc.addPage([pageFormat.pageWidth, pageFormat.pageHeight])
-    let cursorX = pageFormat.marginLeft
-    for (const [columnIndex, columnChunks] of bin.elementsByColumn.entries()) {
-      // New column
-      let cursorY = pageFormat.pageHeight - pageFormat.marginTop
-      let lastTextMargin = 0 // To be removed before drawing a separator
-      for (const chunk of columnChunks) {
-        if (chunk.type === 'chunk') {
-          for (const element of chunk.elements) {
-            currentPage.drawText(element.text, {
-              x: cursorX + element.x,
-              y: cursorY - element.y - element.style.height,
-              font: element.style.font,
-              size: element.style.size
-            })
-          }
-          lastTextMargin = chunk.marginBottom
-          cursorY -= chunk.height + chunk.marginBottom
-        } else {
-          cursorY += lastTextMargin // Erase last margin
-          lastTextMargin = 0
-          const y = cursorY - lineMarginTop + lineThickness / 2
-          currentPage.drawLine({
-            start: { x: cursorX, y },
-            end: { x: cursorX + columnWidth, y },
-            thickness: lineThickness,
-            opacity: 0.3
-          })
-          cursorY -= chunk.height
-        }
+    for (const columnsByPage of [
+      bin.elementsByColumn.slice(0, pageFormat.columns),
+      bin.elementsByColumn.slice(pageFormat.columns)
+    ]) {
+      // Skip blank pages.
+      if (columnsByPage.every((chunks) => chunks.every((it) => it.type === 'blank'))) {
+        continue
       }
+      let currentPage = pdfDoc.addPage([pageFormat.pageWidth, pageFormat.pageHeight])
+      let cursorX = pageFormat.marginLeft
+      for (const [columnIndex, columnChunks] of columnsByPage.entries()) {
+        // New column
+        let cursorY = pageFormat.pageHeight - pageFormat.marginTop
+        let lastTextMargin = 0 // To be removed before drawing a separator
+        for (const chunk of columnChunks) {
+          if (chunk.type === 'chunk') {
+            for (const element of chunk.elements) {
+              currentPage.drawText(element.text, {
+                x: cursorX + element.x,
+                y: cursorY - element.y - element.style.height,
+                font: element.style.font,
+                size: element.style.size
+              })
+            }
+            lastTextMargin = chunk.marginBottom
+            cursorY -= chunk.height + chunk.marginBottom
+          } else {
+            cursorY += lastTextMargin // Erase last margin
+            lastTextMargin = 0
+            const y = cursorY - lineMarginTop + lineThickness / 2
+            currentPage.drawLine({
+              start: { x: cursorX, y },
+              end: { x: cursorX + columnWidth, y },
+              thickness: lineThickness,
+              opacity: 0.3
+            })
+            cursorY -= chunk.height
+          }
+        }
 
-      // draw column separator
-      if (columnIndex !== bin.elementsByColumn.length - 1) {
-        cursorX += columnWidth
-        const gutterX = cursorX + gutterLeftMargin
-        currentPage.drawLine({
-          start: { x: gutterX, y: pageFormat.pageHeight - pageFormat.marginTop },
-          end: { x: gutterX, y: pageFormat.marginBottom },
-          thickness: gutterSeparatorThickness,
-          opacity: 0.5
-        })
+        // draw column separator
+        if (columnIndex !== columnsByPage.length - 1) {
+          cursorX += columnWidth
+          const gutterX = cursorX + gutterLeftMargin
+          currentPage.drawLine({
+            start: { x: gutterX, y: pageFormat.pageHeight - pageFormat.marginTop },
+            end: { x: gutterX, y: pageFormat.marginBottom },
+            thickness: gutterSeparatorThickness,
+            opacity: 0.5
+          })
 
-        cursorX += gutterWidth
+          cursorX += gutterWidth
+        }
       }
     }
   }

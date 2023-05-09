@@ -14,10 +14,7 @@ export interface Bin<T, TChunk> {
   columns: number[]
   currentColumn: number
   totalRemaining: number
-  /**
-   * Objects to patch starting on this bin.
-   * TODO: Or maybe just `T[]`?
-   */
+  /** Objects to patch starting on this bin. */
   objects: ObjectToPack<T, TChunk>[]
   elementsByColumn: TChunk[][]
 }
