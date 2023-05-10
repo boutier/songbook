@@ -151,6 +151,7 @@ export function parse_file(file: string): Song[] {
     // Add non-breaking spaces
     .replace(/([«])\s*/g, '$1 ')
     .replace(/\s*([!?;:»])/g, ' $1')
+    .replace(/\n\s*([a-zôà])/g, (x) => x.toLocaleUpperCase())
     .normalize('NFC')
     .split(/[0-9]+\s*[-—–]/)
     .map((it) => it.trim())
