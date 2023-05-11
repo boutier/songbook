@@ -253,7 +253,7 @@ export function format_element(
       style,
       alineaX,
       alineaX,
-      y + style.height // We may add interline here.
+      y + style.height + style.interLine // We may add interline here.
     )
   } else {
     elements.push({ x, y, text, style })
