@@ -69,18 +69,18 @@ export class BinSet<T, TChunk> {
 
   private addInColumn(obj: ObjectToPack<T, TChunk>, binIndex: number): boolean {
     let bin = this.bins[binIndex]
-    const prefixWithSeparator =
-      bin.columns[bin.currentColumn] !== this.def.binCapacities[bin.currentColumn]
-    const separatorSize = prefixWithSeparator ? this.def.separator.size : 0
-    if (obj.size + separatorSize <= bin.columns[bin.currentColumn]) {
-      // Fit in column
-      bin.columns[bin.currentColumn] -= obj.size + separatorSize
-      bin.objects.push(obj)
-      if (prefixWithSeparator)
-        bin.elementsByColumn[bin.currentColumn].push(this.def.separator.objChunk)
-      obj.elements.forEach((it) => bin.elementsByColumn[bin.currentColumn].push(it.objChunk))
-      Bin.resetRemaining(bin)
-      return true
+    for (let col = 0; col <= bin.currentColumn; col++) {
+      const prefixWithSeparator = bin.columns[col] !== this.def.binCapacities[col]
+      const separatorSize = prefixWithSeparator ? this.def.separator.size : 0
+      if (obj.size + separatorSize <= bin.columns[col]) {
+        // Fit in column
+        bin.columns[col] -= obj.size + separatorSize
+        bin.objects.push(obj)
+        if (prefixWithSeparator) bin.elementsByColumn[col].push(this.def.separator.objChunk)
+        obj.elements.forEach((it) => bin.elementsByColumn[col].push(it.objChunk))
+        Bin.resetRemaining(bin)
+        return true
+      }
     }
     return false
   }
@@ -94,7 +94,7 @@ export class BinSet<T, TChunk> {
       let i = bin.currentColumn
       const newColumns = [...bin.columns]
       const newElements = bin.elementsByColumn.map((it) => [...it])
-      for (const el of obj.elements) {
+      for (const [elementIndex, el] of obj.elements.entries()) {
         if (el.size <= newColumns[i]) {
           // Fit in current column
           if (prefixWithSeparator) {
@@ -107,6 +107,10 @@ export class BinSet<T, TChunk> {
         } else if (i < bin.columns.length - 1) {
           // Require a new column
           prefixWithSeparator = false
+          if (elementIndex !== 0) {
+            // Say the column is full to prevent inserting elements that could cut the song.
+            newColumns[i] = 0
+          }
           ++i
           if (el.size <= newColumns[i]) {
             newColumns[i] -= el.size
@@ -140,7 +144,7 @@ export class BinSet<T, TChunk> {
     bin.objects.push(obj)
     let prefixWithSeparator =
       bin.columns[bin.currentColumn] !== this.def.binCapacities[bin.currentColumn]
-    for (const el of obj.elements) {
+    for (const [elementIndex, el] of obj.elements.entries()) {
       let pushed = false
       while (!pushed) {
         if (el.size <= bin.columns[bin.currentColumn]) {
@@ -159,13 +163,18 @@ export class BinSet<T, TChunk> {
         } else if (bin.currentColumn < bin.columns.length - 1) {
           // Require a new column
           prefixWithSeparator = false
-          // bin.columns[bin.currentColumn] = 0
+          if (elementIndex !== 0) {
+            // Say the column is full to prevent inserting elements that could cut the song.
+            bin.columns[bin.currentColumn] = 0
+          }
           ++bin.currentColumn
         } else {
           // Require a new bin
           prefixWithSeparator = false
-          // bin.columns[bin.currentColumn] = 0
-          bin.totalRemaining = 0
+          if (elementIndex !== 0) {
+            bin.columns[bin.currentColumn] = 0
+          }
+          Bin.resetRemaining(bin)
           bin.currentColumn = bin.columns.length
           bin = this.newBin()
         }
