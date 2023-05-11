@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PageSizes } from 'pdf-lib'
+import { PDFDocument, PageSizes } from 'pdf-lib'
 import VueMultiselect from 'vue-multiselect'
 import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
 </script>
@@ -110,6 +110,20 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
 
     <textarea v-model="rawsongs" rows="20"></textarea>
 
+    <div class="h6">Spécifique pdf:</div>
+    <div class="d-flex justify-content-start">
+      <div class="fw-bold mx-3 my-auto">Insérer ce pdf avant</div>
+      <input type="file" @change="uploadFile($event, 'before')" />
+    </div>
+    <!-- <div class="d-flex justify-content-start">
+      <div class="fw-bold mx-3 my-auto">Insérer ce pdf au début</div>
+      <input type="file" @change="uploadFile($event, 'inside')" />
+    </div> -->
+    <div class="d-flex justify-content-start">
+      <div class="fw-bold mx-3 my-auto">Insérer ce pdf après</div>
+      <input type="file" @change="uploadFile($event, 'after')" />
+    </div>
+
     <!-- <button class="btn btn-primary" @click="plop()">SECLI</button> -->
     <div class="d-flex my-2">
       <button class="btn btn-outline-primary" @click="reset()">Reset</button>
@@ -208,18 +222,18 @@ C’est par la foi que je suis sauvé. (bis)
 # type : méditation
 Ne crains pas, je suis ton Dieu,
 C’est moi qui t’ai choisi, appelé par ton nom.
-Tu as du prix à mes yeux et je t’aime. 
+Tu as du prix à mes yeux et je t’aime.
 Ne crains pas car je suis avec toi.
 
-1 - Mon âme se repose 
+1 - Mon âme se repose
 #context : (Taizé)
 # type : méditation
-Mon âme se repose en paix sur Dieu seul : 
-de lui vient mon salut. 
+Mon âme se repose en paix sur Dieu seul :
+de lui vient mon salut.
 Oui, sur Dieu seul mon âme se repose,
 se repose en paix.
 
-1 - Jésus le Christ 
+1 - Jésus le Christ
 #context : (Taizé)
 # type : intercession+
 Jésus le Christ, lumière intérieure,
@@ -227,12 +241,12 @@ ne laisse pas mes ténèbres me parler.
 Jésus le Christ, lumière intérieure,
 donne-moi d’accueillir ton amour.
 
-1 - Cœur de Jésus brûlant d'amour 
+1 - Cœur de Jésus brûlant d'amour
 # type : intercession+
-Cœur de Jésus brûlant d’amour, 
-Embrase-nous par ton Esprit. 
-Que nos cœurs soient semblables au tien, 
-Que nous brûlions de charité ! 
+Cœur de Jésus brûlant d’amour,
+Embrase-nous par ton Esprit.
+Que nos cœurs soient semblables au tien,
+Que nous brûlions de charité !
 
 113 - Je laisse à tes pieds
 # type : intercession+
@@ -262,9 +276,17 @@ type DataContent = {
   separatorStyle: SeparatorStyle
   packingMethod: PackingMethod
   rawsongs: string
+  toInsert: PdfToInsert
+
   songs: Song[]
   error?: string
   pdfDataUri?: string
+}
+
+type PdfToInsert = {
+  before?: File
+  inside?: File
+  after?: File
 }
 
 export default {
@@ -285,6 +307,8 @@ export default {
         separatorStyle: DEFAULT_SEPARATOR_STYLE,
         packingMethod: 'auto',
         rawsongs: false ? SAMPLE : RAW_DATA,
+        toInsert: {},
+
         songs: [],
         error: undefined,
         pdfDataUri: undefined
@@ -301,6 +325,7 @@ export default {
       this.separatorStyle = from.separatorStyle
       this.packingMethod = from.packingMethod
       this.rawsongs = from.rawsongs
+      this.toInsert = from.toInsert
 
       this.songs = []
       this.error = undefined
@@ -318,6 +343,7 @@ export default {
         separatorStyle: this.separatorStyle,
         packingMethod: this.packingMethod,
         rawsongs: this.rawsongs,
+        toInsert: this.toInsert,
 
         songs: [],
         error: undefined,
@@ -354,6 +380,11 @@ export default {
     plop() {
       parse_secli_xml()
     },
+    uploadFile(f: Event, where: keyof PdfToInsert) {
+      if (f.target instanceof HTMLInputElement) {
+        this.toInsert[where] = f.target.files?.[0] ?? undefined
+      }
+    },
     async gen_pdf() {
       this.save()
 
@@ -374,6 +405,13 @@ export default {
         )
         this.error = errors.length > 0 ? errors.join('\n') : undefined
         renumber_songs(bins)
+
+        if (this.toInsert.before) {
+          const doc = await PDFDocument.load(await this.toInsert.before.arrayBuffer())
+          const pages = await pdfDoc.copyPages(doc, doc.getPageIndices())
+          pages.forEach((page) => pdfDoc.addPage(page))
+        }
+
         await generate_pdf(pdfDoc, pageFormat, format, this.separatorStyle, bins)
         await append_table_of_content_to_pdf(
           pdfDoc,
@@ -381,6 +419,12 @@ export default {
           this.tableOfContentStylesheet,
           bins.flatMap((bin) => bin.objects.map((it) => it.obj.song))
         )
+
+        if (this.toInsert.after) {
+          const doc = await PDFDocument.load(await this.toInsert.after.arrayBuffer())
+          const pages = await pdfDoc.copyPages(doc, doc.getPageIndices())
+          pages.forEach((page) => pdfDoc.addPage(page))
+        }
 
         this.pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true })
       } catch (e) {

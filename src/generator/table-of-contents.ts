@@ -283,9 +283,9 @@ export async function append_table_of_content_to_pdf(
     cursorX += headerLineMargin
 
     // Song number
-    titleLines.forEach((line) =>
+    titleLines.forEach((line, index) =>
       page.drawText(line.text, {
-        x: cursorX,
+        x: cursorX + (index && pageFormat.wrapAlineaWidth),
         y: cursorY - line.y,
         size: format.size,
         font: format.font
