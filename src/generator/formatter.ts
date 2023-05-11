@@ -1,4 +1,4 @@
-import { PDFDocument, PDFFont, StandardFonts } from 'pdf-lib'
+import { PDFDocument, PDFFont, PDFPage, StandardFonts } from 'pdf-lib'
 import type { Bin, ObjectToPack } from './bin-packing-2'
 import * as Packing from './bin-packing-2'
 import type { PrefixType, Song } from './parser'
@@ -142,7 +142,7 @@ export namespace PageFormat {
     const displayWidth = pageWidth - marginLeft - marginRight
     const displayHeight = pageHeight - marginTop - marginBottom
     const gutterWidth = gutterLeftMargin + gutterRightMargin + gutterSeparatorThickness
-    const columnWidth = displayWidth / page.columns - (page.columns - 1) * gutterWidth
+    const columnWidth = (displayWidth - (page.columns - 1) * gutterWidth) / page.columns
 
     return {
       unit,
@@ -378,7 +378,7 @@ export async function generate_bins(
   packingMethod: PackingMethod,
 
   errorsOut: string[]
-): Promise<[PDFDocument, PackedPage[]]> {
+): Promise<[PDFDocument, Format, PackedPage[]]> {
   // PDF Creation
   const pdfDoc = await PDFDocument.create()
   const format: Format = await toFormat(pdfDoc, formatDefinition)
@@ -435,7 +435,7 @@ export async function generate_bins(
     initialBins
   )
 
-  return [pdfDoc, bins]
+  return [pdfDoc, format, bins]
 }
 
 export function renumber_songs(bins: PackedPage[]) {
@@ -453,6 +453,7 @@ export function renumber_songs(bins: PackedPage[]) {
 export async function generate_pdf(
   pdfDoc: PDFDocument,
   pageFormat: PageFormat,
+  format: Format,
   separatorStyle: SeparatorStyle,
   bins: PackedPage[]
 ) {
@@ -463,6 +464,7 @@ export async function generate_pdf(
   const { lineMarginTop, lineThickness } = separatorStyle
 
   for (const bin of bins) {
+    let currentPage: PDFPage | undefined
     for (const columnsByPage of [
       bin.elementsByColumn.slice(0, pageFormat.columns),
       bin.elementsByColumn.slice(pageFormat.columns)
@@ -471,7 +473,7 @@ export async function generate_pdf(
       if (columnsByPage.every((chunks) => chunks.every((it) => it.type === 'blank'))) {
         continue
       }
-      let currentPage = pdfDoc.addPage([pageFormat.pageWidth, pageFormat.pageHeight])
+      currentPage = pdfDoc.addPage([pageFormat.pageWidth, pageFormat.pageHeight])
       let cursorX = pageFormat.marginLeft
       for (const [columnIndex, columnChunks] of columnsByPage.entries()) {
         // New column
@@ -517,6 +519,17 @@ export async function generate_pdf(
           cursorX += gutterWidth
         }
       }
+    }
+
+    // Print last song number in the bottom-right corner
+    if (bin.elementsByColumn[bin.elementsByColumn.length - 1].length > 0) {
+      const num = bin.objects[bin.objects.length - 1].obj.song.number!.toString()
+      currentPage?.drawText(num, {
+        x: pageFormat.pageWidth - pageFormat.marginRight - format.default.widthOf(num),
+        y: pageFormat.marginBottom,
+        font: format.default.font,
+        size: format.default.size
+      })
     }
   }
 }

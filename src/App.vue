@@ -363,7 +363,7 @@ export default {
       try {
         const pageFormat = PageFormat.convertTo('pts', this.pageFormat)
         const errors: string[] = []
-        const [pdfDoc, bins] = await generate_bins(
+        const [pdfDoc, format, bins] = await generate_bins(
           pageFormat,
           this.oddFirstPage,
           this.stylesheet,
@@ -374,7 +374,7 @@ export default {
         )
         this.error = errors.length > 0 ? errors.join('\n') : undefined
         renumber_songs(bins)
-        await generate_pdf(pdfDoc, pageFormat, this.separatorStyle, bins)
+        await generate_pdf(pdfDoc, pageFormat, format, this.separatorStyle, bins)
         await append_table_of_content_to_pdf(
           pdfDoc,
           pageFormat,
@@ -396,7 +396,7 @@ export default {
       try {
         const pageFormat = PageFormat.convertTo('pts', this.pageFormat)
         const errors: string[] = []
-        const [_pdfDoc, bins] = await generate_bins(
+        const [_pdfDoc, _format, bins] = await generate_bins(
           pageFormat,
           this.oddFirstPage,
           this.stylesheet,
