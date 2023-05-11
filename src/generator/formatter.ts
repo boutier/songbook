@@ -382,7 +382,7 @@ export async function generate_bins(
   // PDF Creation
   const pdfDoc = await PDFDocument.create()
   const format: Format = await toFormat(pdfDoc, formatDefinition)
-  const titlePrefixFormat = // somethink like '000 - ' to guess the numerotation length.
+  const titlePrefixFormat = // something like '000 - ' to guess the numerotation length.
     new Array(Math.floor(Math.log10(parsed_songs.length)) + 1).fill('0').join('') +
     (pageFormat.titleSeparator ? ' - ' : ' ')
   const formatted_songs: FormattedSong[] = parsed_songs.map((it) =>
@@ -456,8 +456,6 @@ export async function generate_pdf(
   separatorStyle: SeparatorStyle,
   bins: PackedPage[]
 ) {
-  const columnsByPage = pageFormat.columns
-
   const { gutterLeftMargin, gutterRightMargin, gutterSeparatorThickness, columnWidth } = pageFormat
   const gutterWidth = gutterLeftMargin + gutterRightMargin + gutterSeparatorThickness
 

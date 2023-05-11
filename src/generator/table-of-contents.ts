@@ -1,4 +1,4 @@
-import { StandardFonts, degrees, type PDFDocument } from 'pdf-lib'
+import { PDFPage, StandardFonts, degrees, type PDFDocument } from 'pdf-lib'
 import {
   format_element,
   toFormat,
@@ -83,25 +83,46 @@ export async function append_table_of_content_to_pdf(
 
   const headerLineMargin = 1
   const headerLineThickness = 1
+  // titleNumber is something like '000' to guess the N° length.
+  const titleNumber = new Array(Math.floor(Math.log10(songs.length)) + 1).fill('0').join('')
   const numberWidth = Math.max(
     headerFormat.widthOf('N°'),
-    oddFormat.widthOf('000'),
-    evenFormat.widthOf('000')
+    oddFormat.widthOf(titleNumber),
+    evenFormat.widthOf(titleNumber)
   )
   const markShiftForCentering = (headerFormat.height - evenFormat.widthOf('+')) / 2
 
+  const { gutterLeftMargin, gutterRightMargin, gutterSeparatorThickness, columnWidth } = pageFormat
+  const gutterWidth = gutterLeftMargin + gutterRightMargin + gutterSeparatorThickness
+
   // Helper to create headers on each new page
-  const newPageWithHeader = () => {
+  const pageCursorY = pageFormat.pageHeight - pageFormat.marginTop
+  const newPage = () => {
     const page = pdfDoc.addPage([pageFormat.pageWidth, pageFormat.pageHeight])
-    let cursorY = pageFormat.pageHeight - pageFormat.marginTop
-    cursorY -= widestTag
+    let cursorY = pageCursorY
     let cursorX = pageFormat.marginLeft
+
+    return [page, cursorX, cursorY] as const
+  }
+
+  const drawVerticalLine = (page: PDFPage, x: number, thickness: number, opacity: number) => {
+    page.drawLine({
+      start: { x: x, y: pageFormat.pageHeight - pageFormat.marginTop },
+      end: { x: x, y: pageFormat.marginBottom },
+      thickness: thickness,
+      opacity: 0.5
+    })
+  }
+
+  const drawHeaders = (page: PDFPage, cursorX: number, cursorY: number) => {
+    const originX = cursorX
+    cursorY -= widestTag
 
     // Tags
     tagHeaders.forEach((header) => {
       cursorX += headerFormat.height
       page.drawText(capitalize(header.text), {
-        x: cursorX,
+        x: cursorX - headerFormat.height / 6,
         y: cursorY,
         size: headerFormat.size,
         font: headerFormat.font,
@@ -109,6 +130,7 @@ export async function append_table_of_content_to_pdf(
       })
 
       cursorX += headerLineMargin
+      drawVerticalLine(page, cursorX, 0.3, 0.1)
       cursorX += headerLineThickness
       cursorX += headerLineMargin
     })
@@ -123,11 +145,12 @@ export async function append_table_of_content_to_pdf(
 
     cursorX += numberWidth
     cursorX += headerLineMargin
+    drawVerticalLine(page, cursorX, 0.3, 0.1)
     cursorX += headerLineThickness
     cursorX += headerLineMargin
 
     // Song number
-    const maxTitleWidth = pageFormat.displayWidth - cursorX + pageFormat.marginLeft
+    const maxTitleWidth = columnWidth - cursorX + originX
     page.drawText('Titre', {
       x: cursorX,
       y: cursorY,
@@ -141,23 +164,30 @@ export async function append_table_of_content_to_pdf(
     const lineThickness = 1
     cursorY -= lineMarginTop + lineThickness / 2
     page.drawLine({
-      start: { x: pageFormat.marginLeft, y: cursorY },
-      end: { x: pageFormat.marginLeft + pageFormat.displayWidth, y: cursorY },
+      start: { x: originX, y: cursorY },
+      end: { x: originX + columnWidth, y: cursorY },
       thickness: lineThickness
     })
     cursorY -= lineMarginBottom + lineThickness / 2
 
-    return [page, cursorY, maxTitleWidth] as const
+    return [cursorY, maxTitleWidth] as const
+  }
+
+  const drawColumnSeparator = (page: PDFPage, cursorX: number) => {
+    drawVerticalLine(page, cursorX + gutterLeftMargin, gutterSeparatorThickness, 0.5)
+    return cursorX + gutterWidth
   }
 
   // Ok, let's build the index!
   let prevLetter = ''
   let format = oddFormat
-  let [page, cursorY, maxTitleWidth] = newPageWithHeader()
+  let [page, cursorX, cursorY] = newPage()
+  let maxTitleWidth: number
+  ;[cursorY, maxTitleWidth] = drawHeaders(page, cursorX, cursorY)
   let stripped = false
+  let currentColumn = 0
   alphabetic_ordered_songs.forEach((song) => {
-    const top = cursorY
-    let cursorX = pageFormat.marginLeft
+    let cursorX = pageFormat.marginLeft + currentColumn * (columnWidth + gutterWidth)
 
     // Switch format on letter change
     const firstTitleLetter = removeDiacritics(song.title[0])
@@ -183,13 +213,21 @@ export async function append_table_of_content_to_pdf(
     }
 
     if (cursorY - titleHeight < pageFormat.marginBottom) {
-      ;[page, cursorY] = newPageWithHeader()
+      // New column or new page
+      if (++currentColumn < pageFormat.columns) {
+        cursorX = drawColumnSeparator(page, cursorX + columnWidth)
+        cursorY = pageCursorY
+      } else {
+        currentColumn = 0
+        ;[page, cursorX, cursorY] = newPage()
+      }
+      ;[cursorY, maxTitleWidth] = drawHeaders(page, cursorX, cursorY)
       stripped = false
     }
-    cursorY -= format.height
 
     // Stripped background
     if (stripped) {
+      const totalHeight = format.height * titleLines.length
       /*
         Line height (without any margin) go from the baseline (bottom of
         letter 'A' for example) to the top of 'Ô'. We should extend it of
@@ -199,10 +237,10 @@ export async function append_table_of_content_to_pdf(
         baseline.
       */
       page.drawRectangle({
-        x: pageFormat.marginLeft,
-        y: cursorY - format.height / 5,
-        width: pageFormat.displayWidth,
-        height: format.height * titleLines.length,
+        x: cursorX,
+        y: cursorY - totalHeight - format.height / 5,
+        width: columnWidth,
+        height: totalHeight,
         opacity: 0.1
       })
       // page.drawLine({
@@ -212,6 +250,8 @@ export async function append_table_of_content_to_pdf(
       // })
     }
     stripped = !stripped
+
+    cursorY -= format.height
 
     // Tags
     tagHeaders.forEach((header) => {
