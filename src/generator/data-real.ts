@@ -9086,11 +9086,11 @@ Viens Esprit-Saint,
 Viens dans nos cœurs, 
 Doux Esprit-Saint,
 Embrase-nous…
-2…console-nous,
-3…apaise-nous,
-4…soulage-nous,
-5…éclaire-nous,
-6…vivifie-nous.
+2. …console-nous,
+3. …apaise-nous,
+4. …soulage-nous,
+5. …éclaire-nous,
+6. …vivifie-nous.
 
 
 78 - Viens Saint-Esprit

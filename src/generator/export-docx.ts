@@ -6,6 +6,7 @@ import {
   Packer,
   PageBreak,
   Paragraph,
+  TextRun,
   type IParagraphStyleOptions
 } from 'docx'
 import type { IParagraphStylePropertiesOptions } from 'docx/build/file/paragraph/properties'
@@ -115,7 +116,9 @@ export async function exportDocx(
         contentSectionChildren.push(
           new Paragraph({
             style: styleId,
-            text: stanza.lines.join('\u2028'),
+            children: stanza.lines.map((it, i) =>
+              i === 0 ? new TextRun(it) : new TextRun({ text: it, break: 1 })
+            ),
             numbering: numberingFromStanza(stanza, songNumber)
           })
         )
