@@ -203,6 +203,17 @@ export function naive_packing<T, TChunk>(
   return bins.bins
 }
 
+export function force_push_packing<T, TChunk>(
+  objects: ObjectToPack<T, TChunk>[],
+  bins: BinSet<T, TChunk>
+): Bin<T, TChunk>[] {
+  for (const obj of objects) {
+    bins.addAndSplit(obj)
+  }
+
+  return bins.bins
+}
+
 /** Sort objects (biggest first) and put in the first matching bin. */
 export function packing1<T, TChunk>(
   objects: ObjectToPack<T, TChunk>[],

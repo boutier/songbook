@@ -37,7 +37,7 @@ export default {
     />
     <div class="me-3 my-auto">
       <label>
-        <input ref="toUpper" type="checkbox" @click="emit" :checked="style.toUpper" />
+        <input ref="toUpper" type="checkbox" @change="emit" :checked="style.toUpper" />
         majuscule
       </label>
     </div>

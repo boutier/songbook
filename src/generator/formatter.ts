@@ -399,7 +399,7 @@ export async function generate_bins(
   // Do some bin-packing (songs may be reordered)
   const packingFunction =
     packingMethod === 'linear-split'
-      ? Packing.naive_packing
+      ? Packing.force_push_packing
       : packingMethod === 'linear-no-split'
       ? Packing.naive_packing
       : Packing.packing1

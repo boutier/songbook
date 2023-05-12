@@ -32,7 +32,7 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
         </template> -->
       </VueMultiselect>
       <label class="my-auto ms-2">
-        <input type="checkbox" v-bind="landskape" @click="switchLandskape" value="newsletter" />
+        <input type="checkbox" :checked="landskape" @change="switchLandskape" value="newsletter" />
         Paysage
       </label>
     </div>
@@ -65,7 +65,12 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
     <div class="d-flex justify-content-start">
       <div class="fw-bold mx-3 my-auto">Présentation</div>
       <label class="my-auto ms-2">
-        <input type="checkbox" v-model="oddFirstPage" value="newsletter" />
+        <input
+          type="checkbox"
+          :checked="oddFirstPage"
+          @change="oddFirstPage = !oddFirstPage"
+          value="newsletter"
+        />
         Première page impaire (les chants de la première page ne doivent pas être coupés sur la 2e)
       </label>
     </div>
@@ -129,6 +134,26 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
       <button class="btn btn-outline-primary" @click="reset()">Reset</button>
       <button class="ms-2 btn btn-primary" @click="gen_pdf()">Générer PDF</button>
       <button class="ms-2 btn btn-primary" @click="gen_docx()">Générer DocX</button>
+      <label class="my-auto ms-2">
+        <input
+          type="checkbox"
+          :checked="packingMethod === 'auto'"
+          @change="packingMethod = packingMethod === 'auto' ? 'linear-split' : 'auto'"
+          value="newsletter"
+        />
+        Réordonner
+      </label>
+      <label class="my-auto ms-2" v-if="packingMethod !== 'auto'">
+        <input
+          type="checkbox"
+          :checked="packingMethod === 'linear-split'"
+          @change="
+            packingMethod = packingMethod === 'linear-no-split' ? 'linear-split' : 'linear-no-split'
+          "
+          value="newsletter"
+        />
+        Couper les chants
+      </label>
     </div>
 
     <div>Nombre de chants: {{ songs.length }}</div>
