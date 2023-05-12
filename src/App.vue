@@ -417,7 +417,7 @@ export default {
           pdfDoc,
           pageFormat,
           this.tableOfContentStylesheet,
-          bins.flatMap((bin) => bin.objects.map((it) => it.obj.song))
+          bins.flatMap((bin) => bin.objectsByColumn.flatMap((it) => it).map((it) => it.obj.song))
         )
 
         if (this.toInsert.after) {

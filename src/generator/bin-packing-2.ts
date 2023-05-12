@@ -15,7 +15,7 @@ export interface Bin<T, TChunk> {
   currentColumn: number
   totalRemaining: number
   /** Objects to patch starting on this bin. */
-  objects: ObjectToPack<T, TChunk>[]
+  objectsByColumn: ObjectToPack<T, TChunk>[][]
   elementsByColumn: TChunk[][]
 }
 
@@ -25,7 +25,7 @@ namespace Bin {
       columns: [...def.binCapacities],
       currentColumn: 0,
       totalRemaining: def.binCapacities.reduce((acc, it) => acc + it, 0),
-      objects: [],
+      objectsByColumn: def.binCapacities.map(() => []),
       elementsByColumn: def.binCapacities.map(() => [])
     }
   }
@@ -75,7 +75,7 @@ export class BinSet<T, TChunk> {
       if (obj.size + separatorSize <= bin.columns[col]) {
         // Fit in column
         bin.columns[col] -= obj.size + separatorSize
-        bin.objects.push(obj)
+        bin.objectsByColumn[col].push(obj)
         if (prefixWithSeparator) bin.elementsByColumn[col].push(this.def.separator.objChunk)
         obj.elements.forEach((it) => bin.elementsByColumn[col].push(it.objChunk))
         Bin.resetRemaining(bin)
@@ -92,6 +92,7 @@ export class BinSet<T, TChunk> {
     if (obj.size <= bin.totalRemaining) {
       // May fit in all columns if splitted
       let i = bin.currentColumn
+      let firstChangedColumn = bin.columns.length
       const newColumns = [...bin.columns]
       const newElements = bin.elementsByColumn.map((it) => [...it])
       for (const [elementIndex, el] of obj.elements.entries()) {
@@ -104,6 +105,7 @@ export class BinSet<T, TChunk> {
           }
           newColumns[i] -= el.size
           newElements[i].push(el.objChunk)
+          firstChangedColumn = Math.min(i, firstChangedColumn)
         } else if (i < bin.columns.length - 1) {
           // Require a new column
           prefixWithSeparator = false
@@ -115,6 +117,7 @@ export class BinSet<T, TChunk> {
           if (el.size <= newColumns[i]) {
             newColumns[i] -= el.size
             newElements[i].push(el.objChunk)
+            firstChangedColumn = Math.min(i, firstChangedColumn)
           } else {
             console.error('Chunk cannot fit in any column!', { obj: obj, chunk: el })
             return false
@@ -128,10 +131,10 @@ export class BinSet<T, TChunk> {
           return false
         }
       }
+      bin.objectsByColumn[firstChangedColumn].push(obj)
       bin.currentColumn = i
       bin.columns = newColumns
       bin.elementsByColumn = newElements
-      bin.objects.push(obj)
       Bin.resetRemaining(bin)
       return true
     }
@@ -141,7 +144,7 @@ export class BinSet<T, TChunk> {
   /** Add to the last bin and allow to split among multiple bins. New bins may be created. */
   private forceAdd(obj: ObjectToPack<T, TChunk>): void {
     let bin = this.bins[this.bins.length - 1]
-    bin.objects.push(obj)
+    bin.objectsByColumn[bin.currentColumn].push(obj)
     let prefixWithSeparator =
       bin.columns[bin.currentColumn] !== this.def.binCapacities[bin.currentColumn]
     for (const [elementIndex, el] of obj.elements.entries()) {

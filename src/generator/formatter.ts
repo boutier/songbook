@@ -441,11 +441,13 @@ export async function generate_bins(
 export function renumber_songs(bins: PackedPage[]) {
   let song_num = 0
   bins.forEach((bin) =>
-    bin.objects.forEach((song) => {
-      const title = song.obj.elements[0].elements[0]
-      title.text = title.text.replace(/^0+/, (++song_num).toString())
-      song.obj.song.number = song_num
-    })
+    bin.objectsByColumn.forEach((column) =>
+      column.forEach((song) => {
+        const title = song.obj.elements[0].elements[0]
+        title.text = title.text.replace(/^0+/, (++song_num).toString())
+        song.obj.song.number = song_num
+      })
+    )
   )
 }
 
@@ -523,7 +525,8 @@ export async function generate_pdf(
 
     // Print last song number in the bottom-right corner
     if (bin.elementsByColumn[bin.elementsByColumn.length - 1].length > 0) {
-      const num = bin.objects[bin.objects.length - 1].obj.song.number!.toString()
+      const objects = bin.objectsByColumn.flatMap((it) => it)
+      const num = objects[objects.length - 1].obj.song.number!.toString()
       currentPage?.drawText(num, {
         x: pageFormat.pageWidth - pageFormat.marginRight - format.default.widthOf(num),
         y: pageFormat.marginBottom,

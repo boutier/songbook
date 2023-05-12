@@ -97,7 +97,8 @@ export async function exportDocx(
   const contentSectionChildren = []
   let songNumber = 0
   for (const bin of bins) {
-    for (const { obj } of bin.objects) {
+    const objects = bin.objectsByColumn.flatMap(it => it)
+    for (const { obj } of objects) {
       const song = obj.song
       ++songNumber
       contentSectionChildren.push(
