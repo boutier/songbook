@@ -25,30 +25,30 @@ export type TableOfContentFormatDefinition = {
 export const DEFAULT_TABLE_OF_CONTENT_STYLES: TableOfContentFormatDefinition = {
   header: {
     font: StandardFonts.TimesRomanBold,
-    size: 10,
+    size: 9,
     toUpper: false,
-    interLine: 2,
+    interLine: 0,
     afterParagraph: 0
   },
   oddTitle: {
     font: StandardFonts.TimesRomanBold,
-    size: 10,
+    size: 8,
     toUpper: false,
-    interLine: 2,
+    interLine: 0,
     afterParagraph: 0
   },
   evenTitle: {
     font: StandardFonts.TimesRoman,
-    size: 10,
+    size: 9,
     toUpper: false,
-    interLine: 2,
+    interLine: 0,
     afterParagraph: 0
   },
   otherFields: {
     font: StandardFonts.TimesRoman,
-    size: 10,
+    size: 9,
     toUpper: false,
-    interLine: 2,
+    interLine: 0,
     afterParagraph: 0
   }
 }

@@ -45,45 +45,45 @@ export type Format = {
 export const DEFAULT_STYLES: FormatDefinition = {
   default: {
     font: StandardFonts.TimesRoman,
-    size: 12,
+    size: 11,
     toUpper: false,
     interLine: 2,
-    afterParagraph: 10
+    afterParagraph: 6
   },
   title: {
     font: StandardFonts.TimesRomanBold,
-    size: 11,
+    size: 10,
     toUpper: true,
     interLine: 2,
-    afterParagraph: 10
+    afterParagraph: 6
   },
   refrain: {
     font: StandardFonts.TimesRomanBold,
-    size: 12,
+    size: 11,
     toUpper: false,
     interLine: 2,
-    afterParagraph: 10
+    afterParagraph: 6
   },
   verse: {
     font: StandardFonts.TimesRoman,
-    size: 12,
+    size: 11,
     toUpper: false,
     interLine: 2,
-    afterParagraph: 10
+    afterParagraph: 6
   },
   coda: {
     font: StandardFonts.TimesRomanBold,
-    size: 12,
+    size: 11,
     toUpper: false,
     interLine: 2,
-    afterParagraph: 10
+    afterParagraph: 6
   },
   bridge: {
     font: StandardFonts.TimesRomanBold,
-    size: 12,
+    size: 11,
     toUpper: false,
     interLine: 2,
-    afterParagraph: 10
+    afterParagraph: 6
   }
 }
 

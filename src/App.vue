@@ -167,19 +167,19 @@ import { fullErrorMessage } from './generator/utils'
 const DEFAULT_PAGE_FORMAT: PageFormat = {
   unit: 'mm',
 
-  pageWidth: Math.round(mmFromPoints(PageSizes.A4[0] / 2)),
-  pageHeight: Math.round(mmFromPoints(PageSizes.A4[1])),
+  pageWidth: Math.round(mmFromPoints(PageSizes.A5[0])),
+  pageHeight: Math.round(mmFromPoints(PageSizes.A5[1])),
 
-  marginTop: 10,
+  marginTop: 5,
   marginRight: 5,
-  marginBottom: 10,
+  marginBottom: 5,
   marginLeft: 5,
 
   displayWidth: 0,
   displayHeight: 0,
   columnWidth: 0,
 
-  columns: 1,
+  columns: 2,
   gutterLeftMargin: 2,
   gutterRightMargin: 2,
   gutterSeparatorThickness: 1,
@@ -300,7 +300,7 @@ export default {
         pageSizes: Object.entries(PageSizes),
         pageSize: 'A4' as keyof typeof PageSizes | 'custom',
         landskape: false,
-        oddFirstPage: false,
+        oddFirstPage: true,
         pageFormat: PageFormat.convertTo('mm', DEFAULT_PAGE_FORMAT),
         stylesheet: { ...DEFAULT_STYLES },
         tableOfContentStylesheet: { ...DEFAULT_TABLE_OF_CONTENT_STYLES },
@@ -325,8 +325,8 @@ export default {
       this.separatorStyle = from.separatorStyle
       this.packingMethod = from.packingMethod
       this.rawsongs = from.rawsongs
-      this.toInsert = from.toInsert
 
+      this.toInsert = {}
       this.songs = []
       this.error = undefined
       this.pdfDataUri = undefined
@@ -343,8 +343,8 @@ export default {
         separatorStyle: this.separatorStyle,
         packingMethod: this.packingMethod,
         rawsongs: this.rawsongs,
-        toInsert: this.toInsert,
 
+        toInsert: {},
         songs: [],
         error: undefined,
         pdfDataUri: ''
@@ -429,6 +429,7 @@ export default {
         this.pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true })
       } catch (e) {
         this.error = fullErrorMessage(e)
+        console.error(e)
       }
     },
     async gen_docx() {
