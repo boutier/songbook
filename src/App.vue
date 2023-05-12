@@ -152,6 +152,7 @@ import {
   generate_pdf,
   renumber_songs,
   type FormatDefinition,
+  type PackedPage,
   type PackingMethod,
   type SeparatorStyle
 } from './generator/formatter'
@@ -405,6 +406,7 @@ export default {
         )
         this.error = errors.length > 0 ? errors.join('\n') : undefined
         renumber_songs(bins)
+        this.rewrite_input(bins)
 
         if (this.toInsert.before) {
           const doc = await PDFDocument.load(await this.toInsert.before.arrayBuffer())
@@ -451,10 +453,37 @@ export default {
           errors
         )
         this.error = errors.length > 0 ? errors.join('\n') : undefined
+        this.rewrite_input(bins)
         exportDocx(pageFormat, this.stylesheet, bins)
       } catch (e) {
         this.error = fullErrorMessage(e)
       }
+    },
+    rewrite_input(bins: PackedPage[]) {
+      const text = bins
+        .flatMap((bin) =>
+          bin.objectsByColumn
+            .flatMap((it) => it)
+            .map((obj) => {
+              const song = obj.obj.song
+              return [
+                `${song.number || 0} - ` + song.title,
+                song.context ? `# context: ${song.context}` : '',
+                song.tags.length > 0 ? `# type: ${song.tags.join(', ')}` : '',
+                ...song.stanzas.map((stanza) =>
+                  [
+                    stanza.prefix + (stanza.prefix ? ' ' : '') + stanza.lines[0],
+                    ...stanza.lines.slice(1)
+                  ].join('\n')
+                )
+              ]
+                .filter((it) => !!it)
+                .join('\n\n')
+            })
+        )
+        .join('\n\n')
+
+      this.rawsongs = text
     }
   }
 }
