@@ -7487,6 +7487,11 @@ Tu es restée fidèle, Mère au pied de la Croix.
 Soutiens notre espérance et garde notre foi.
 Du côté de ton Fils, tu as puisé pour nous
 L’eau et le sang versés qui sauvent du péché.
+5.
+Reine, sois dans la joie ! chante et réjouis-toi !
+Car le fruit de ton sein a été glorifié !
+De la mort, du péché, il nous a libéré,
+Prie sans cesse pour nous Jésus ressuscité !
 3.
 Quelle fut la joie d’Ève lorsque tu es montée,
 Plus haut que tous les anges, plus haut que les nuées,

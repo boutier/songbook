@@ -220,6 +220,104 @@ export type FormattedSong = {
   song: Song
 }
 
+function splitOn(
+  regex: RegExp,
+  text: string,
+  fits: (s: string) => boolean,
+  limit_1: boolean
+): undefined | string[] {
+  if (fits(text)) {
+    return [text]
+  }
+  text.search(regex)
+  const res: string[] = []
+  const splitIndexes = [...text.matchAll(regex)].map((it) => it.index! + it[0].length)
+  splitIndexes.push(text.length)
+  let curr
+  let fromTextIndex = 0
+  let toSplitIndex = 0
+  while (toSplitIndex < splitIndexes.length) {
+    const t1 = text.substring(fromTextIndex, splitIndexes[toSplitIndex]).trim()
+    if (fits(t1)) {
+      curr = t1
+      toSplitIndex++
+    } else if (curr) {
+      res.push(curr)
+      fromTextIndex = splitIndexes[toSplitIndex - 1]
+      const rest = text.substring(fromTextIndex).trim()
+      if (fits(rest) || limit_1) {
+        res.push(rest)
+        return res
+      }
+    } else {
+      return undefined // cannot split the text
+    }
+  }
+
+  return undefined
+}
+
+function splitSimple(
+  text: string,
+  fitsFirstLine: (s: string) => boolean,
+  fitsOtherLines: (s: string) => boolean
+): string[] {
+  const firstSplit = splitOn(/ /g, text, fitsFirstLine, true)
+  if (!firstSplit) {
+    throw Error(`Cannot split ${text}`)
+  }
+  if (firstSplit.length === 1) return firstSplit
+  const [line1, rest] = firstSplit
+
+  const otherSplit = splitOn(/ /g, rest, fitsOtherLines, false)
+  if (!otherSplit) {
+    throw Error(`Cannot split ${text}`)
+  }
+  return [line1, ...otherSplit]
+}
+
+function splitOnPonctuationIfPossible(
+  text: string,
+  fitsFirstLine: (s: string) => boolean,
+  fitsOtherLines: (s: string) => boolean
+): string[] {
+  const firstSplit =
+    splitOn(/[,?;.:!"»]+ +/g, text, fitsFirstLine, true) || splitOn(/ /g, text, fitsFirstLine, true)
+  if (!firstSplit) {
+    throw Error(`Cannot split ${text}`)
+  }
+  if (firstSplit.length === 1) return firstSplit
+
+  const [line1, rest] = firstSplit
+  const res = [line1]
+  text = rest
+  while (true) {
+    const split =
+      splitOn(/[,?;.:!"»]+ +/g, text, fitsOtherLines, true) ||
+      splitOn(/ /g, text, fitsOtherLines, true)
+    if (!split) {
+      throw Error(`Cannot split ${text}`)
+    }
+    res.push(split[0])
+    if (split.length <= 1) return res
+    text = split[1]
+  }
+}
+
+function split_text(
+  text: string,
+  style: Style,
+  maxWidth: number,
+  alineaMaxWidth: number
+): string[] {
+  const fitsFirstLine = (s: string) => style.widthOf(s) <= maxWidth
+  const fitsOtherLines = (s: string) => style.widthOf(s) <= alineaMaxWidth
+
+  const res1 = splitSimple(text, fitsFirstLine, fitsOtherLines)
+  const res2 = splitOnPonctuationIfPossible(text, fitsFirstLine, fitsOtherLines)
+  return res1.length < res2.length ? res1 : res2
+}
+
 /** Format a chunk of text and wrap it if it is too long.
  *               x
  *             y +-------------+
@@ -235,30 +333,15 @@ export function format_element(
   alineaX: number,
   y: number
 ): number {
-  const textWidth = style.widthOf(text)
-  if (textWidth > maxWidth) {
-    let i = Math.ceil((text.length * maxWidth) / textWidth)
-    let t1: string | undefined
-    do {
-      i = text.lastIndexOf(' ', i - 1)
-      if (i <= 0) throw Error(`cannot split "${text}" (width=${textWidth}, max=${maxWidth})`)
-      t1 = text.substring(0, i)
-    } while (style.widthOf(t1) > maxWidth)
-    const t2 = text.substring(i + 1)
-    elements.push({ x, y, text: t1, style })
-    return format_element(
-      elements,
-      t2,
-      maxWidth - (alineaX - x),
-      style,
-      alineaX,
-      alineaX,
-      y + style.height + style.interLine // We may add interline here.
-    )
-  } else {
-    elements.push({ x, y, text, style })
-    return y + style.height
+  const lines = split_text(text, style, maxWidth, maxWidth - (alineaX - x))
+  elements.push({ x, y, text: lines[0], style })
+  for (let i = 1; i < lines.length; i++) {
+    const line = lines[i]
+    y += style.height + style.interLine
+    elements.push({ x: alineaX, y, text: line, style })
   }
+  y += style.height
+  return y
 }
 
 function format_song(
