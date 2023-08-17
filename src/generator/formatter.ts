@@ -331,14 +331,20 @@ export function format_element(
   style: Style,
   x: number,
   alineaX: number,
-  y: number
+  y: number,
+  alignWrappedToRight: boolean = false
 ): number {
-  const lines = split_text(text, style, maxWidth, maxWidth - (alineaX - x))
+  const alineaMaxWidth = maxWidth - (alineaX - x)
+  const lines = split_text(text, style, maxWidth, alineaMaxWidth)
   elements.push({ x, y, text: lines[0], style })
   for (let i = 1; i < lines.length; i++) {
     const line = lines[i]
     y += style.height + style.interLine
-    elements.push({ x: alineaX, y, text: line, style })
+    if (alignWrappedToRight) {
+      elements.push({ x: x + maxWidth - style.widthOf(line), y, text: line, style })
+    } else {
+      elements.push({ x: alineaX, y, text: line, style })
+    }
   }
   y += style.height
   return y
