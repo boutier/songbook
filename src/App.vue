@@ -5,7 +5,69 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
 </script>
 
 <template>
-  <div class="m-3 d-flex flex-column">
+  <div class="d-flex m-2 justify-content-between">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button
+        :class="[tab === 'format' ? 'btn btn-primary' : 'btn btn-outline-primary']"
+        @click="tab = 'format'"
+      >
+        Format
+      </button>
+      <button
+        class="btn"
+        :class="[tab === 'content' ? 'btn-primary' : 'btn-outline-primary']"
+        @click="tab = 'content'"
+      >
+        Contenu
+      </button>
+      <button
+        class="btn"
+        :class="[tab === 'pdf-options' ? 'btn-primary' : 'btn-outline-primary']"
+        @click="tab = 'pdf-options'"
+      >
+        PDF
+      </button>
+      <button
+        v-if="pdfDataUri"
+        class="btn"
+        :class="[tab === 'preview' ? 'btn-primary' : 'btn-outline-primary']"
+        @click="tab = 'preview'"
+      >
+        Aperçu
+      </button>
+    </div>
+
+    <div class="d-flex">
+      <div class="d-flex flex-column">
+        <label class="my-auto mx-2">
+          <input
+            type="checkbox"
+            :checked="packingMethod === 'auto'"
+            @change="packingMethod = packingMethod === 'auto' ? 'linear-split' : 'auto'"
+            value="newsletter"
+          />
+          Réordonner
+        </label>
+        <label class="my-auto mx-2" v-if="packingMethod !== 'auto'">
+          <input
+            type="checkbox"
+            :checked="packingMethod === 'linear-split'"
+            @change="
+              packingMethod =
+                packingMethod === 'linear-no-split' ? 'linear-split' : 'linear-no-split'
+            "
+            value="newsletter"
+          />
+          Couper les chants
+        </label>
+      </div>
+      <button class="btn btn-outline-primary" @click="reset()">Reset</button>
+      <button class="ms-2 btn btn-primary" @click="gen_pdf()">Générer PDF</button>
+      <button class="ms-2 btn btn-primary" @click="gen_docx()">Générer DocX</button>
+    </div>
+  </div>
+
+  <div v-if="tab === 'format'" class="m-3 d-flex flex-column">
     <div class="h6">Format du document (unités en millimètres)</div>
     <div class="d-flex justify-content-start">
       <div class="fw-bold mx-3 my-auto">Papier</div>
@@ -110,11 +172,15 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
       />
       <StyleInput :title="'Autre (n°, +)'" v-model:style="tableOfContentStylesheet.otherFields" />
     </div>
+  </div>
 
+  <div v-if="tab === 'content'" class="m-3 d-flex flex-column">
     <div class="h6">Contenu du livret</div>
 
     <textarea v-model="rawsongs" rows="20"></textarea>
+  </div>
 
+  <div v-if="tab === 'pdf-options'" class="m-3 d-flex flex-column">
     <div class="h6">Spécifique pdf:</div>
     <div class="d-flex justify-content-start">
       <div class="fw-bold mx-3 my-auto">Insérer ce pdf avant</div>
@@ -128,34 +194,10 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
       <div class="fw-bold mx-3 my-auto">Insérer ce pdf après</div>
       <input type="file" @change="uploadFile($event, 'after')" />
     </div>
+  </div>
+  <!-- <button class="btn btn-primary" @click="plop()">SECLI</button> -->
 
-    <!-- <button class="btn btn-primary" @click="plop()">SECLI</button> -->
-    <div class="d-flex my-2">
-      <button class="btn btn-outline-primary" @click="reset()">Reset</button>
-      <button class="ms-2 btn btn-primary" @click="gen_pdf()">Générer PDF</button>
-      <button class="ms-2 btn btn-primary" @click="gen_docx()">Générer DocX</button>
-      <label class="my-auto ms-2">
-        <input
-          type="checkbox"
-          :checked="packingMethod === 'auto'"
-          @change="packingMethod = packingMethod === 'auto' ? 'linear-split' : 'auto'"
-          value="newsletter"
-        />
-        Réordonner
-      </label>
-      <label class="my-auto ms-2" v-if="packingMethod !== 'auto'">
-        <input
-          type="checkbox"
-          :checked="packingMethod === 'linear-split'"
-          @change="
-            packingMethod = packingMethod === 'linear-no-split' ? 'linear-split' : 'linear-no-split'
-          "
-          value="newsletter"
-        />
-        Couper les chants
-      </label>
-    </div>
-
+  <div v-if="tab === 'preview'" class="m-3 d-flex flex-column">
     <div>Nombre de chants: {{ songs.length }}</div>
     <div v-if="error" class="text-danger">{{ error }}</div>
   </div>
@@ -292,6 +334,7 @@ Il saute sur les montagnes et bondit sur les collines. (x2)
 `
 
 type DataContent = {
+  tab: 'format' | 'content' | 'pdf-options' | 'preview'
   pageSizes: [string, [number, number]][]
   pageSize: keyof typeof PageSizes | 'custom'
   landskape: boolean
@@ -323,6 +366,8 @@ export default {
   methods: {
     defaults(): DataContent {
       return {
+        tab: 'format',
+
         pageSizes: Object.entries(PageSizes),
         pageSize: 'A4' as keyof typeof PageSizes | 'custom',
         landskape: false,
@@ -352,6 +397,9 @@ export default {
       this.packingMethod = from.packingMethod
       this.rawsongs = from.rawsongs
 
+      if ((this.tab = 'preview')) {
+        this.tab = 'content'
+      }
       this.toInsert = {}
       this.songs = []
       this.error = undefined
@@ -370,6 +418,7 @@ export default {
         packingMethod: this.packingMethod,
         rawsongs: this.rawsongs,
 
+        tab: 'format',
         toInsert: {},
         songs: [],
         error: undefined,
@@ -454,6 +503,7 @@ export default {
         }
 
         this.pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true })
+        this.tab = 'preview'
       } catch (e) {
         this.error = fullErrorMessage(e)
         console.error(e)
