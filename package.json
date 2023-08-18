@@ -14,6 +14,7 @@
   "dependencies": {
     "docx": "^8.0.3",
     "file-saver": "^2.0.5",
+    "papaparse": "^5.4.1",
     "pdf-lib": "^1.17.1",
     "vue": "^3.2.47",
     "vue-multiselect": "^3.0.0-beta.1"
@@ -22,6 +23,7 @@
     "@rushstack/eslint-patch": "^1.2.0",
     "@types/file-saver": "^2.0.5",
     "@types/node": "^18.14.2",
+    "@types/papaparse": "^5.3.7",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/eslint-config-typescript": "^11.0.2",

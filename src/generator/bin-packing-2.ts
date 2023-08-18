@@ -11,8 +11,11 @@ type BinDef<TChunk> = {
 }
 
 export interface Bin<T, TChunk> {
+  /** Capacity of each column (all are probably the same) */
   columns: number[]
+  /** Current column index */
   currentColumn: number
+  /** Sum of column free spaces */
   totalRemaining: number
   /** Objects to patch starting on this bin. */
   objectsByColumn: ObjectToPack<T, TChunk>[][]

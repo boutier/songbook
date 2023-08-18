@@ -64,7 +64,12 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
       <button class="btn btn-outline-primary" @click="reset()">Reset</button>
       <button class="ms-2 btn btn-primary" @click="gen_pdf()">Générer PDF</button>
       <button class="ms-2 btn btn-primary" @click="gen_docx()">Générer DocX</button>
+      <button class="ms-2 btn btn-primary" @click="gen_indexes()">Générer les index (csv)</button>
     </div>
+  </div>
+
+  <div v-if="songs.length > 0" class="mx-3 d-flex justify-content-end">
+    {{ songs.length }} chants, {{ out?.bins.length }} pages
   </div>
 
   <div v-if="tab === 'format'" class="m-3 d-flex flex-column">
@@ -198,7 +203,6 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
   <!-- <button class="btn btn-primary" @click="plop()">SECLI</button> -->
 
   <div v-if="tab === 'preview'" class="m-3 d-flex flex-column">
-    <div>Nombre de chants: {{ songs.length }}</div>
     <div v-if="error" class="text-danger">{{ error }}</div>
   </div>
   <div class="border text-center m-3" v-if="pdfDataUri">
@@ -211,6 +215,8 @@ import StyleInput from './components/StyleInput.vue'
 import { parse_secli_xml } from './data/secli-parser'
 import { RAW_DATA } from './generator/data-real'
 import { exportDocx } from './generator/export-docx'
+import { exportIndexes } from './generator/export-indexes'
+import type { Format } from './generator/formatter'
 import {
   DEFAULT_SEPARATOR_STYLE,
   DEFAULT_STYLES,
@@ -348,6 +354,7 @@ type DataContent = {
   toInsert: PdfToInsert
 
   songs: Song[]
+  out?: { pdfDoc: PDFDocument; pageFormatPts: PageFormat; format: Format; bins: PackedPage[] }
   error?: string
   pdfDataUri?: string
 }
@@ -381,6 +388,8 @@ export default {
         toInsert: {},
 
         songs: [],
+        out: undefined,
+
         error: undefined,
         pdfDataUri: undefined
       }
@@ -460,17 +469,26 @@ export default {
         this.toInsert[where] = f.target.files?.[0] ?? undefined
       }
     },
-    async gen_pdf() {
+    async analyze(): Promise<
+      | {
+          pdfDoc: PDFDocument
+          pageFormatPts: PageFormat
+          format: Format
+          bins: PackedPage[]
+        }
+      | undefined
+    > {
       this.save()
 
       this.songs = parse_file(this.rawsongs)
+      this.out = undefined
       this.error = undefined
 
       try {
-        const pageFormat = PageFormat.convertTo('pts', this.pageFormat)
+        const pageFormatPts = PageFormat.convertTo('pts', this.pageFormat)
         const errors: string[] = []
         const [pdfDoc, format, bins] = await generate_bins(
-          pageFormat,
+          pageFormatPts,
           this.oddFirstPage,
           this.stylesheet,
           this.separatorStyle,
@@ -478,20 +496,31 @@ export default {
           this.packingMethod,
           errors
         )
+        this.out = { pdfDoc, pageFormatPts, format, bins }
         this.error = errors.length > 0 ? errors.join('\n') : undefined
         renumber_songs(bins)
         this.rewrite_input(bins)
-
+        return { pdfDoc, pageFormatPts, format, bins }
+      } catch (e) {
+        this.error = fullErrorMessage(e)
+        console.error(e)
+      }
+    },
+    async gen_pdf() {
+      const res = this.$data.out || (await this.analyze())
+      if (!res) return
+      const { pdfDoc, pageFormatPts, format, bins } = res
+      try {
         if (this.toInsert.before) {
           const doc = await PDFDocument.load(await this.toInsert.before.arrayBuffer())
           const pages = await pdfDoc.copyPages(doc, doc.getPageIndices())
           pages.forEach((page) => pdfDoc.addPage(page))
         }
 
-        await generate_pdf(pdfDoc, pageFormat, format, this.separatorStyle, bins)
+        await generate_pdf(pdfDoc, pageFormatPts, format, this.separatorStyle, bins)
         await append_table_of_content_to_pdf(
           pdfDoc,
-          pageFormat,
+          pageFormatPts,
           this.tableOfContentStylesheet,
           bins.flatMap((bin) => bin.objectsByColumn.flatMap((it) => it).map((it) => it.obj.song))
         )
@@ -510,26 +539,21 @@ export default {
       }
     },
     async gen_docx() {
-      this.save()
-
-      this.songs = parse_file(this.rawsongs)
-      this.error = undefined
-
+      const res = this.$data.out || (await this.analyze())
+      if (!res) return
+      const { pageFormatPts, bins } = res
       try {
-        const pageFormat = PageFormat.convertTo('pts', this.pageFormat)
-        const errors: string[] = []
-        const [_pdfDoc, _format, bins] = await generate_bins(
-          pageFormat,
-          this.oddFirstPage,
-          this.stylesheet,
-          this.separatorStyle,
-          this.songs,
-          this.packingMethod,
-          errors
-        )
-        this.error = errors.length > 0 ? errors.join('\n') : undefined
-        this.rewrite_input(bins)
-        exportDocx(pageFormat, this.stylesheet, bins)
+        exportDocx(pageFormatPts, this.stylesheet, bins)
+      } catch (e) {
+        this.error = fullErrorMessage(e)
+      }
+    },
+    async gen_indexes() {
+      const res = this.$data.out || (await this.analyze())
+      if (!res) return
+      const { bins } = res
+      try {
+        exportIndexes(bins)
       } catch (e) {
         this.error = fullErrorMessage(e)
       }
