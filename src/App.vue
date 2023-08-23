@@ -64,7 +64,12 @@ import SeparatorStyleInput from './components/SeparatorStyleInput.vue'
       <button class="btn btn-outline-primary" @click="reset()">Reset</button>
       <button class="ms-2 btn btn-primary" @click="gen_pdf()">Générer PDF</button>
       <button class="ms-2 btn btn-primary" @click="gen_docx()">Générer DocX</button>
-      <button class="ms-2 btn btn-primary" @click="gen_indexes()">Générer les index (csv)</button>
+      <button class="ms-2 btn btn-primary" @click="gen_indexes_csv()">
+        Générer les index (csv)
+      </button>
+      <button class="ms-2 btn btn-primary" @click="gen_indexes_docx()">
+        Générer les index (docx)
+      </button>
     </div>
   </div>
 
@@ -215,7 +220,7 @@ import StyleInput from './components/StyleInput.vue'
 import { parse_secli_xml } from './data/secli-parser'
 import { RAW_DATA } from './generator/data-real'
 import { exportDocx } from './generator/export-docx'
-import { exportIndexes } from './generator/export-indexes'
+import { exportIndexesCsv, exportIndexesDocx } from './generator/export-indexes'
 import type { Format } from './generator/formatter'
 import {
   DEFAULT_SEPARATOR_STYLE,
@@ -548,12 +553,22 @@ export default {
         this.error = fullErrorMessage(e)
       }
     },
-    async gen_indexes() {
+    async gen_indexes_csv() {
       const res = this.$data.out || (await this.analyze())
       if (!res) return
       const { bins } = res
       try {
-        exportIndexes(bins)
+        exportIndexesCsv(bins)
+      } catch (e) {
+        this.error = fullErrorMessage(e)
+      }
+    },
+    async gen_indexes_docx() {
+      const res = this.$data.out || (await this.analyze())
+      if (!res) return
+      const { bins } = res
+      try {
+        exportIndexesDocx(bins)
       } catch (e) {
         this.error = fullErrorMessage(e)
       }

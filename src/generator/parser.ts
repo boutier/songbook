@@ -101,7 +101,7 @@ function parse_comment(opts: { type: string[]; context?: string }, line: string)
   if (key === 'type') {
     value
       .replace(/(.*)intercession\+?/, '$1méditation')
-      .split(/[\s,;]+/)
+      .split(/\s*[,;]+\s*/)
       .forEach((tag) => opts.type.push(tag.toLocaleLowerCase()))
   } else {
     opts.context = value.trim()
