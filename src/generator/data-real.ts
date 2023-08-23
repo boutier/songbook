@@ -538,7 +538,7 @@ Voyez, il devient notre joie.
 
 
 1 - Un grand champ à moissonner 
-# type : célébration, Carême, temps ordinaire, ouverture
+# type : célébration, Carême, ouverture
 R.
 Un grand champ à moissonner, une vigne à vendanger
 Dieu appelle maintenant pour sa récolte !
@@ -577,7 +577,7 @@ Ubi caritas et amor, ubi caritas Deus ibi est.
 
 
 1 - Tu es notre Dieu 
-# type : célébration, Carême, temps ordinaire, ouverture
+# type : célébration, Carême, ouverture
 R.
 Tu es notre Dieu
 Et nous sommes ton peuple,
@@ -913,7 +913,7 @@ Coda. Alléluia ! Ton Nom Emmanuel ! (x4)
 
 
 1 - Toi, notre Dame
-# type : marie, assomption, notre-dame
+# type : marie, assomption
 R. 
 Toi, notre Dame, nous te chantons !
 Toi, notre Mère, nous te prions !
