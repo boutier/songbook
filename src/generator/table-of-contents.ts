@@ -66,11 +66,11 @@ export async function append_table_of_content_to_pdf(
   const ordered_tags = ['louange', 'méditation', 'esprit-saint', 'marie', 'célébration'].filter(
     (it) => tags.has(it)
   )
-  for (const tag in tags) {
-    if (!ordered_tags.includes(tag)) {
-      ordered_tags.push(tag)
-    }
-  }
+  // for (const tag in tags) {
+  //   if (!ordered_tags.includes(tag)) {
+  //     ordered_tags.push(tag)
+  //   }
+  // }
 
   const formats = await toFormat(pdfDoc, formatDefinition)
 
@@ -78,7 +78,7 @@ export async function append_table_of_content_to_pdf(
   const oddFormat = formats.oddTitle
   const evenFormat = formats.evenTitle
   const mainFormat = formats.otherFields
-  const tagHeaders = [...tags].map((tag) => ({ text: tag, size: headerFormat.widthOf(tag) }))
+  const tagHeaders = ordered_tags.map((tag) => ({ text: tag, size: headerFormat.widthOf(tag) }))
   const widestTag = tagHeaders.reduce((acc, it) => Math.max(acc, it.size), 0)
 
   const headerLineMargin = 1
